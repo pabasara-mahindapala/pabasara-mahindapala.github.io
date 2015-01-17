@@ -9,18 +9,28 @@ permalink:           pretty
 relative_permalinks: true
 
 # Setup
-title:               Lanyon
-tagline:             'A Jekyll theme'
+title:               Asitha
+tagline:             'A software engineer at WSO2 '
 description:         'A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url:                 http://lanyon.getpoole.com
+url:                 https://asitha.github.com
 baseurl:             /
 paginate:            5
 
+avatar: https://avatars0.githubusercontent.com/u/919462?v=3&s=140
+
+# Your disqus shortname, entering this will enable commenting on posts
+disqus: asithan
+
+# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
+google_analytics: UA-57023311-1
+
+github: https://github.com/Asitha/
+
 # About/contact
 author:
-  name:              Mark Otto
-  url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
+  name:              Asitha Nanayakkara
+  url:               https://twitter.com/sharaqzion
+  email:             dulanjana.asitha@gmail.com
 
 # Custom vars
 version:             1.0.0
