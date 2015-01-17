@@ -10,9 +10,9 @@ relative_permalinks: true
 
 # Setup
 title:               Asitha Nanayakkara
-tagline:             '|  res ipsa loquitur'
-description:         'Here I share my thoughts, findings and anything that interests me. <br>Cheers! '
-url:                 https://asitha.github.com
+tagline:             'res ipsa loquitur'
+description:         '<p>Here I share my thoughts, findings and anything that interests me.</p><p align="right"><i>Cheers!</i></p>'
+url:                 asitha.github.io
 baseurl:             /
 paginate:            5
 
