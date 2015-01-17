@@ -33,16 +33,16 @@ author:
   email:             dulanjana.asitha@gmail.com
 
 # Use the following plug-ins
-gems:
-  - jemoji # Emoji please!
-  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+# gems:
+#   - jemoji # Emoji please!
+#   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
 
 # Exclude these files from your production _site
-exclude:
-    - Gemfile
-    - Gemfile.lock
-    - LICENSE
-    - README.md
+# exclude:
+#     - Gemfile
+#     - Gemfile.lock
+#     - LICENSE
+#     - README.md
 
 # Custom vars
 version:             1.0.0
