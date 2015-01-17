@@ -107,6 +107,7 @@ h4, h5, h6 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+
 }
 
 strong {
@@ -156,7 +157,7 @@ code {
   padding: .25em .5em;
   font-size: 85%;
   color: #bf616a;
-  background-color: #f9f9f9;
+  background-color: rgba(140, 140, 140, 0.1);
   border-radius: 3px;
 }
 pre {
@@ -170,7 +171,8 @@ pre {
   white-space: pre-wrap;
   word-break: break-all;
   word-wrap: break-word;
-  background-color: #f9f9f9;
+  color: #333;
+  background-color: rgba(150, 150, 150, 0.2);
 }
 pre code {
   padding: 0;
@@ -214,8 +216,9 @@ pre code {
 blockquote {
   padding: .5rem 1rem;
   margin: .8rem 0;
-  color: #7a7a7a;
-  border-left: .25rem solid #e5e5e5;
+  color: #333;
+  background-color: rgba(150, 150, 150, 0.2);
+  border-left: .25rem solid rgba(255,150,0,0.5);
 }
 blockquote p:last-child {
   margin-bottom: 0;
@@ -274,8 +277,8 @@ tbody tr:nth-child(odd) th {
 .message {
   margin-bottom: 1rem;
   padding: 1rem;
-  color: #717171;
-  background-color: #f9f9f9;
+  color: #44444;
+  background-color: rgba(128,128,128,0.05);
 }
 
 
@@ -341,7 +344,7 @@ tbody tr:nth-child(odd) th {
 }
 .page-title,
 .post-title {
-  margin-top: 0;
+  margin-top: 0;  
 }
 
 /* Meta data line below post title */

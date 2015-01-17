@@ -2,7 +2,10 @@
 layout: post
 title: 'Gotchas #1 : Know your longs'
 published: true
+categories: [cs, programming, gotchas]
+tags: [java, numeric overflow, long overflow, java gotchas, java puzzles]
 ---
+
 This is my go at explaining subtle coding issues that I face in everyday programming and how to properly overcome them. Idea is to make you aware of the pitfalls in coding so that you'll be able to understand and do a better job when you come across similar puzzling moments. 
 
 ##Problem
@@ -41,6 +44,6 @@ System.out.println("value: " + val);
 
 ##Takeaways 
 
-I came across this while I was meddling with some old code. It was lying around for some time going through some release cycles as well. Luckily this didn't lead to any unpleasant scenarios. But the IDE was complaining about a *numeric overflow*. This led us to take another look at the code.
+I came across this while I was meddling with some old code. It was lying around for some time going through some release cycles as well. Luckily this didn't lead to any unpleasant scenarios. All along the IDE was complaining about a *numeric overflow*. Finally this led us to take another look at the code.
 
 Takeaways from this is always be **vigilant about the type of multiplication the JVM might do** and **be aware of IDE/compiler warnings**. 
