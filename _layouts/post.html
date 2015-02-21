@@ -2,10 +2,12 @@
 layout: default
 ---
 
-<div class="post">
-  <h1 class="post-title">{{ page.title }}</h1>
-  <span class="post-date">{{ page.date | date_to_string }}</span>
-  {{ content }}
+<div itemscope='' itemtype='http://schema.org/BlogPosting' class="post">
+  <h1 itemprop="name" class="post-title">{{ page.title }}</h1>
+  <span itemprop="datePublished" class="post-date">{{ page.date | date_to_string }}</span>
+  <span itemprop="articleBody">  
+    {{ content }}
+  </span>  
 </div>
 
 <div class="related">
@@ -21,7 +23,8 @@ layout: default
         </h3>
       </li>
     {% endfor %}
-
+    
     {% include disqus.html disqus_identifier=page.disqus_identifier %}
+
   </ul>
 </div>

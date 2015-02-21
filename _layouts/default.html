@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en" itemscope='' itemtype='http://schema.org/Blog' >
 
   {% include head.html %}
 
@@ -13,7 +13,9 @@
       <div class="masthead">
         <div class="container">
           <h3 class="masthead-title">
-            <a href="/" title="Home">{{ site.title }}</a>
+            <a href="/" title="Home" itemprop='url' >
+                <span itemprop='author'>{{ site.author.name }}</span>
+            </a>
             <small>| {{ site.tagline }}</small>
           </h3>
         </div>
