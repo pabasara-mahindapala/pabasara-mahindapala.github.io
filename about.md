@@ -18,6 +18,7 @@ publish: true
     Apart from my profession I enjoy playing badminton, swimming, reading and anything to do with 
     video production
 </div>
+<br>
 
 <p class="message">
   A cool video on <b>The Art of Writing Software</b> 

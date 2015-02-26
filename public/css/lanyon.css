@@ -38,7 +38,7 @@
 html,
 body {
   overflow-x: hidden;
-  background-color: #fefefe;
+  background-color: #fdfafa;
 }
 
 html {
@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (min-width: 56em) {
   .container {
-    max-width: 38rem;
+    max-width: 45rem;
   }
 }
 
@@ -163,7 +163,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (min-width: 30em) {
   .sidebar {
-    font-size: .75rem; /* 14px */
+    font-size: .875rem; /* 14px */
   }
 }
 
