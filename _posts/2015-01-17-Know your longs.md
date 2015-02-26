@@ -47,3 +47,5 @@ System.out.println("value: " + val);
 I came across this while I was meddling with some old code. It was lying around for some time going through some release cycles as well. Luckily this didn't lead to any unpleasant scenarios. All along the IDE was complaining about a *numeric overflow*. Finally this led us to take another look at the code.
 
 Takeaways from this is always be **vigilant about the type of multiplication the JVM might do** and **be aware of IDE/compiler warnings**. 
+
+> Written by [Asitha Nanayakkara](https://asitha.github.io/about).
