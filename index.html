@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Home
+
 ---
 
 <div class="latest-posts" id="latest-posts"> 
@@ -10,16 +11,16 @@ title: Home
 <div class="posts">
   {% for post in paginator.posts %}
   <div itemscope='' itemtype='http://schema.org/BlogPosting' itemprop='blogpost' class="post">
-    <h1 class="title-name" itemprop='name' class="post-title">
+    <h2 class="title-name" itemprop='name'>
       <a href="{{ post.url }}" itemprop='url'>
         {{ post.title }}
       </a>
-    </h1>
+    </h2>
 
-    <span itemprop="datePublished" class="post-date">{{ post.date | date_to_string }}</span>
-    <span itemprop='articleBody'>
+    <div itemprop="datePublished" class="post-date">{{ post.date | date_to_string }}</div>
+    <div itemprop='articleBody'>
     {{ post.content }}
-    </span>
+    </div>
   </div>
   {% endfor %}
 </div>

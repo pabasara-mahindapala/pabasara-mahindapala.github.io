@@ -2,17 +2,18 @@
 layout: post
 title: 'How to ignore trust store when connecting to a WSO2 server'
 published: true
+description: How to ignore certificate validation from client when connecting to WSO2 server via SSL using Axis2 client stub
 categories: [cs, programming, gotchas, wso2]
 tags: [ignore trust store, TrustAllTrustManager, identity server, java, axis2, WSO2, IS, java gotchas, java puzzlers, ]
 ---
 
 ##Problem
-There might be an instances where you want to **connect to a WSO2 server** (eg: WSO2 Identity Server) using an **axis2 client stub** with an **SSL connection**. In that case you need to set a trust store for the client application to trust the server. Trusting the server or not is totally up to the client. And the default trust store of Java doesn't have the self signed certificate of a default wso2 server. Hence we usually use system properties to set the correct trust store.
+There might be an instances where you want to **connect to a WSO2 server** (eg: WSO2 Identity Server) using an **Axis2 client stub** with an **SSL connection**. In that case you need to set a trust store for the client application to trust the server. Trusting the server or not is totally up to the client. And the default trust store of Java doesn't have the self signed certificate of a default WSO2 server. Hence we usually use system properties to set the correct trust store.
 
-There might be a requirement to totally **ignore the certificate** and trust whatever the server it connects to by ignoring the trust store. Most probably in a testing environment. Way to do this is some what different from a usual java HTTP client when we use **axis2 client stub** implementations.
+There might be a requirement to totally **ignore the certificate** and trust whatever the server it connects to by ignoring the trust store. Most probably in a testing environment. Way to do this is some what different from a usual Java HTTP client when we use **Axis2 client stub** implementations.
 
 ##Solution
-In axis2 there is a class for this specific purpose, to trust all the servers it connects to, [TrustAllTrustManager](http://axis.apache.org/axis2/java/core/api/org/apache/axis2/java/security/TrustAllTrustManager.html). We can use that `TrustManager` to create an `SSLContext` which trust all the servers.
+In Axis2 there is a class for this specific purpose, to trust all the servers it connects to, [TrustAllTrustManager](http://axis.apache.org/axis2/java/core/api/org/apache/axis2/java/security/TrustAllTrustManager.html). We can use that `TrustManager` to create an `SSLContext` which trust all the servers.
 
 ```java
  SSLContext sslCtx = SSLContext.getInstance("http");
@@ -32,7 +33,7 @@ stub._getServiceClient().getOptions().setProperty(
 After that we can use this stub to communicate with the server without any failing SSL handshake issue.
 
 ##Gotchas
-Most common mistake we do when trying to ignore the trust store using axis2 stubs is that we use something similar to following.
+Most common mistake we do when trying to ignore the trust store using Axis2 stubs is that we use something similar to following.
 
 ```java
 // SSLContext sslContext; created to trust all servers
@@ -52,7 +53,7 @@ HostnameVerifier validateAllHosts = new HostnameVerifier() {
 HttpsURLConnection.setDefaultHostnameVerifier(validateAllHosts);
 ``` 
 
-Problem is underlying axis2 client **doesn't use the `HTTPSURLConnection`** hence this code has no effect to the underlying axis2 client.  
+Problem is underlying Axis2 client **doesn't use the `HTTPSURLConnection`** hence this code has no effect to the underlying Axis2 client.  
 
 ## Extension points
 
