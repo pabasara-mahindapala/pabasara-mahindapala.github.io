@@ -1,13 +1,13 @@
 ---
 layout: post
-title: 'Gotchas #2 : How to ignore trust store when connecting to a WSO2 server'
+title: 'How to ignore trust store when connecting to a WSO2 server'
 published: true
 categories: [cs, programming, gotchas, wso2]
-tags: [ignore trust store, TrustAllTrustManager, java, axis2, WSO2, IS, java gotchas, java puzzlers, ]
+tags: [ignore trust store, TrustAllTrustManager, identity server, java, axis2, WSO2, IS, java gotchas, java puzzlers, ]
 ---
 
 ##Problem
-There might be an instances where you want to **connect to a WSO2 server** using an **axis2 client stub** with an **SSL connection**. In that case you need to set a trust store for the client application to trust the server. Trusting the server or not is totally up to the client. And the default trust store of Java doesn't have the self signed certificate of a default wso2 server. Hence we usually use system properties to set the correct trust store.
+There might be an instances where you want to **connect to a WSO2 server** (eg: WSO2 Identity Server) using an **axis2 client stub** with an **SSL connection**. In that case you need to set a trust store for the client application to trust the server. Trusting the server or not is totally up to the client. And the default trust store of Java doesn't have the self signed certificate of a default wso2 server. Hence we usually use system properties to set the correct trust store.
 
 There might be a requirement to totally **ignore the certificate** and trust whatever the server it connects to by ignoring the trust store. Most probably in a testing environment. Way to do this is some what different from a usual java HTTP client when we use **axis2 client stub** implementations.
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Gotchas #1 : Know your longs'
+title: 'Know your longs'
 published: true
 categories: [cs, programming, gotchas]
 tags: [java, numeric overflow, long overflow, java gotchas, java puzzles]
