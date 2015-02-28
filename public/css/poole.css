@@ -212,6 +212,13 @@ pre code {
   border-radius: 0;
 }
 
+.latest-posts h1{
+  text-align: center;
+  padding-bottom: 0.75rem;
+  border-bottom-style: solid;
+  border-width: 1px;  
+}
+
 /* Quotes */
 blockquote {
   padding: .5rem 1rem;

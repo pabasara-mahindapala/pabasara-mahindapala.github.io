@@ -12,7 +12,7 @@ relative_permalinks: true
 title:               Asitha Nanayakkara
 tagline:             'res ipsa loquitur'
 description:         'Here I share my thoughts, findings and anything that interests me.<br/><i>Cheers!</i>'
-url:                 asitha.github.io
+url:                 https://asitha.github.io
 baseurl:             /
 paginate:            5
 
