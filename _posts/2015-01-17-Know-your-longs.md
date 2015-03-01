@@ -10,7 +10,7 @@ tags: [java, numeric overflow, long overflow, java gotchas, java puzzles]
 This is my go at explaining subtle coding issues that I face in everyday programming and how to properly overcome them. Idea is to make you aware of the pitfalls in coding so that you'll be able to understand and do a better job when you come across similar puzzling moments. 
 
 ##Problem
-I'll start my series of gotchas with a **Java `long` type** related gotcha. Here is the java code segment. 
+I'll start my series of gotchas with a **Java `long` type** related gotcha. Here is the Java code segment. 
 
 ```java
 long referenceStart = 41 * 365 * 24 * 60 * 60 * 1000; //this is 2011

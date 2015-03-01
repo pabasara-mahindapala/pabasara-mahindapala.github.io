@@ -42,15 +42,13 @@ body {
 }
 
 html {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: Arial, sans-serif;
   /*font-family: "PT Serif", Georgia, "Times New Roman", serif;*/
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: Arial, sans-serif;
   /*font-family: "PT Sans", Helvetica, Arial, sans-serif;*/
-  font-weight: 300;
-  color: #313131;
   letter-spacing: -.025rem;
 }
 
@@ -263,6 +261,13 @@ a.sidebar-nav-item:focus {
   }
 }
 
+img.profile-image {
+    display: block;
+    margin-left: left;
+    margin-right: auto;
+    height: 150px; 
+}
+
 
 /* Slide effect
  *
@@ -312,7 +317,7 @@ a.sidebar-nav-item:focus {
 
 .page,
 .post {
-  margin-bottom: 4em;
+  margin-bottom: 2em;
 }
 
 /* Blog post or page title */
@@ -329,7 +334,7 @@ a.sidebar-nav-item:focus {
 /* Meta data line below post title */
 .post-date {
   display: block;
-  margin-top: -.5rem;
+  margin-top: 0.1rem;
   margin-bottom: 1rem;
   color: #9a9a9a;
 }
@@ -337,7 +342,7 @@ a.sidebar-nav-item:focus {
 /* Related posts */
 .related {
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   border-top: 1px solid #eee;
 }
 .related-posts {
@@ -436,7 +441,6 @@ a.pagination-item:hover {
       -ms-transform: translateX(-14rem);
           transform: translateX(-14rem);
 }
-
 
 /*
  * Themes

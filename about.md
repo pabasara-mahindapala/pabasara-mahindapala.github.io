@@ -1,9 +1,15 @@
 ---
 layout: page
 title: About
+description: Quick bio about the author of the blog, Asitha Nanayakkara
 publish: true
 ---
+
+
+
+
 <div itemscope itemtype="http://schema.org/Person"> 
+    <img itemprop="image" class="profile-image" src="{{ site.avatar }}" alt="Asitha Nanayakkara"/>
     Hi, my name is 
     <span itemprop="name">Asitha Nanayakkara</span> and I'm a 
     <span itemprop="jobTitle">Software Engineer</span> at 
@@ -18,11 +24,6 @@ publish: true
     Apart from my profession I enjoy playing badminton, swimming, reading and anything to do with 
     video production
 </div>
-<br>
 
-<p class="message">
-  A cool video on <b>The Art of Writing Software</b> 
 
-  <iframe width="650" height="400" src="//www.youtube.com/embed/QdVFvsCWXrA" frameborder="0" allowfullscreen></iframe>
-</p>
-
+####Find me on twitter [@sharaqzion](https://twitter.com/sharaqzion)
