@@ -5,9 +5,6 @@ description: Quick bio about the author of the blog, Asitha Nanayakkara
 publish: true
 ---
 
-
-
-
 <div itemscope itemtype="http://schema.org/Person"> 
     <img itemprop="image" class="profile-image" src="{{ site.avatar }}" alt="Asitha Nanayakkara"/>
     Hi, my name is 
@@ -24,6 +21,5 @@ publish: true
     Apart from my profession I enjoy playing badminton, swimming, reading and anything to do with 
     video production
 </div>
-
 
 ####Find me on twitter [@sharaqzion](https://twitter.com/sharaqzion)
