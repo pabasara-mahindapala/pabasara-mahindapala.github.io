@@ -13,16 +13,18 @@ layout: default
 {% include share-page.html %}
 
 <div class="related">
-  <h2>Other posts by author</h2>
+  <h3>Other posts by author</h3>
   <ul class="related-posts">
     {% for post in site.related_posts limit:3 %}
       <li>
-        <h3>
-          <a href="{{ post.url }}">
-            {{ post.title }}
-            <small>{{ post.date | date_to_string }}</small>
-          </a>
-        </h3>
+        <div class="related-posts-item" >
+          <h4>
+            <a href="{{ post.url }}">
+              {{ post.title }}
+              <div class="other-post-date"><small>{{ post.date | date_to_string }}</small></div>
+            </a>
+          </h4> 
+        </div>
       </li>
     {% endfor %}
   </ul>
