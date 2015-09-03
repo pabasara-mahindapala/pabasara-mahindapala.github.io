@@ -43,23 +43,28 @@ body {
 }
 
 html {
-  font-family: "texgyreherosregular", Arial, sans-serif;
+  /*font-family: "texgyreherosregular", Arial, sans-serif;*/
+  font-family: 'Open Sans', sans-serif;
   /*font-family: "PT Serif", Georgia, "Times New Roman", serif;*/
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "texgyreherosregular", Arial, sans-serif;
+  /*font-family: "texgyreherosregular", Arial, sans-serif;*/
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
   /*font-family: "PT Sans", Helvetica, Arial, sans-serif;*/
 
 }
 
 h2, h3 {
-  font-family: "texgyreherosregular", Arial, sans-serif;
+  /*font-family: "texgyreherosregular", Arial, sans-serif;*/
+  font-family: 'Open Sans', sans-serif;
   color: #325D72;
+
   font-size: 24px;
   margin: 1.5em 0px 1em;
   border-bottom: 1px solid #DDD;
-} 
+}
 
 h3 {
   font-size: 20px;
@@ -75,7 +80,8 @@ h2.title-name {
 }
 
 .latest-posts h1 {
-  font-family: "texgyreherositalic";
+  font-family: 'Open Sans', sans-serif;
+  /*font-family: "texgyreherositalic";*/
   font-size: 30px;
   font-weight: 200;
   color: black;
@@ -196,7 +202,8 @@ h3.masthead-title {
   width: 14rem;
   visibility: hidden;
   overflow-y: auto;
-  font-family: 'texgyreherosregular', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  /*font-family: 'texgyreherosregular', sans-serif;*/
   /*font-family: "PT Sans", Helvetica, Arial, sans-serif;*/
   font-size: .875rem; /* 15px */
   color: rgba(255,255,255,.6);
@@ -228,7 +235,7 @@ h3.masthead-title {
   padding: 1rem;
   letter-spacing: 0.1rem;
 }
-  
+
 }
 .sidebar-item p:last-child {
   margin-bottom: 0;
@@ -315,7 +322,7 @@ img.profile-image {
     display: block;
     margin-left: left;
     margin-right: auto;
-    height: 150px; 
+    height: 150px;
 }
 
 
@@ -392,7 +399,8 @@ h1.post-title {
 
 /* Meta data line below post title */
 .post-date {
-  font-family: "texgyreherositalic";
+  font-family: 'Open Sans', sans-serif;
+  /*font-family: "texgyreherositalic";*/
   display: block;
   margin-top: 0.1rem;
   margin-bottom: 1rem;
@@ -400,7 +408,8 @@ h1.post-title {
 }
 
 .other-post-date {
-  font-family: "texgyreherositalic";
+  /*font-family: "texgyreherositalic";*/
+  font-family: 'Open Sans', sans-serif;
   display: block;
   color: #9a9a9a;
   font-size: 16px;
@@ -443,7 +452,8 @@ h1.post-title {
   overflow: hidden; /* clearfix */
   margin-left: -1rem;
   margin-right: -1rem;
-  font-family: 'texgyreherosregular', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  /*font-family: 'texgyreherosregular', sans-serif;*/
   /*font-family: "PT Sans", Helvetica, Arial, sans-serif;*/
   color: #ccc;
   text-align: center;

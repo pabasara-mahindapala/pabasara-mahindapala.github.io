@@ -12,7 +12,7 @@
       <meta name="description" content="{{ page.description }}">
     {% endif %}
   {% endif %}
-  
+
   {% if site.twitter_username %}<!-- Twitter Cards -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:image" content="{{ site.url }}/public/site-logo.png">
@@ -31,9 +31,11 @@
   </title>
 
   <!-- CSS -->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:700,400italic,300' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="{{ site.baseurl }}public/css/poole.css">
   <link rel="stylesheet" href="{{ site.baseurl }}public/css/syntax.css">
   <link rel="stylesheet" href="{{ site.baseurl }}public/css/lanyon.css">
+
 <!--   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400"> -->
   <!-- <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic' rel='stylesheet' type='text/css'> -->
 
@@ -43,5 +45,5 @@
 
   <!-- Atom feed -->
   <link rel="alternate" type="application/atom+xml" title="Atom" href="/atom.xml">
-  {% include analytics.html %}	
+  {% include analytics.html %}
 </head>
