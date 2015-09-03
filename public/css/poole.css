@@ -12,7 +12,53 @@
  * Designed, built, and released under MIT license by @mdo. Learn more at
  * https://github.com/poole/poole.
  */
+@font-face {
+    font-family: 'texgyreherosregular';
+    src: url('../../fonts/texgyreheros-regular-webfont.eot');
+    src: url('../../fonts/texgyreheros-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/texgyreheros-regular-webfont.woff') format('woff'),
+         url('../../fonts/texgyreheros-regular-webfont.ttf') format('truetype'),
+         url('../../fonts/texgyreheros-regular-webfont.svg#texgyreherosregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
+}
+
+@font-face {
+    font-family: 'texgyreherositalic';
+    src: url('../../fonts/texgyreheros-italic-webfont.eot');
+    src: url('../../fonts/texgyreheros-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/texgyreheros-italic-webfont.woff') format('woff'),
+         url('../../fonts/texgyreheros-italic-webfont.ttf') format('truetype'),
+         url('../../fonts/texgyreheros-italic-webfont.svg#texgyreherositalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'texgyreherosbold';
+    src: url('../../fonts/texgyreheros-bold-webfont.eot');
+    src: url('../../fonts/texgyreheros-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/texgyreheros-bold-webfont.woff') format('woff'),
+         url('../../fonts/texgyreheros-bold-webfont.ttf') format('truetype'),
+         url('../../fonts/texgyreheros-bold-webfont.svg#texgyreherosbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'texgyreherosbold_italic';
+    src: url('../fonts/texgyreheros-bolditalic-webfont.eot');
+    src: url('../fonts/texgyreheros-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/texgyreheros-bolditalic-webfont.woff') format('woff'),
+         url('../fonts/texgyreheros-bolditalic-webfont.ttf') format('truetype'),
+         url('../fonts/texgyreheros-bolditalic-webfont.svg#texgyreherosbold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 /*
  * Contents
@@ -48,9 +94,9 @@ body {
 }
 
 html {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  line-height: 1.5;
+  font-family: "texgyreherosregular", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
 }
 @media (min-width: 38em) {
   html {
