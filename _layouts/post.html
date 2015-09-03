@@ -3,11 +3,11 @@ layout: default
 ---
 
 <div itemscope='' itemtype='http://schema.org/BlogPosting' class="post">
-  <h1 itemprop="name" class="post-title">{{ page.title }}</h1>
+  <h1 itemprop="headline" class="post-title">{{ page.title }}</h1>
   <div itemprop="datePublished" class="post-date">{{ page.date | date_to_string }}</div>
-  <div itemprop="articleBody">  
+  <div itemprop="articleBody">
     {{ content }}
-  </div>  
+  </div>
 </div>
 
 {% include share-page.html %}
@@ -23,7 +23,7 @@ layout: default
               {{ post.title }}
               <div class="other-post-date"><small>{{ post.date | date_to_string }}</small></div>
             </a>
-          </h4> 
+          </h4>
         </div>
       </li>
     {% endfor %}

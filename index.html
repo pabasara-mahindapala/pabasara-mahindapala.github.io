@@ -4,7 +4,7 @@ title: Home
 
 ---
 
-<div class="latest-posts" id="latest-posts"> 
+<div class="latest-posts" id="latest-posts">
   <h1>~ Latest Posts ~</h1>
 </div>
 
@@ -13,7 +13,7 @@ title: Home
   <div itemscope='' itemtype='http://schema.org/BlogPosting' itemprop='blogpost' class="post">
     <h2 class="title-name" itemprop='name'>
       <a href="{{ post.url }}" itemprop='url'>
-        {{ post.title }}
+        <div itemprop="headline">{{ post.title }}</div>
       </a>
     </h2>
 
@@ -41,4 +41,3 @@ title: Home
     <span class="pagination-item newer">Newer</span>
   {% endif %}
 </div>
-
