@@ -4,7 +4,7 @@ title: 'How to ignore trust store when connecting to a WSO2 server'
 published: true
 description: How to ignore certificate validation from client when connecting to WSO2 server via SSL using Axis2 client stub
 categories: [cs, programming, gotchas, wso2]
-tags: [ignore trust store, TrustAllTrustManager, identity server, java, axis2, WSO2, IS, java gotchas, java puzzlers, ]
+tags: [ignore trust store, TrustAllTrustManager, identity server, java, axis2, WSO2, IS,]
 ---
 
 ##Problem
@@ -24,7 +24,7 @@ Next we **set SSLContext to axis2 stub** implementation as follows.
 
 ```java
 stub._getServiceClient().getOptions().setProperty(
-	HTTPConstants.CUSTOM_PROTOCOL_HANDLER, 
+	HTTPConstants.CUSTOM_PROTOCOL_HANDLER,
 	new Protocol("https", new SSLProtocolSocketFactory(sslCtx), 443)
 	);
 
@@ -43,7 +43,7 @@ HttpsURLConnection.setDefaultSSLSocketFactory(sslContext.getSocketFactory());
 
 // Create all-trusting host name verifier
 HostnameVerifier validateAllHosts = new HostnameVerifier() {
-	
+
 	public boolean verify(String hostname, SSLSession session) {
 		return true;
 	}
@@ -51,7 +51,7 @@ HostnameVerifier validateAllHosts = new HostnameVerifier() {
 
 // Set the all-trusting host verifier
 HttpsURLConnection.setDefaultHostnameVerifier(validateAllHosts);
-``` 
+```
 
 Problem is underlying Axis2 client **doesn't use the `HTTPSURLConnection`** hence this code has no effect to the underlying Axis2 client.  
 
@@ -83,9 +83,9 @@ sslContext = SSLContext.getInstance("SSL");
 sslContext.init(null, customTrustManager, new java.security.SecureRandom());
 
 // Set the SSLContext to the stub as mention above
-``` 
+```
 
 That's all for this gotcha!
 
 
-> Written by [Asitha Nanayakkara](https://asitha.github.io/about).
+> Written by [Asitha Nanayakkara](https://asitha.github.io/about)
