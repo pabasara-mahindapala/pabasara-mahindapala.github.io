@@ -171,15 +171,18 @@ h4, h5, h6 {
 /* Body text */
 p {
   margin: 1em 0px;
-  color: #333;
+  color: black;
   padding: 0px;
   border: 0px none;
   font: inherit;
   vertical-align: baseline;
+  font-weight: 300;
 
 }
 
 strong {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
   color: #303030;
 }
 
@@ -384,8 +387,9 @@ tbody tr:nth-child(odd) th {
   margin-bottom: 0;
   color: #505050;
 }
-.masthead-title a {
+a.masthead-title {
   color: #505050;
+  font-weight: 300;
 }
 .masthead-title small {
   font-size: 75%;

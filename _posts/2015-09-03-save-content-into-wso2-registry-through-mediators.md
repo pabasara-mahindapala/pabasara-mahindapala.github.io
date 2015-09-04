@@ -24,26 +24,14 @@ Achieving this with script mediator is relatively easy. **Note that using the sc
 
 Here is a sample code snippet of a script mediator to save the value stored under `myProperty` in message context to registry.
 
-```xml
-<script language="js"><![CDATA[
-    importPackage(Packages.org.apache.synapse.config);
-    mc.getConfiguration().getRegistry().newResource("conf:/store/myStore",false);
-    mc.getConfiguration().getRegistry().updateResource(
-                "conf:/store/myStore", mc.getProperty("myProperty").toString());
-]]></script>
-```
+<script src="https://gist.github.com/Asitha/c185878fdc0460c9d8cd.js"></script>
 
 ##Class Mediator
 
 First of all, you need to create a class mediator. You can follow [this](https://docs.wso2.com/display/ESB481/Writing+a+WSO2+ESB+Mediator) guide to write your own class mediator.
 After that what you need is to write some Java code similar to following to store the content in to the registry.
 
-```java
-String resourcePath = "conf:/store/myStore";
-mc.getConfiguration().getRegistry().newResource(resourcePath, false);
-mc.getConfiguration().getRegistry().updateResource(
-            resourcePath, mc.getProperty("myProperty").toString().getBytes());
-```
+<script src="https://gist.github.com/Asitha/481688f06ab156737985.js"></script>
 
 ##Retrieve content
 
