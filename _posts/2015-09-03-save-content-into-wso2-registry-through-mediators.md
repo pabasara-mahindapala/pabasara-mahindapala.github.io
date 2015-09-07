@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Save content into WSO2 Registry through WSO2 ESB mediators'
+title: 'Writing content into WSO2 Registry through WSO2 ESB mediators'
 published: true
 description: How to store and retrieve content to and from WSO2 Registry using WSO2 ESB 4.8.1. This post discusses two possible options using the script mediator and the class mediator
 categories: [cs, programming, gotchas, wso2]
