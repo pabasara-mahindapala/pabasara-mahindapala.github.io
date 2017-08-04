@@ -9,7 +9,7 @@ publish: true
     <img itemprop="image" class="profile-image" src="{{ site.avatar }}" alt="Asitha Nanayakkara"/>
     Hi, my name is 
     <span itemprop="name">Asitha Nanayakkara</span> and I'm a 
-    <span itemprop="jobTitle">Software Engineer</span> at 
+    <span itemprop="jobTitle">Senior Software Engineer</span> at 
     <span itemprop='memberof'>
         <span itemscope itemtype="http://schema.org/Organization" >
             <a href="http://wso2.com/about/team/asitha_nanayakkara/">
