@@ -136,6 +136,11 @@ a:focus {
 
 }
 
+.adsbygoogle {
+    text-align: center;
+    padding: 4px 4px;
+}
+
 .sharer-page > a {
     font-weight: 700;
     color: #fff;
