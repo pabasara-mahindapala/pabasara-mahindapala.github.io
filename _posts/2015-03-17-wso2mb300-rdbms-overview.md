@@ -11,7 +11,7 @@ There are lot of architectural changes in WSO2 Message Broker (MB) 3.0.0. We can
 
 One of the key features that's introduced with MB 3.0.0 is its RDBMS support. Previously it was all about Cassandra. Whether you like it or not If you are using MB you had to stick with Cassandra. With MB 3.0.0 you can connect MB to either **Cassandra (Either with Hector or CQL), MySQL, MS-SQL, Oracle, PostgresSQL** or **H2** data store.
 
-##Design
+## Design
 In MB, core functionality is handled by Andes. Andes is protocol independent and is cluster aware. MQTT and AMQP protocol implementations talks to Andes to get its work done. Andes mainly uses two data stores for data persistence. They are *AndesContextStore* and *MessageStore*.
 
 > **Note:**
@@ -28,7 +28,7 @@ Following is the class diagram of MB 3.0.0 that comes with specific implementati
 RDBMS related implementations are written using ANSI SQL so that it can be used with many RDBMS's.
 This includes MS-SQL, Oracle, MySQL, PostgresSQL, H2.
 
-##Extension points
+## Extension points
 With this new design there is an option to write custom RDBMS or any DBMS specific store and plug it to MB. For instance you can write custom classes implementing *AndesContextStore* and *MessageStore* interfaces to harness performance gaines by using specific SQL statements supported by a given database.
 
 > Written by [Asitha Nanayakkara](http://asitha.github.io/about)

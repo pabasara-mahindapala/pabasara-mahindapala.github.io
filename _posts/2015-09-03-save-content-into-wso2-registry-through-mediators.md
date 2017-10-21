@@ -16,7 +16,7 @@ In WSO2 `ESB 4.8.1` there is no direct way to save content to registry through s
 Following examples shows how to store the value of property `myProperty` of type String in message context into the registry path
 `conf:/store/myStore`
 
-##Script Mediator
+## Script Mediator
 
 Achieving this with script mediator is relatively easy. **Note that using the script mediator will have some performance impact on your mediation logic.**
 
@@ -24,13 +24,13 @@ Here is a sample code snippet of a script mediator to save the value stored unde
 
 <script src="https://gist.github.com/Asitha/c185878fdc0460c9d8cd.js"></script>
 
-##Class Mediator
+## Class Mediator
 
 First of all, you need to create a class mediator. You can follow [this](https://docs.wso2.com/display/ESB481 /Writing+a+WSO2+ESB+Mediator) guide to write your own class mediator. After that what you need is to write some Java code similar to following to store the content into the registry.
 
 <script src="https://gist.github.com/Asitha/481688f06ab156737985.js"></script>
 
-##Retrieve content
+## Retrieve content
 
 To retrieve the stored content you can simply use the `get-property` XPath function with `registry` scope as follows.
 
