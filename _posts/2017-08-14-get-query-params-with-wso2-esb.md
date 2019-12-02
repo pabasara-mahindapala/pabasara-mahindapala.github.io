@@ -66,4 +66,4 @@ You can test this out with [WSO2 Integrator](http://wso2.com/integration) which 
 
 *Cheers!*
 
-> Written by [Asitha Nanayakkara](http://asitha.github.io/about)
+> Written by [Asitha Nanayakkara](https://asitha.github.io/about)

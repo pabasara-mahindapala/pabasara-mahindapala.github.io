@@ -12,7 +12,7 @@ title: Home
 
 <div class="posts">
   {% for post in paginator.posts %}
-  <div itemscope='' itemtype='http://schema.org/BlogPosting' itemprop='blogpost' class="post">
+  <div itemscope='' itemtype='https://schema.org/BlogPosting' itemprop='blogpost' class="post">
     <h2 class="title-name" itemprop='name'>
       <a href="{{ post.url }}" itemprop='url'>
         <div itemprop="headline">{{ post.title }}</div>

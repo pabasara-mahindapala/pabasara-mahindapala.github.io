@@ -14,7 +14,7 @@ While writing a proxy service or a sequence, there might be an instance where yo
 
 ## Hazelcast Leader node
 
-WSO2 carbon server which WSO2 ESB is built upon uses [Hazelcast](http://hazelcast.org/) as the cluster coordination implementation. In Hazelcast, there is a mechanism to reliably get the leader node of a cluster. Only one node in a cluster at a given time becomes the leader node. We can use this property of Hazelcast within WSO2
+WSO2 carbon server which WSO2 ESB is built upon uses [Hazelcast](https://hazelcast.org/) as the cluster coordination implementation. In Hazelcast, there is a mechanism to reliably get the leader node of a cluster. Only one node in a cluster at a given time becomes the leader node. We can use this property of Hazelcast within WSO2
 ESB using either a [script mediator](https://docs.wso2.com/display/ESB481/Script+Mediator) or a [class mediator](https://docs.wso2.com/display/ESB481/Class+Mediator)
 to get the leader node.
 

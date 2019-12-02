@@ -42,4 +42,4 @@ To retrieve the stored content you can simply use the `get-property` XPath funct
 
 *Cheers!*
 
-> Written by [Asitha Nanayakkara](http://asitha.github.io/about)
+> Written by [Asitha Nanayakkara](https://asitha.github.io/about)

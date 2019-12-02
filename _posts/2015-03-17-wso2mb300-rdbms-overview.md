@@ -23,7 +23,7 @@ By way of *AndesContextStore* and *MessageStore* interfaces, in MB 3.0.0, tight 
 
 Following is the class diagram of MB 3.0.0 that comes with specific implementation for several DBMS types
 
-![UML class diagram of DBMS design](http://asitha.github.io/public/images/data-store-architecture.png "DBMS-Architecture")
+![UML class diagram of DBMS design](https://asitha.github.io/public/images/data-store-architecture.png "DBMS-Architecture")
 
 RDBMS related implementations are written using ANSI SQL so that it can be used with many RDBMS's.
 This includes MS-SQL, Oracle, MySQL, PostgresSQL, H2.
@@ -31,4 +31,4 @@ This includes MS-SQL, Oracle, MySQL, PostgresSQL, H2.
 ## Extension points
 With this new design there is an option to write custom RDBMS or any DBMS specific store and plug it to MB. For instance you can write custom classes implementing *AndesContextStore* and *MessageStore* interfaces to harness performance gaines by using specific SQL statements supported by a given database.
 
-> Written by [Asitha Nanayakkara](http://asitha.github.io/about)
+> Written by [Asitha Nanayakkara](https://asitha.github.io/about)

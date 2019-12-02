@@ -116,4 +116,4 @@ So that's my five lessons. Those five lessons played a major role in the first f
 
 _Cheers!_
 
-> Written by [Asitha Nanayakkara](http://asitha.github.io/about)
+> Written by [Asitha Nanayakkara](https://asitha.github.io/about)
