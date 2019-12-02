@@ -9,7 +9,7 @@ publish: true
     <img itemprop="image" class="profile-image" src="{{ site.avatar }}" alt="Asitha Nanayakkara"/>
     Hi, my name is 
     <span itemprop="name">Asitha Nanayakkara</span> and I'm a 
-    <span itemprop="jobTitle">Senior Software Engineer</span> at 
+    <span itemprop="jobTitle">Technical Lead</span> at 
     <span itemprop='memberof'>
         <span itemscope itemtype="http://schema.org/Organization" >
             <a href="https://wso2.com/about/team/asitha_nanayakkara/">
@@ -19,7 +19,7 @@ publish: true
     </span>
     I have a bachelors degree in Computer Science and Engineering from University of Moratuwa. 
     Apart from my profession I enjoy playing badminton, swimming, reading and anything to do with 
-    video production
+    video production.
 </div>
 
-####Find me on twitter [@sharaqzion](https://twitter.com/sharaqzion)
+####Find me on twitter [@_asitha_n](https://twitter.com/_asitha_n)
