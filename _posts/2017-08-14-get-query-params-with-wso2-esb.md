@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to retrieve query parameters in WSO2 ESB
-published: true
+published: false
 description: This post describes methods to read query parameters of an HTTP request using a synapse configuration in WSO2 ESB.
 categories: [cs, programming, wso2, esb, mediators]
 tags: [query params, api, wso2, esb]

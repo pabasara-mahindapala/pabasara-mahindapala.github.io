@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Overview of WSO2 MB 3.0.0 DBMS Support'
-published: true
+published: false
 description: This is a quick look at WSO2 MB 3.0.0 new DBMS support. Now MB supports RDBMS databases as its data store in addition to Cassandra. This includes support for Oracle, MSSQL, MySQL, PostgreSQL, H2.  
 categories: [cs, programming, wso2, mb]
 tags: [WSO2 MB 3.0.0, RDBMS, Cassandra, Upcoming MB release, MS-SQL, Oracle, MySQL, H2, WSO2, MB]

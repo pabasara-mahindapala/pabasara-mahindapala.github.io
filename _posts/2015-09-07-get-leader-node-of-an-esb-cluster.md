@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'How to get the leader node of a WSO2 ESB Cluster'
-published: true
+published: false
 description: This post describes how to check whether the current node is the leader node of the ESB cluster. And a example use case of using this property to write a cluster aware scheduled task in WSO2 ESB.
 categories: [cs, programming, gotchas, wso2, esb]
 tags: [leader node, hazelcast, leader election, wso2, esb, script mediator, class mediator, cluster aware, scheduled task]

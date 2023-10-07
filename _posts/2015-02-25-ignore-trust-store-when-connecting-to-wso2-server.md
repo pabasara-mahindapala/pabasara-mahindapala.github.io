@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'How to ignore trust store when connecting to a WSO2 server'
-published: true
+published: false
 description: How to ignore certificate validation from client when connecting to WSO2 server via SSL using Axis2 client stub
 categories: [cs, programming, gotchas, wso2]
 tags: [ignore trust store, TrustAllTrustManager, identity server, java, axis2, WSO2, IS,]

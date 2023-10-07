@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Five Lessons After Five Years as a Software Engineer
-published: true
+published: false
 description: Five life lessons that helped me grow as an individual in the software engineering field
 categories: [life-lessons, professional-development]
 tags: [ynab, life-lessons, pragmatic programmer]

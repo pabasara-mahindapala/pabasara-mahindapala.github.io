@@ -8,29 +8,29 @@ highlighter:         rouge
 permalink:           pretty
 
 # Setup
-title:               Asitha Nanayakkara
-tagline:             'res ipsa loquitur'
-description:         'Here I share my thoughts, findings and anything that interests me.'
-url:                 https://asitha.github.io
+title:               Pabasara Mahindapala
+tagline:             Software Engineer
+description:         ''
+url:                 https://pabasara-mahindapala.github.io
 baseurl:             /
 paginate:            5
 
-avatar: https://avatars0.githubusercontent.com/u/919462
+avatar: https://avatars0.githubusercontent.com/u/42961797
 
 # Your disqus shortname, entering this will enable commenting on posts
 disqus: asithan
-twitter_username: sharaqzion
+twitter_username: pabasara_mahi
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 google_analytics: UA-57023311-1
 
-github: https://github.com/Asitha/
+github: https://github.com/pabasara-mahindapala/
 
 # About/contact
 author:
-  name:              Asitha Nanayakkara
-  url:               https://twitter.com/sharaqzion
-  email:             dulanjana.asitha@gmail.com
+  name:              Pabasara Mahindapala
+  url:               https://twitter.com/pabasara_mahi
+  email:             pabasaramahindapala@gmail.com
   linkedIn:          
 
 # Use the following plug-ins

@@ -1,25 +1,23 @@
 ---
 layout: page
 title: About
-description: Quick bio about the author of the blog, Asitha Nanayakkara
+description: Quick bio about the author of the blog, Pabasara Mahindapala
 publish: true
 ---
 
 <div itemscope itemtype="https://schema.org/Person">
-    <img itemprop="image" class="profile-image" src="{{ site.avatar }}" alt="Asitha Nanayakkara"/>
-    Hi, my name is 
-    <span itemprop="name">Asitha Nanayakkara</span> and I'm a 
-    <span itemprop="jobTitle">Technical Lead</span> at 
+    <img itemprop="image" class="profile-image" src="{{ site.avatar }}" alt="Pabasara Mahindapala"/>
+    Hi, I'm
+    <span itemprop="name">Pabasara Mahindapala</span> working as a
+    <span itemprop="jobTitle">Software Engineer</span> at 
     <span itemprop='memberof'>
         <span itemscope itemtype="http://schema.org/Organization" >
-            <a href="https://wso2.com/about/team/asitha_nanayakkara/">
+            <a href="https://wso2.com/about/team/pabasara-mahindapala/">
                 <span itemprop='name'>WSO2 Inc.</span>
             </a>
         </span>
     </span>
-    I have a bachelors degree in Computer Science and Engineering from University of Moratuwa. 
-    Apart from my profession I enjoy playing badminton, swimming, reading and anything to do with 
-    video production.
+    <!-- Lorem ipsum dolor sit amet -->
 </div>
 
-####Find me on twitter [@_asitha_n](https://twitter.com/_asitha_n)
+[Twitter](https://twitter.com/pabasara_mahi) · [GitHub](https://github.com/pabasara-mahindapala) · [LinkedIn](https://www.linkedin.com/in/pabasara-mahindapala/) · [StackOverflow](https://stackoverflow.com/users/10310943/pabasara-mahindapala) · [Medium](https://medium.com/@pabasaramahindapala)

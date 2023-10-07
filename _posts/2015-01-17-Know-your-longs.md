@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Know your longs'
-published: true
+published: false
 description: Describes a common mistake done when using Java long type in calculations with other numeric data types.
 categories: [cs, programming, gotchas]
 tags: [java, numeric overflow, long overflow, java gotchas, java puzzles]
