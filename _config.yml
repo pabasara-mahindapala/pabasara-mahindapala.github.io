@@ -18,7 +18,7 @@ paginate:            5
 avatar: https://avatars0.githubusercontent.com/u/42961797
 
 # Your disqus shortname, entering this will enable commenting on posts
-disqus: asithan
+disqus: 
 twitter_username: pabasara_mahi
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking

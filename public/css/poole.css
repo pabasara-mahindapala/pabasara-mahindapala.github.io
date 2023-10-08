@@ -506,3 +506,9 @@ a.pagination-item:hover {
     border-bottom-right-radius: 4px;
   }
 }
+
+img.centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
