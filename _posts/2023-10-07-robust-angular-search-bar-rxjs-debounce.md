@@ -62,7 +62,7 @@ After the debounce time is reached, the _searchRequest()_ method is called with 
 
 You can see a StackBlitz demo of the search bar below. Check the console to see the requests being made.
 
-<iframe src="https://stackblitz.com/edit/angular-search-bar-debounce?embed=1&file=src%2Fapp%2Fapp.component.html&view=preview" title="demo" width="100%" height="700px" frameborder="0"></iframe>
+<iframe src="https://stackblitz.com/edit/angular-search-bar-debounce?ctl=1&embed=1&file=src%2Fapp%2Fapp.component.html&view=preview" title="demo" width="100%" height="700px" frameborder="0"></iframe>
 
 > Don’t forget to check the full source code on <a href="https://github.com/pabasara-mahindapala/search-bar">GitHub</a>!
 
