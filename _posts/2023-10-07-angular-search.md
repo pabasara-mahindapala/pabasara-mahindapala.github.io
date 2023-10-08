@@ -20,7 +20,7 @@ Think about a search bar for countries that displays results as you type.
 Assume a user wants to search for Columbia, and the user types in “col” from the keyboard. If the search function is triggered on each keyboard input, there will be three separate search requests for “c”, “co” and “col” (See below).
 <br/><br/>
 
-![Unwanted API request are being sent](http://localhost:4000/public/images/country-search-box.gif "Unwanted API request are being sent"){:.centered}
+![Unwanted API request are being sent](https://pabasara-mahindapala.github.io/public/images/country-search-box.gif "Unwanted API request are being sent"){:.centered}
 
 <br/>
 
@@ -28,7 +28,7 @@ But, only the results from the last request that search for “col” are actual
 
 To prevent a search bar from sending unwanted requests like this for each letter the user types in, we can use the **debounce** operator in RxJs.
 
-*By definition, The debounce operator emits a notification from the source Observable only after a particular time span determined by another Observable has passed without another source emission.*
+_By definition, The debounce operator emits a notification from the source Observable only after a particular time span determined by another Observable has passed without another source emission._
 
 In simple words, it prevents sending a request to the API until a configured time (Let’s say 500ms) is passed after an input, without another input. Since the time period between letters when the user typing “c”, “o” and “l” is less than this value, API requests will not be sent. But, when 500ms is passed after the user has typed “col”, the API request for the search will be sent.
 
@@ -62,7 +62,7 @@ After the debounce time is reached, the _searchRequest()_ method is called with 
 
 You can see a StackBlitz demo of the search bar below. Check the console to see the requests being made.
 
-<iframe src="https://stackblitz.com/edit/angular-search-bar-debounce?embed=1&file=src%2Fapp%2Fapp.component.html&view=preview" width="100%" height="700px" frameborder="0"></iframe>
+<iframe src="https://stackblitz.com/edit/angular-search-bar-debounce?embed=1&file=src%2Fapp%2Fapp.component.html&view=preview" title="demo" width="100%" height="700px" frameborder="0"></iframe>
 
 > Don’t forget to check the full source code on <a href="https://github.com/pabasara-mahindapala/search-bar">GitHub</a>!
 
