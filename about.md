@@ -8,7 +8,7 @@ publish: true
 <div itemscope itemtype="https://schema.org/Person">
     <img itemprop="image" class="profile-image" src="{{ site.avatar }}" alt="Pabasara Mahindapala"/>
     Hi, I'm
-    <span itemprop="name">Pabasara Mahindapala</span> working as a
+    <span itemprop="name">Pabasara Mahindapala</span> currently working as a
     <span itemprop="jobTitle">Software Engineer</span> at 
     <span itemprop='memberof'>
         <span itemscope itemtype="http://schema.org/Organization" >
@@ -20,4 +20,4 @@ publish: true
     <!-- Lorem ipsum dolor sit amet -->
 </div>
 
-[Twitter](https://twitter.com/pabasara_mahi) · [GitHub](https://github.com/pabasara-mahindapala) · [LinkedIn](https://www.linkedin.com/in/pabasara-mahindapala/) · [StackOverflow](https://stackoverflow.com/users/10310943/pabasara-mahindapala) · [Medium](https://medium.com/@pabasaramahindapala)
+[Twitter](https://twitter.com/pabasara_mahi) &middot; [GitHub](https://github.com/pabasara-mahindapala) &middot; [LinkedIn](https://www.linkedin.com/in/pabasara-mahindapala/) &middot; [StackOverflow](https://stackoverflow.com/users/10310943/pabasara-mahindapala) &middot; [Medium](https://medium.com/@pabasaramahindapala)
