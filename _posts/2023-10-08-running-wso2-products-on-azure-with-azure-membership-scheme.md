@@ -13,7 +13,7 @@ tags: [wso2, azure, software, programming, coding, cloud, hazelcast, wso2is]
     </small>
 </div>
 
-![Azure Membership Scheme](https://pabasara-mahindapala.github.io/public/images/azure-membership-scheme.png "Azure Membership Scheme"){:.centered}
+![Azure Membership Scheme](/public/images/azure-membership-scheme.png "Azure Membership Scheme"){:.centered}
 
 Have you ever deployed WSO2 products in Azure virtual machines?
 
