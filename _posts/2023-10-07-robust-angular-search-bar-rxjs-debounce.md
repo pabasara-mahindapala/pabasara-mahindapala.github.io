@@ -20,7 +20,7 @@ Think about a search bar for countries that displays results as you type.
 Assume a user wants to search for Columbia, and the user types in “col” from the keyboard. If the search function is triggered on each keyboard input, there will be three separate search requests for “c”, “co” and “col” (See below).
 <br/><br/>
 
-![Unwanted API request are being sent](https://pabasara-mahindapala.github.io/public/images/country-search-box.gif "Unwanted API request are being sent"){:.centered}
+![Unwanted API request are being sent](/public/images/country-search-box.gif "Unwanted API request are being sent"){:.centered}
 
 <br/>
 
