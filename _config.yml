@@ -12,7 +12,7 @@ title:               Pabasara Mahindapala
 tagline:             Software Engineer
 description:         ''
 url:                 https://pabasara-mahindapala.github.io
-baseurl:             /
+baseurl:             https://pabasara-mahindapala.github.io
 paginate:            5
 
 avatar: https://avatars0.githubusercontent.com/u/42961797
