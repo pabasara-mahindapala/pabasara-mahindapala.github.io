@@ -300,3 +300,14 @@ Thank you for reading!
 2. [https://www.baeldung.com/cqrs-event-sourcing-java](https://www.baeldung.com/cqrs-event-sourcing-java)
 
 3. [https://www.confluent.io/learn/cqrs/](https://www.confluent.io/learn/cqrs/)
+
+<style>
+.gist {
+   overflow:auto;
+}
+
+.gist .blob-wrapper.data {
+   max-height:300px;
+   overflow:auto;
+}
+</style>
