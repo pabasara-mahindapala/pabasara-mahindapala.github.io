@@ -4,7 +4,7 @@ title: Implementing CQRS in ASP.NET Core - Separating Read and Write Operations 
 published: true
 description: Implementing CQRS in ASP.NET Core - Separating Read and Write Operations for Scalability and Performance
 categories: [software-development, software-architecture]
-tags: [software, programming, coding, software-architecture, aspnet-core, cqrs, command-query-responsibility-segregation, scalability, performance]
+tags: [software, programming, coding, software-architecture, csharp, c#, aspnet-core, cqrs, command-query-responsibility-segregation, scalability, performance]
 ---
 
 <!-- <div class="message">
@@ -21,10 +21,12 @@ Command Query Responsibility Segregation (CQRS) is a pattern that separates the 
 
 Let's define Commands and Queries:
 
-1. Commands: These operations change the system's state and may or may not return data.
-2. Queries: These operations retrieve data from the system without modifying its state.
+1. **Commands**: These operations change the system's state and may or may not return data.
+2. **Queries**: These operations retrieve data from the system without modifying its state.
 
-Why is this required? What possible benefits can be achieved by taking the effort to implement this pattern? 
+Why is this required? What possible benefits can be achieved by taking the effort to implement this pattern?
+
+### Benefits of CQRS
 
 One of the main advantages of CQRS is the ability to scale the read and write operations independently. In traditional applications, scaling both operations together is necessary. Having the isolation between read and write models allows more flexibility and allows individual models to be updated without affecting the other. Additionally, implementing CQRS gives the ability to optimize the read model and write model separately for performance.
 
@@ -38,7 +40,7 @@ Another concern is maintaining the consistency between the read model and the wr
 
 CQRS can also lead to code duplication and increased development time since there is an associated learning curve.
 
-### Implementation
+### Implementation of CQRS
 
 Now let's dive into the implementation.
 
@@ -88,7 +90,7 @@ public interface IUserRepository
 
 <script src="https://gist.github.com/pabasara-mahindapala/1f6d48dc2bb8225ca355bae4c5f37061.js"></script>
 
-As you know, I can expose the simple CRUD operations from the repository as a service and use it in the controller. And our application would work just fine.
+As you know, I can expose these simple CRUD operations from the repository as a service and use it in the ASP.NET Core controller. And our application would work just fine.
 
 Instead, I need to separate the read and write operations into separate models to implement CQRS pattern in the application.
 
@@ -149,7 +151,7 @@ And that completes the write side of the application.
 
 Next we will implement the read side of the application. When it comes to the read operations, note that the data model should be independent of the write model and optimized only for reading data.
 
-We need to define the read model suited to the read operations that we have in the application. In this application, end users should be able to get the contact details of a particular user according to the contact type, and the address of a particular user according to the state.
+We need to define the read model suited to the read operations that we have in the application. In this ASP.NET Core application, end users should be able to get the contact details of a particular user according to the contact type, and the address of a particular user according to the state.
 
 To achieve this, I have defined two queries:
 
@@ -272,10 +274,9 @@ public User HandleUpdateUserCommand(UpdateUserCommand command)
 
 With the synchronization in place, the read model tables will be updated whenever a user is updated. 
 
-And that completes the implementation of CQRS in the application.
+And that completes the implementation of the CQRS pattern in the application.
 
 > The source code for this application can be found in the <a href="https://github.com/pabasara-mahindapala/ContactBook">GitHub repo</a>
-
 
 Follow the below steps to run the application:
 
