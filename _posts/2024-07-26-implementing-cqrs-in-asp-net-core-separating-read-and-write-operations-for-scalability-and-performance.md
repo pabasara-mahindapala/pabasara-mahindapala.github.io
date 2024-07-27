@@ -17,7 +17,7 @@ I have recently followed a course on Linkedin Learning titled [Software Architec
 
 ### Understanding CQRS
 
-Command Query Responsibility Segregation (CQRS) is a pattern that separates the responsibility of reading and writing data. In a traditional application, we usually have a single model that is used to read and write data. CQRS introduces two separate models, one for reading data and one for writing data. The model for reading data (read model) is optimized for reading data and the model for writing data (write model) is optimized for writing data.
+Command Query Responsibility Segregation (CQRS) is a software architectural pattern that separates the responsibility of reading and writing data. In a traditional application, we usually have a single model that is used to read and write data. CQRS introduces two separate models, one for reading data and one for writing data. The model for reading data (read model) is optimized for reading data and the model for writing data (write model) is optimized for writing data.
 
 Let's define Commands and Queries:
 
