@@ -44,11 +44,11 @@ CQRS can also lead to code duplication and increased development time since ther
 
 Now let's dive into the implementation.
 
-First I built a simple CRUD application for managing contacts. The application has three entities: User, Contact, and Address. A user can have contacts of different types (email, phone, etc.) and addresses in different states.
+First, I built a simple CRUD application for managing contacts. The application has three entities: User, Contact, and Address. A user can have contacts of different types (email, phone, etc.) and addresses in different states.
 
 You would see that a simple CRUD application like this does not have a use case for CQRS. However, we will use this application to demonstrate how CQRS can be implemented.
 
-I created the domain models and a repository which uses a SQLite database to persist the data. Tables for each entity were created in the database.
+I created the domain models and a repository which uses an SQLite database to persist the data. Tables for each entity were created in the database.
 
 ```csharp
 public class User
