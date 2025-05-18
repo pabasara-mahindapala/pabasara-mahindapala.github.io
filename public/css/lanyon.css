@@ -423,7 +423,7 @@ h1.post-title {
 }
 .related-posts {
   padding-left: 0;
-  list-style: none;
+  /* list-style: none; */
 }
 .related-posts h3 {
   margin-top: 0;
