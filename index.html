@@ -27,20 +27,23 @@ title: Home
   {% endfor %}
 {% endif %}
 
+<!-- Display regular non-sticky posts -->
 <div class="posts">
   {% for post in paginator.posts %}
-  <div itemscope='' itemtype='https://schema.org/BlogPosting' itemprop='blogpost' class="post">
-    <h2 class="title-name" itemprop='name'>
-      <a href="{{ post.url }}" itemprop='url'>
-        <div itemprop="headline">{{ post.title }}</div>
-      </a>
-    </h2>
+  {% unless post.sticky %}
+    <div itemscope='' itemtype='https://schema.org/BlogPosting' itemprop='blogpost' class="post">
+      <h2 class="title-name" itemprop='name'>
+        <a href="{{ post.url }}" itemprop='url'>
+          <div itemprop="headline">{{ post.title }}</div>
+        </a>
+      </h2>
 
-    <div itemprop="datePublished" class="post-date">{{ post.date | date_to_string }}</div>
-    <div itemprop='articleBody'>
-    {{ post.content }}
+      <div itemprop="datePublished" class="post-date">{{ post.date | date_to_string }}</div>
+      <div itemprop='articleBody'>
+      {{ post.content }}
+      </div>
     </div>
-  </div>
+  {% endunless %}
   {% endfor %}
 </div>
 
