@@ -4,15 +4,11 @@ title: Home
 
 ---
 
-<div class="latest-posts" id="latest-posts">
-  <h1>~ Latest Posts ~</h1>
-</div>
-
 {% if paginator.page == 1 %}
   {% for post in site.posts %}
     {% if post.sticky %}
       <div itemscope='' itemtype='https://schema.org/BlogPosting' itemprop='blogpost' class="post sticky-post">
-        <span class="sticky-indicator">📌 Pinned</span>
+        <!-- <span class="sticky-indicator">📌 Pinned</span> -->
         <h2 class="title-name" itemprop='name'>
           <a href="{{ post.url }}" itemprop='url'>
             <div itemprop="headline">{{ post.title }}</div>
@@ -26,6 +22,10 @@ title: Home
     {% endif %}
   {% endfor %}
 {% endif %}
+
+<div class="latest-posts" id="latest-posts">
+  <h1>~ Latest Posts ~</h1>
+</div>
 
 <!-- Display regular non-sticky posts -->
 <div class="posts">
