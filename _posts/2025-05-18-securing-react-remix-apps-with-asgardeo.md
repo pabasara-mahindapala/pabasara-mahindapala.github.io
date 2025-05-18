@@ -158,7 +158,7 @@ Let’s modify the `app/routes/_index.tsx` file as follows to prevent unauthenti
 Now only authenticated users can access the index page. If a user is not authenticated, they will be redirected to the login page.
 
 <div class="message">
-    Remix doesn’t provide a way to have a parent route loader validate the user and protect all child routes. Therefore you have to validate the user session in the loader of each route that needs to be protected. For more information, refer to the <a href="https://remix.run/docs/en/1.19.3/pages/faq#how-can-i-have-a-parent-route-loader-validate-the-user-and-protect-all-child-routes" target="_blank" rel="noopener noreferrer">Remix documentation</a> on this.
+    <strong>Note:</strong> Remix doesn’t provide a way to have a parent route loader validate the user and protect all child routes. Therefore you have to validate the user session in the loader of each route that needs to be protected. For more information, refer to the <a href="https://remix.run/docs/en/1.19.3/pages/faq#how-can-i-have-a-parent-route-loader-validate-the-user-and-protect-all-child-routes" target="_blank" rel="noopener noreferrer">Remix documentation</a> on this.
 </div>
 
 ### Setup Environment Variables
