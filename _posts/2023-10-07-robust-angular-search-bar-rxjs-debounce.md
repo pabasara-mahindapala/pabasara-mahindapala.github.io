@@ -2,6 +2,7 @@
 layout: post
 title: A Robust Angular Search Bar with RxJs Debounce
 published: true
+sticky: true
 description: A Robust Angular Search Bar with RxJs Debounce
 categories: [software-development, angular]
 tags: [angular, javascript, software, programming, coding, rxjs, debounce]

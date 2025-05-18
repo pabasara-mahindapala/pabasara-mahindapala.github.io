@@ -8,6 +8,25 @@ title: Home
   <h1>~ Latest Posts ~</h1>
 </div>
 
+{% if paginator.page == 1 %}
+  {% for post in site.posts %}
+    {% if post.sticky %}
+      <div itemscope='' itemtype='https://schema.org/BlogPosting' itemprop='blogpost' class="post sticky-post">
+        <span class="sticky-indicator">📌 Pinned</span>
+        <h2 class="title-name" itemprop='name'>
+          <a href="{{ post.url }}" itemprop='url'>
+            <div itemprop="headline">{{ post.title }}</div>
+          </a>
+        </h2>
+        <div itemprop="datePublished" class="post-date">{{ post.date | date_to_string }}</div>
+        <div itemprop='articleBody'>
+          {{ post.content }}
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
 <div class="posts">
   {% for post in paginator.posts %}
   <div itemscope='' itemtype='https://schema.org/BlogPosting' itemprop='blogpost' class="post">
