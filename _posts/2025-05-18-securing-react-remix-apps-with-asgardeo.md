@@ -7,6 +7,12 @@ categories: [software-development, programming, coding, frontend, web-developmen
 tags: [software, programming, coding, javascript, react, remix, asgardeo, oidc, wsso2, authentication, authorization, web-development]
 ---
 
+<div class="message">
+    <small>
+  This article was originally published on <a href="https://javascript.plainenglish.io/securing-remix-apps-with-asgardeo-11b204e38a30">JavaScript in Plain English</a>.
+    </small>
+</div>
+
 [Remix](https://remix.run/docs/en/main/discussion/introduction) is a relatively new web framework that leverages the power of React to build fast, scalable, and dynamic web applications.
 
 - It is built on top of React Router.
