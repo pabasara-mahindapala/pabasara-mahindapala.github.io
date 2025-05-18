@@ -7,12 +7,6 @@ categories: [software-development, software-architecture]
 tags: [software, programming, coding, software-architecture, csharp, c#, aspnet-core, cqrs, command-query-responsibility-segregation, scalability, performance]
 ---
 
-<!-- <div class="message">
-    <small>
-  This article was originally published on <a href="https://towardsdev.com/monitoring-java-applications-on-azure-with-application-insights-246d6758337a">Towards Dev</a>.
-    </small>
-</div> -->
-
 I have recently followed a course on Linkedin Learning titled [Software Architecture: Patterns for Developers](https://www.linkedin.com/learning/software-architecture-patterns-for-developers) by Peter Morlion. In this course, I learned about the Command Query Responsibility Segregation (CQRS) pattern and I was interested to try it out in ASP.NET Core. In this article, I will walk you through my approach to implementing CQRS in a ASP.NET Core Web API project.
 
 ### Understanding CQRS
