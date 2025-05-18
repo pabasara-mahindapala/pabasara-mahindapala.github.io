@@ -19,12 +19,14 @@ In this guide, we will explore how to secure your Remix applications using [Asga
 
 <div class="message">
     If you’d like to skip the step-by-step guide and explore a sample application right away, you can check out <a href="https://github.com/pabasara-mahindapala/remix-asgardeo-sample" target="_blank" rel="noopener noreferrer">this Remix sample app repository</a> that includes the completed sample application.
-
 </div>
 
 ## Create Your Remix App
 
-Note: You need to have installed a Node.js LTS version and npm (which comes inbuilt with Node) to run this sample (Although Node.js is primarily a server-side language, it needs to have been installed to manage dependencies and run scripts for our project).
+<div class="message">
+    <strong>Note:</strong> You need to have installed a Node.js LTS version and npm (which comes inbuilt with Node) to run this sample (Although Node.js is primarily a server-side language, it needs to have been installed to manage dependencies and run scripts for our project).
+</div>
+
 
 We will use the create-remix command to generate a new Remix project with a basic template.
 
@@ -50,7 +52,7 @@ If all goes well, you should see the following result in the terminal and the ap
 
 ![Run the remix project](/public/images/srra2.png "Run the remix project"){:.centered}
 
-Go to http://localhost:5173 on your browser and confirm that everything is set up correctly.
+Go to `http://localhost:5173` on your browser and confirm that everything is set up correctly.
 
 ![Remix sample app](/public/images/srra3.png "Remix sample app"){:.centered}
 
@@ -103,13 +105,17 @@ To integrate your application with Asgardeo, you first need to create an organiz
 
 5. Complete the wizard popup by providing a suitable name and an authorized redirect URL
 
-**Note:** The authorized redirect URL determines where Asgardeo should send users after they successfully log in. Typically, this will be the web address where your application is hosted. For this guide, we’ll use `http://localhost:5173/auth/asgardeo/callback`, as the sample application will be accessible at this URL.
+<div class="message">
+    <strong>Note:</strong> The authorized redirect URL determines where Asgardeo should send users after they successfully log in. Typically, this will be the web address where your application is hosted. For this guide, we’ll use <code>http://localhost:5173/auth/asgardeo/callback</code>, as the sample application will be accessible at this URL.
+</div>
 
 6. Once you create the application, you will be directed to the Quick Start tab of the created application which will guide you to integrate login to your application in several technologies.
 
 ![Quick start](/public/images/srra6.png "Quick start"){:.centered}
 
-**Note:** Information available in the Quick Start tab of your app are required to configure Asgardeo in the Remix app.
+<div class="message">
+    <strong>Note:</strong> Information available in the Quick Start tab of your app are required to configure Asgardeo in the Remix app.
+</div>
 
 ### Implementing login in the Remix Application
 
@@ -151,7 +157,9 @@ Let’s modify the `app/routes/_index.tsx` file as follows to prevent unauthenti
 
 Now only authenticated users can access the index page. If a user is not authenticated, they will be redirected to the login page.
 
-**Note:** Remix doesn’t provide a way to have a parent route loader validate the user and protect all child routes. Therefore you have to validate the user session in the loader of each route that needs to be protected. For more information, refer to the [Remix documentation](https://remix.run/docs/en/1.19.3/pages/faq#how-can-i-have-a-parent-route-loader-validate-the-user-and-protect-all-child-routes) on this.
+<div class="message">
+    Remix doesn’t provide a way to have a parent route loader validate the user and protect all child routes. Therefore you have to validate the user session in the loader of each route that needs to be protected. For more information, refer to the <a href="https://remix.run/docs/en/1.19.3/pages/faq#how-can-i-have-a-parent-route-loader-validate-the-user-and-protect-all-child-routes" target="_blank" rel="noopener noreferrer">Remix documentation</a> on this.
+</div>
 
 ### Setup Environment Variables
 
