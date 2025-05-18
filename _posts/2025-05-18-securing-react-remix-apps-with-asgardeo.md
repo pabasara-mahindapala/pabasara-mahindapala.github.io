@@ -114,7 +114,7 @@ To integrate your application with Asgardeo, you first need to create an organiz
 ![Quick start](/public/images/srra6.png "Quick start"){:.centered}
 
 <div class="message">
-    <strong>Note:</strong> Information available in the Quick Start tab of your app are required to configure Asgardeo in the Remix app.
+    <strong>Note:</strong> Information available in the Quick Start tab of your app is required to configure Asgardeo in the Remix app.
 </div>
 
 ### Implementing login in the Remix Application
