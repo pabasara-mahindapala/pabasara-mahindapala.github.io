@@ -1,49 +1,52 @@
 # Dependencies
-markdown:            kramdown
-highlighter:         rouge
+markdown:    kramdown
+highlighter: rouge
 
 # Permalinks
-#
-# Use of `relative_permalinks` ensures post links from the index work properly.
-permalink:           pretty
+permalink: pretty
 
-# Setup
-title:               Pabasara Mahindapala
-tagline:             Software Engineer
-description:         ''
-url:                 https://pabasara-mahindapala.github.io
-baseurl:             https://pabasara-mahindapala.github.io
-paginate:            5
+# Site
+title:       Pabasara Mahindapala
+tagline:     Identity engineer. Frontend pragmatist.
+description: >
+  Senior Software Engineer at WSO2. Writing about identity, frontend engineering,
+  and what breaks in production.
+url:     https://pabasara-mahindapala.github.io
+baseurl: https://pabasara-mahindapala.github.io
+
+paginate: 5
 
 avatar: https://avatars0.githubusercontent.com/u/42961797
 
-# Your disqus shortname, entering this will enable commenting on posts
-disqus: 
+# Social
 twitter_username: pabasara_mahi
+medium_username:  pabasaramahindapala
+github:           https://github.com/pabasara-mahindapala/
 
-# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics: UA-57023311-1
+# Google Analytics — UA is retired; add a GA4 measurement ID here when ready
+# google_analytics: G-XXXXXXXXXX
 
-github: https://github.com/pabasara-mahindapala/
+# Disqus comments — add your shortname to enable
+disqus:
 
-# About/contact
+# About / contact
 author:
-  name:              Pabasara Mahindapala
-  url:               https://twitter.com/pabasara_mahi
-  email:             pabasaramahindapala@gmail.com
-  linkedIn:          
+  name:     Pabasara Mahindapala
+  url:      https://twitter.com/pabasara_mahi
+  email:    pabasaramahindapala@gmail.com
+  linkedIn: https://www.linkedin.com/in/pabasara-mahindapala/
 
-# Use the following plug-ins
+# Plugins
 gems:
-   - jemoji # Emoji please!
-   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+  - jemoji
+  - jekyll-sitemap
 
-# Exclude these files from your production _site
+# Exclude from production build
 exclude:
-     - Gemfile
-     - Gemfile.lock
-     - LICENSE
-     - README.md
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - CLAUDE.md
 
-# Custom vars
-version:             1.0.0
+version: 2.0.0

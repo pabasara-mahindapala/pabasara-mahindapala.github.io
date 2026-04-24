@@ -1,0 +1,20 @@
+<footer class="site-footer">
+  <div class="footer-inner">
+    <ul class="footer-social" role="list">
+      {% if site.twitter_username %}
+      <li><a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+      {% endif %}
+      {% if site.github %}
+      <li><a href="{{ site.github }}" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      {% endif %}
+      {% if site.author.linkedIn %}
+      <li><a href="{{ site.author.linkedIn }}" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      {% endif %}
+      {% if site.medium_username %}
+      <li><a href="https://medium.com/@{{ site.medium_username }}" target="_blank" rel="noopener noreferrer">Medium</a></li>
+      {% endif %}
+      <li><a href="/atom.xml">RSS</a></li>
+    </ul>
+    <p class="footer-copy">&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}</p>
+  </div>
+</footer>
