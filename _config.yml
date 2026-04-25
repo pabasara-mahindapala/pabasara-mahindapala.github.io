@@ -12,7 +12,7 @@ description: >
   Senior Software Engineer at WSO2. Writing about identity, frontend engineering,
   and what breaks in production.
 url:     https://pabasara-mahindapala.github.io
-baseurl: https://pabasara-mahindapala.github.io
+baseurl: ""
 
 paginate: 5
 
@@ -37,9 +37,11 @@ author:
   linkedIn: https://www.linkedin.com/in/pabasara-mahindapala/
 
 # Plugins
-gems:
+plugins:
   - jemoji
   - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate
 
 # Exclude from production build
 exclude:

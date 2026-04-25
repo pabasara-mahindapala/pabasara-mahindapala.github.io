@@ -1,66 +1,33 @@
 ---
 layout: default
 title: Home
-
 ---
 
-{% if paginator.page == 1 %}
-  {% for post in site.posts %}
-    {% if post.sticky %}
-      <div itemscope='' itemtype='https://schema.org/BlogPosting' itemprop='blogpost' class="post sticky-post">
-        <!-- <span class="sticky-indicator">📌 Pinned</span> -->
-        <h2 class="title-name" itemprop='name'>
-          <a href="{{ post.url }}" itemprop='url'>
-            <div itemprop="headline">{{ post.title }}</div>
-          </a>
-        </h2>
-        <div itemprop="datePublished" class="post-date">{{ post.date | date_to_string }}</div>
-        <div itemprop='articleBody'>
-          {{ post.content }}
-        </div>
-      </div>
-    {% endif %}
-  {% endfor %}
-{% endif %}
-
-<div class="latest-posts" id="latest-posts">
-  <h1>~ Latest Posts ~</h1>
-</div>
-
-<!-- Display regular non-sticky posts -->
-<div class="posts">
-  {% for post in paginator.posts %}
-  {% unless post.sticky %}
-    <div itemscope='' itemtype='https://schema.org/BlogPosting' itemprop='blogpost' class="post">
-      <h2 class="title-name" itemprop='name'>
-        <a href="{{ post.url }}" itemprop='url'>
-          <div itemprop="headline">{{ post.title }}</div>
-        </a>
-      </h2>
-
-      <div itemprop="datePublished" class="post-date">{{ post.date | date_to_string }}</div>
-      <div itemprop='articleBody'>
-      {{ post.content }}
+<section class="hero">
+  <div class="hero-inner">
+    <img src="{{ site.avatar }}" alt="{{ site.author.name }}" class="hero-avatar">
+    <div class="hero-text">
+      <h1>Hi, I'm Pabasara.</h1>
+      <p>Senior Software Engineer at WSO2, specialising in Identity and Access Management. I write about IAM, Agentic AI, frontend engineering, software architecture, and what breaks in production.</p>
+      <div class="hero-cta">
+        <a href="/writing/" class="btn btn-primary">Read writing</a>
+        <a href="/projects/" class="btn btn-secondary">See projects</a>
+        <a href="/about/" class="btn btn-secondary">About me</a>
       </div>
     </div>
-  {% endunless %}
-  {% endfor %}
-</div>
+  </div>
+</section>
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
-              
+{% include currently.html %}
+
+<section class="recent-posts">
+  <div class="section-header">
+    <p class="section-label">Recent writing</p>
+    <a href="/writing/" class="section-link">Full archive →</a>
+  </div>
+  <ul class="post-list">
+    {% for post in site.posts limit:5 %}
+      {% include post-card.html post=post %}
+    {% endfor %}
+  </ul>
+</section>

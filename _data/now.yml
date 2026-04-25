@@ -1,0 +1,12 @@
+items:
+  - emoji: "✍️"
+    label: "Writing"
+    text: "Mostly on Medium"
+    url: "https://medium.com/@pabasaramahindapala"
+  - emoji: "🔧"
+    label: "Building"
+    text: "Open-source projects"
+    url: "https://github.com/pabasara-mahindapala?tab=repositories"
+  - emoji: "📖"
+    label: "Reading"
+    text: "About Agentic AI"

@@ -1,0 +1,26 @@
+{% assign p = include.post %}
+<li class="post-card" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="post-card-meta">
+    <span itemprop="datePublished" class="post-date">{{ p.date | date: "%b %-d, %Y" }}</span>
+    {% if p.categories %}
+      {% for cat in p.categories limit:2 %}
+        <a href="/writing/" class="tag-chip">{{ cat }}</a>
+      {% endfor %}
+    {% endif %}
+    {% if p.cross_posts %}
+      {% for cp in p.cross_posts %}
+        <a href="{{ cp.url }}" target="_blank" rel="noopener noreferrer" class="platform-badge">{{ cp.platform }} ↗</a>
+      {% endfor %}
+    {% endif %}
+  </div>
+  <h2 class="post-card-title">
+    <a itemprop="url" href="{{ p.url }}">
+      <span itemprop="headline">{{ p.title }}</span>
+    </a>
+  </h2>
+  {% if p.description and p.description != p.title %}
+    <p class="post-excerpt">{{ p.description }}</p>
+  {% else %}
+    <p class="post-excerpt">{{ p.excerpt | strip_html | truncatewords: 35 }}</p>
+  {% endif %}
+</li>

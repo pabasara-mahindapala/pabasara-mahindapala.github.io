@@ -2,9 +2,12 @@
 layout: post
 title: A Robust Angular Search Bar with RxJs Debounce
 published: true
-description: A Robust Angular Search Bar with RxJs Debounce
-categories: [software-development, angular]
+description: Build a production-ready search bar in Angular using RxJS debounce, distinctUntilChanged, and switchMap to avoid unnecessary API calls.
+categories: [software-development, frontend, angular]
 tags: [angular, javascript, software, programming, coding, rxjs, debounce]
+cross_posts:
+  - platform: medium
+    url: https://medium.com/javascript-in-plain-english/a-robust-angular-search-bar-with-rxjs-debounce-29a082d6816e
 ---
 
 <div class="message">
@@ -65,5 +68,3 @@ You can see a StackBlitz demo of the search bar below. Check the console to see 
 <iframe src="https://stackblitz.com/edit/angular-search-bar-debounce?ctl=1&embed=1&file=src%2Fapp%2Fapp.component.html&view=preview" title="demo" width="100%" height="700px" frameborder="0"></iframe>
 
 > Don’t forget to check the full source code on <a href="https://github.com/pabasara-mahindapala/search-bar">GitHub</a>!
-
-

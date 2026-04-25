@@ -1,4 +1,8 @@
 source 'https://rubygems.org'
-gem 'github-pages', group: :jekyll_plugins
-gem 'jemoji'
 
+gem 'jekyll',           '~> 4.3'
+gem 'jekyll-paginate',  '~> 1.1'
+gem 'jekyll-sitemap'
+gem 'jekyll-feed'
+gem 'jemoji'
+gem 'webrick'           # required for Ruby 3+
