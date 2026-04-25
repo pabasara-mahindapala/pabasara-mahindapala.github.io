@@ -1,0 +1,23 @@
+# - name: Inkfolio
+#   description: Open-source PDF annotation editor built with Angular 18. Draw textboxes, rectangles, highlights, and lines directly on PDFs; manage and reorder pages; and download the annotated result as a PDF.
+#   tech: [Angular, TypeScript, Fabric.js, pdf-lib, PDF.js]
+#   url: https://github.com/pabasara-mahindapala/inkfolio
+#   status: active
+
+- name: Azure Membership Scheme
+  description: Hazelcast membership scheme for automatically discovering WSO2 product cluster nodes on Azure virtual machines. Supports both the Azure REST API and Azure Java SDK for IP discovery.
+  tech: [Java, Azure, Hazelcast, WSO2]
+  url: https://github.com/pabasara-mahindapala/azure-membership-scheme
+  status: maintained
+
+- name: Angular Search Bar with RxJS Debounce
+  description: A production-ready search bar component in Angular using RxJS debounceTime, distinctUntilChanged, and switchMap — avoiding unnecessary API calls as the user types.
+  tech: [Angular, TypeScript, RxJS]
+  url: https://github.com/pabasara-mahindapala/search-bar
+  status: reference
+
+- name: pabasara-mahindapala.github.io
+  description: This website. A Jekyll blog redesigned from Lanyon into a custom editorial theme — Ink & Signal palette, Inter + Instrument Serif typography, dark mode, and structured content via Jekyll data files.
+  tech: [Jekyll, Liquid, CSS, Ruby, GitHub Pages]
+  url: https://github.com/pabasara-mahindapala/pabasara-mahindapala.github.io
+  status: active

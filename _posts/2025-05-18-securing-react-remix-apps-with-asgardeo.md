@@ -4,7 +4,7 @@ title: Securing Remix Apps with Asgardeo
 published: true
 description: Learn to secure Remix (built on React) apps with Asgardeo. This step by step guide covers user login, OIDC integration, and securing protected resources.
 categories: [software-development, programming, coding, frontend, web-development]
-tags: [software, programming, coding, javascript, react, remix, asgardeo, oidc, wsso2, authentication, authorization, web-development]
+tags: [software, programming, coding, javascript, react, remix, asgardeo, oidc, wso2, authentication, authorization, web-development]
 cross_posts:
   - platform: medium
     url: https://javascript.plainenglish.io/securing-remix-apps-with-asgardeo-11b204e38a30
