@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-description: About Pabasara Mahindapala — Senior Software Engineer at WSO2, writing about identity, frontend engineering, and software architecture.
+description: About Pabasara Mahindapala - Senior Software Engineer at WSO2, writing about identity, frontend engineering, and software architecture.
 published: true
 ---
 
@@ -31,11 +31,11 @@ Five years of working with customers has taught me that the right answer is usua
 
 Writing is how I process what I learn. The recurring themes:
 
-- **Identity and access management** — OIDC, OAuth 2.0, SAML, RBAC, session management, and the edge cases that bite in production
-- **Agentic AI** — the capabilities, limitations, and risks of autonomous agents, and how to use them
-- **Frontend engineering** — Angular, RxJS patterns, component architecture, and the tradeoffs that don't show up in tutorials
-- **Software architecture** — system design, and applying patterns to real problems
-- **What breaks in production** — war stories and post-mortems, because failure is the best teacher
+- **Identity and access management** - OIDC, OAuth 2.0, SAML, RBAC, session management, and the edge cases that bite in production
+- **Agentic AI** - the capabilities, limitations, and risks of autonomous agents, and how to use them
+- **Frontend engineering** - Angular, RxJS patterns, component architecture, and the tradeoffs that don't show up in tutorials
+- **Software architecture** - system design, and applying patterns to real problems
+- **What breaks in production** - war stories and post-mortems, because failure is the best teacher
 
 Most of my long-form writing appears on [Medium](https://medium.com/@pabasaramahindapala).
 

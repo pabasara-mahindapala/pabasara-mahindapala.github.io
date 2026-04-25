@@ -2,7 +2,7 @@
 layout: default
 title: Writing
 permalink: /writing/
-description: All articles by Pabasara Mahindapala — identity, frontend engineering, software architecture, and cloud.
+description: All articles by Pabasara Mahindapala - identity, frontend engineering, software architecture, and cloud.
 ---
 
 <div class="page writing-archive">

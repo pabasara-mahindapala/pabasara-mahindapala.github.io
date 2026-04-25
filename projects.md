@@ -2,7 +2,7 @@
 layout: default
 title: Projects
 permalink: /projects/
-description: Open source projects and side work by Pabasara Mahindapala — Angular, Java, Jekyll, and cloud tooling.
+description: Open source projects and side work by Pabasara Mahindapala - Angular, Java, Jekyll, and cloud tooling.
 ---
 
 <div class="page projects-page" itemscope itemtype="https://schema.org/WebPage">

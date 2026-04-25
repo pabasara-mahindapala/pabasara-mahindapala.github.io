@@ -1,5 +1,5 @@
 /* =============================================================
-   site.css — pabasara-mahindapala.github.io
+   site.css - pabasara-mahindapala.github.io
    Theme: Ink & Signal
    ============================================================= */
 
@@ -33,7 +33,7 @@
   --shadow-md: 0 4px 14px rgba(0,0,0,0.08);
 }
 
-/* --- Dark mode — system preference --- */
+/* --- Dark mode - system preference --- */
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg:           #0F1419;
@@ -214,7 +214,7 @@ abbr[title] { text-decoration: underline dotted; cursor: help; }
 }
 .theme-toggle:hover { border-color: var(--color-accent); color: var(--color-text); }
 
-/* Mobile hamburger — hidden on desktop */
+/* Mobile hamburger - hidden on desktop */
 .nav-mobile-toggle {
   display: none;
   background: none;
@@ -679,18 +679,7 @@ pre code {
   font-size: 0.875rem;
 }
 
-/* --- Syntax highlighting overrides (Rouge) --- */
-.highlight { background: #161b22 !important; border-radius: var(--radius-md); }
-.highlight pre { border: none; box-shadow: none; }
-.highlight .c,  .highlight .cm, .highlight .c1, .highlight .cs { color: #8b949e; }
-.highlight .k,  .highlight .kd, .highlight .kn, .highlight .kp { color: #ff7b72; }
-.highlight .n,  .highlight .nx { color: #e6edf3; }
-.highlight .s,  .highlight .s1, .highlight .s2, .highlight .sb { color: #a5d6ff; }
-.highlight .mi, .highlight .mf, .highlight .mh { color: #79c0ff; }
-.highlight .nf, .highlight .nb { color: #d2a8ff; }
-.highlight .na, .highlight .nc, .highlight .no { color: #ffa657; }
-.highlight .o  { color: #ff7b72; }
-.highlight .p  { color: #e6edf3; }
+/* Syntax highlighting is in syntax.css (GitHub Dark theme) */
 
 /* --- Related posts --- */
 .related {
@@ -1095,6 +1084,50 @@ tr:last-child td { border-bottom: none; }
   color: var(--color-text-muted);
   padding-top: 1.5rem;
   border-top: 1px solid var(--color-border);
+}
+
+/* --- Series navigation --- */
+.series-nav {
+  margin-top: 3rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-accent);
+}
+
+.series-nav .section-label {
+  margin-bottom: 0.875rem;
+}
+
+.series-nav ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.series-nav li {
+  font-size: 0.9375rem;
+  padding: 0.25rem 0;
+  color: var(--color-text-muted);
+}
+
+.series-nav li a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+.series-nav li a:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+.series-nav .series-current {
+  color: var(--color-text);
+  font-weight: 500;
+}
+.series-nav .series-current::before {
+  content: "→ ";
+  color: var(--color-accent);
 }
 
 /* --- 404 page --- */
