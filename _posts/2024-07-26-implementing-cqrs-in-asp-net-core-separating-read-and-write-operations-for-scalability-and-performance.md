@@ -280,8 +280,6 @@ Follow the below steps to run the application:
  4. Run the application.
  5. Use the Swagger UI to test the API endpoints for creating, updating, and reading user contacts.
 
-### Conclusion
-
 In this article, my aim was to demonstrate how to implement the CQRS pattern in an ASP.NET Core application. In my next article, I will try to implement Event Sourcing along with CQRS in this application.
 
 If you have any questions or feedback, please feel free to share.

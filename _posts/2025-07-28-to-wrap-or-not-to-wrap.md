@@ -123,8 +123,6 @@ However, this approach may not be suitable when the application is small and doe
 
 ![](/public/images/to-wrap-or-not-to-wrap/image-5.png "r/ProgrammerHumor")
 
-#### Conclusion
-
 In conclusion, creating a wrapper layer for UI components in a complex Angular project can make it easier to manage and maintain the application. It will ensure consistency across the application and allow more flexibility for changes in the future.
 
 This approach can be particularly useful when using components from multiple UI libraries that have different APIs. However, it is important to consider whether this approach is necessary for an application before implementing, as it can add complexity and overhead.
