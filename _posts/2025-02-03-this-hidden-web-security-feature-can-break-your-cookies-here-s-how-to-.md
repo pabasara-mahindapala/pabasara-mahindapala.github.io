@@ -103,8 +103,6 @@ NaN. [https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies](https://develop
 - [**Join our content creators community on Discord**](https://discord.gg/in-plain-english-709094664682340443) 🧑🏻‍💻
 - For more content, visit [**plainenglish.io**](https://plainenglish.io/) + [**stackademic.com**](https://stackademic.com/)
 
-![](/public/images/this-hidden-web-security-feature-can-break-your-cookies-here-s-how-to-/image-2.jpg)
-
 ---
 
 [This Hidden Web Security Feature Can Break Your Cookies — Here’s How to Fix It](https://javascript.plainenglish.io/this-hidden-web-security-feature-can-break-your-cookies-heres-how-to-fix-it-7e7813ec3d1d) was originally published in [JavaScript in Plain English](https://javascript.plainenglish.io) on Medium, where people are continuing the conversation by highlighting and responding to this story.

@@ -12,8 +12,6 @@ import { XMLParser } from 'fast-xml-parser';
 import * as cheerio from 'cheerio';
 import fs from 'fs';
 import path from 'path';
-import https from 'https';
-import http from 'http';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -73,24 +71,19 @@ function pubDisplayName(url) {
   return 'Medium';
 }
 
-function downloadFile(url, destPath) {
-  return new Promise((resolve, reject) => {
-    const proto = url.startsWith('https') ? https : http;
-    const file = fs.createWriteStream(destPath);
-    proto.get(url, (res) => {
-      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
-        file.close();
-        fs.unlinkSync(destPath);
-        downloadFile(res.headers.location, destPath).then(resolve).catch(reject);
-        return;
-      }
-      res.pipe(file);
-      file.on('finish', () => file.close(resolve));
-    }).on('error', (err) => {
-      fs.unlink(destPath, () => {});
-      reject(err);
-    });
+async function downloadFile(url, destPath) {
+  const res = await fetch(url, {
+    redirect: 'follow',
+    headers: {
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+      'Accept': 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+      'Accept-Language': 'en-US,en;q=0.9',
+      'Referer': 'https://medium.com/',
+    },
   });
+  if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
+  const buf = await res.arrayBuffer();
+  fs.writeFileSync(destPath, Buffer.from(buf));
 }
 
 function guessExt(url) {
@@ -208,7 +201,8 @@ async function convertHtml(html, slug) {
   $('img').each((_, el) => {
     const $el = $(el);
     const src = $el.attr('src') || $el.attr('data-src') || '';
-    if (src && !src.startsWith('data:')) {
+    // Skip Medium tracking pixels (/_/stat URLs)
+    if (src && !src.startsWith('data:') && !src.includes('medium.com/_/stat')) {
       imgCounter++;
       const ext = guessExt(src);
       const localName = `image-${imgCounter}${ext}`;
