@@ -8,6 +8,8 @@ tags: [angular, javascript, software, programming, coding, rxjs, debounce]
 cross_posts:
   - platform: medium
     url: https://medium.com/javascript-in-plain-english/a-robust-angular-search-bar-with-rxjs-debounce-29a082d6816e
+  - platform: linkedin
+    url: https://www.linkedin.com/pulse/robust-angular-search-bar-rxjs-debounce-pabasara-mahindapala-jwx6c
 ---
 
 <div class="message">

@@ -32,7 +32,7 @@ description: What Pabasara Mahindapala is working on, reading, and thinking abou
         <h2 class="now-card-label">Writing</h2>
         <p>Working on few articles on IAM, software architecture and Agentic AI topics.</p>
         <p>Just published an
-        <a href="https://medium.com/@pabasaramahindapala/the-residuality-method-evolving-an-identity-system-from-naive-to-unbreakable-533127590838" target="_blank" rel="noopener noreferrer"> article </a> on applying residuality theory to identity system design - stress-testing an IAM architecture against failure modes instead of happy paths.</p>
+        <a href="../software-architecture/coding/programming/system-design-concepts/software-development/2026/04/14/the-residuality-method-evolving-an-identity-system-from-naive-to-unbre" target="_blank" rel="noopener noreferrer"> article </a> on applying residuality theory to identity system design - stress-testing an IAM architecture against failure modes instead of happy paths.</p>
       </div>
     </div>
 
@@ -40,8 +40,8 @@ description: What Pabasara Mahindapala is working on, reading, and thinking abou
       <div class="now-card-icon" aria-hidden="true">🔧</div>
       <div class="now-card-body">
         <h2 class="now-card-label">Building</h2>
-        <p>An open-source Angular 18 PDF annotation editor. Current focus: annotation persistence reliability and page manipulation.</p>
-        <p>This website - migrating from the Lanyon theme to a custom editorial design using Jekyll data files and CSS custom properties.</p>
+        <p>An open-source Angular 18 PDF annotation editor as a hobby project. Current focus: annotation persistence reliability and page manipulation.</p>
+        <p>This website - migrating from the Lanyon theme to a custom design using Jekyll data files and CSS custom properties.</p>
       </div>
     </div>
 
@@ -49,7 +49,7 @@ description: What Pabasara Mahindapala is working on, reading, and thinking abou
       <div class="now-card-icon" aria-hidden="true">📖</div>
       <div class="now-card-body">
         <h2 class="now-card-label">Reading</h2>
-        <p>Catching up on the agentic AI wave - Not because of the hype, but because of the impact</p>
+        <p>Reading up on the agentic AI - Not because of the hype, but because I need to understand how they work.</p>
         <p>Reading on how agents are being structured, where they break, and what that means for the systems they connect to.</p>
       </div>
     </div>

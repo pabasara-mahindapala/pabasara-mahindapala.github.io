@@ -3,8 +3,8 @@ layout: post
 title: "Securing Remix Apps with Asgardeo — Part 2"
 published: true
 description: "Securing Remix Apps with Asgardeo — Part 2In the previous part of this article, we explored how to secure Remix applications using Asgardeo by implementing user login and logout functionality."
-categories: [react, reactjs, remix, web-development, front-end-development]
-tags: [react, reactjs, remix, web-development, front-end-development]
+categories: [react, remix, asgardeo, reactjs, web-development, front-end-development]
+tags: [react, remix, asgardeo, reactjs, web-development, front-end-development, wso2, authentication, authorization, oidc]
 series: asgardeo-remix
 series_order: 2
 cross_posts:

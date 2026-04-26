@@ -17,12 +17,12 @@
   blog_post: /2024/07/26/implementing-cqrs-in-asp-net-core-separating-read-and-write-operations-for-scalability-and-performance/
   status: reference
 
-- name: custom-account-lock-handler
-  description: Custom OSGi bundle for WSO2 Identity Server that replaces the default AccountLockHandler with per-method locking rules — permanent lock after three failed password attempts, temporary lock after three failed OTP attempts. Built to satisfy a real production requirement where WSO2 IS's built-in handler couldn't differentiate between authentication methods.
-  tech: [Java, WSO2 Identity Server, OSGi, Authentication]
-  url: https://github.com/pabasara-mahindapala/custom-account-lock-handler
-  blog_post: /2025/04/20/customizing-account-locking-rules-in-wso2-identity-server/
-  status: maintained
+# - name: custom-account-lock-handler
+#   description: Custom OSGi bundle for WSO2 Identity Server that replaces the default AccountLockHandler with per-method locking rules — permanent lock after three failed password attempts, temporary lock after three failed OTP attempts. Built to satisfy a real production requirement where WSO2 IS's built-in handler couldn't differentiate between authentication methods.
+#   tech: [Java, WSO2 Identity Server, OSGi, Authentication]
+#   url: https://github.com/pabasara-mahindapala/custom-account-lock-handler
+#   blog_post: /2025/04/20/customizing-account-locking-rules-in-wso2-identity-server/
+#   status: reference
 
 - name: babylon.js-shape-extrusion
   description: An experiment in interactive 3D in the browser — draw a 2D polygon and extrude it into a 3D solid using Babylon.js. Covers the mesh generation and manipulation APIs that sit beneath most Babylon.js 3D scenes.
@@ -34,14 +34,14 @@
   description: Hazelcast membership scheme for automatically discovering WSO2 product cluster nodes on Azure virtual machines. Supports both the Azure REST API and Azure Java SDK for IP discovery.
   tech: [Java, Azure, Hazelcast, WSO2]
   url: https://github.com/pabasara-mahindapala/azure-membership-scheme
-  blog_post: /2023/10/08/running-wso2-products-on-azure-with-azure-membership-scheme/
+  blog_post: ../software-development/wso2/2023/10/08/running-wso2-products-on-azure-with-azure-membership-scheme/
   status: maintained
 
 - name: Angular Search Bar with RxJS Debounce
   description: A production-ready search bar component in Angular using RxJS debounceTime, distinctUntilChanged, and switchMap - avoiding unnecessary API calls as the user types.
   tech: [Angular, TypeScript, RxJS]
   url: https://github.com/pabasara-mahindapala/search-bar
-  blog_post: /2022/08/05/robust-angular-search-bar-rxjs-debounce/
+  blog_post: ../software-development/frontend/angular/2022/08/05/robust-angular-search-bar-rxjs-debounce/
   status: reference
 
 - name: pabasara-mahindapala.github.io
