@@ -32,7 +32,7 @@ Five years of working with customers has taught me that the right answer is usua
 Writing is how I process what I learn. The recurring themes:
 
 - **Identity and access management** - OIDC, OAuth 2.0, SAML, RBAC, session management, and the edge cases that bite in production
-- **Agentic AI** - the capabilities, limitations, and risks of autonomous agents, and how to use them
+- **AI and agents** - useful tools, but with a lot of exaggerated hype around them; I write about what they can actually do mechanically, where human judgment is still irreplaceable, and how they work under the hood — not because they're trending
 - **Frontend engineering** - Angular, RxJS patterns, component architecture, and the tradeoffs that don't show up in tutorials
 - **Software architecture** - system design, and applying patterns to real problems
 - **What breaks in production** - war stories and post-mortems, because failure is the best teacher
