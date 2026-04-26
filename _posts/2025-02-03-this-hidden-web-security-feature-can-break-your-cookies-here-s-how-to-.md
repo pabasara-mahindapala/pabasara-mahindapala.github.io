@@ -27,8 +27,9 @@ WSO2 IS authentication pages use a cookie named **ui_lang** to store the user’
 
 Now, this was a bit puzzling. It’s not like I have done any complex configurations or customizations in the product UIs. Everything was pretty much out-of-the-box. However, I could identify that the issue happened due to the hostname I was using for the IS server - **test.gov.rs**.
 
-```
-
+```toml
+[server]
+hostname = "test.gov.rs"
 ```
 
 This led me to dig deeper into the issue and discover the Public Suffix List (PSL) and its critical role in web application development.
@@ -49,8 +50,31 @@ When a domain is included in the PSL, browsers restrict setting cookies for that
 
 #### How to fix it?
 
-```
-
+```javascript
+/**
+ * Extracts the domain from the hostname.
+ * If parsing fails, undefined will be returned.
+ */
+function extractDomainFromHost() {
+  let domain = undefined;
+  /**
+   * Extract the domain from the hostname.
+   * Ex: If env.app.example.io is parsed, `example.io` will be set as the domain.
+   */
+  try {
+    let hostnameTokens = window.location.hostname.split(".");
+    if (hostnameTokens.length > 1) {
+      domain = hostnameTokens
+        .slice(hostnameTokens.length - 2, hostnameTokens.length)
+        .join(".");
+    } else if (hostnameTokens.length == 1) {
+      domain = hostnameTokens[0];
+    }
+  } catch (e) {
+    // Couldn't parse the hostname.
+  }
+  return domain;
+}
 ```
 
 [identity-apps/identity-apps-core/apps/authentication-portal/src/main/webapp/includes/language-switcher.jsp at d2b06cbf70f3ccf5857d17711f247715ba542783 · wso2/identity-apps](https://github.com/wso2/identity-apps/blob/d2b06cbf70f3ccf5857d17711f247715ba542783/identity-apps-core/apps/authentication-portal/src/main/webapp/includes/language-switcher.jsp#L66)
@@ -71,8 +95,54 @@ Otherwise, we need to regularly update the PSL in our application from the offic
 
 In WSO2 IS, this issue was fixed using the **tldts** library.
 
-```
+```typescript
+import { getDomain as _getDomain } from "tldts";
 
+/**
+* Extracts the domain from the hostname.
+*
+* This function uses the public suffix list to parse the domain safely
+* for complex hostnames like `app.example.gov.us`, etc.
+* If parsing fails, `undefined` will be returned.
+*
+* @example
+* // Assuming the current hostname is 'app.example.gov.us'
+* const domain = URLUtils.getDomain();
+* console.log(domain); // Outputs: 'example.gov.us'
+*
+* @returns The extracted domain or `undefined` if parsing fails.
+*/
+public static getDomain(url: string, options: Record<string, unknown> = {
+ validHosts: [ "localhost" ]
+}): string | undefined {
+  let domain: string = null;
+
+  try {
+    domain = _getDomain(url, options);
+  } catch (e) {
+
+  }
+
+  // `tldts` doesn't handle non TDLDs like custom hostnames.
+  // Fallback to a simple parser for such cases.
+  if (domain === null || typeof domain === "undefined") {
+      try {
+      const parsedURL: URL = new URL(url);
+
+      const hostnameTokens: string[] = parsedURL.hostname.split(".");
+
+      if (hostnameTokens.length === 1){
+        domain = hostnameTokens[0];
+      } else if (hostnameTokens.length > 1) {
+        domain = hostnameTokens.slice(hostnameTokens.length - 2, hostnameTokens.length).join(".");
+      }
+    } catch (e) {
+
+    }
+  }
+
+  return domain;
+};
 ```
 
 [identity-apps/modules/core/src/utils/url-utils.ts at 566c585d5f99c0b75fb4c5626b206a43dd03c6ab · wso2/identity-apps](https://github.com/wso2/identity-apps/blob/566c585d5f99c0b75fb4c5626b206a43dd03c6ab/modules/core/src/utils/url-utils.ts#L213)
@@ -89,20 +159,5 @@ Have you encountered similar issues with cookies and domain restrictions? Share 
 
 #### Read more:
 
-NaN. [https://publicsuffix.org/learn/](https://publicsuffix.org/learn/)
-NaN. [https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
-
-### Thank you for being a part of the community
-
-*Before you go:*
-
-- Be sure to **clap** and **follow** the writer ️👏**️️**
-- Follow us: [**X**](https://x.com/inPlainEngHQ) | [**LinkedIn**](https://www.linkedin.com/company/inplainenglish/) | [**YouTube**](https://www.youtube.com/channel/UCtipWUghju290NWcn8jhyAw) | [**Newsletter**](https://newsletter.plainenglish.io/) | [**Podcast**](https://open.spotify.com/show/7qxylRWKhvZwMz2WuEoua0)
-- [**Check out CoFeed, the smart way to stay up-to-date with the latest in tech**](https://cofeed.app/) **🧪**
-- [**Start your own free AI-powered blog on Differ**](https://differ.blog/) 🚀
-- [**Join our content creators community on Discord**](https://discord.gg/in-plain-english-709094664682340443) 🧑🏻‍💻
-- For more content, visit [**plainenglish.io**](https://plainenglish.io/) + [**stackademic.com**](https://stackademic.com/)
-
----
-
-[This Hidden Web Security Feature Can Break Your Cookies — Here’s How to Fix It](https://javascript.plainenglish.io/this-hidden-web-security-feature-can-break-your-cookies-heres-how-to-fix-it-7e7813ec3d1d) was originally published in [JavaScript in Plain English](https://javascript.plainenglish.io) on Medium, where people are continuing the conversation by highlighting and responding to this story.
+1. [https://publicsuffix.org/learn/](https://publicsuffix.org/learn/)
+2. [https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)

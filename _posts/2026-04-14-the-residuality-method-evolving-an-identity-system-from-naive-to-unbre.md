@@ -104,5 +104,3 @@ We now have **Redis **for caching high-churn data, a** claim-check pattern** for
 The Residuality Method moves us from guessing future requirements to stress-testing our architecture against chaos that actually happens in the real world.
 
 By embracing chaos and failures as sources of insight, we can build systems that are resilient, adaptable, and capable of surviving unexpected challenges.
-
-![](/public/images/the-residuality-method-evolving-an-identity-system-from-naive-to-unbre/image-8.jpg)

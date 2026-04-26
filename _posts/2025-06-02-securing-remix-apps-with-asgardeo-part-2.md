@@ -83,8 +83,8 @@ If we refer to the [scim2/Me API docs in Asgardeo](https://wso2.com/asgardeo/doc
 
 First, we’ll define this endpoint in our .env file as follows:
 
-```
-
+```toml
+ASGARDEO_SCIM_ME_URL=https://api.asgardeo.io/t/<asgardeo_organization_name>/scim2/Me
 ```
 
 Modify the app/utils/asgardeo.server.ts file as follows:
@@ -114,19 +114,3 @@ Next you can explore the additional features that Asgardeo offer to make the log
 - [Self registration](https://wso2.com/asgardeo/docs/guides/user-accounts/configure-self-registration/)
 - [User management](https://wso2.com/asgardeo/docs/guides/users/)
 - [Login UI customization](https://wso2.com/asgardeo/docs/guides/branding/)
-
-### Thank you for being a part of the community
-
-*Before you go:*
-
-- Be sure to **clap** and **follow** the writer ️👏**️️**
-- Follow us: [**X**](https://x.com/inPlainEngHQ) | [**LinkedIn**](https://www.linkedin.com/company/inplainenglish/) | [**YouTube**](https://www.youtube.com/@InPlainEnglish) | [**Newsletter**](https://newsletter.plainenglish.io/) | [**Podcast**](https://open.spotify.com/show/7qxylRWKhvZwMz2WuEoua0) | [**Differ**](https://differ.blog/inplainenglish) | [**Twitch**](https://twitch.tv/inplainenglish)
-- [**Start your own free AI-powered blog on Differ**](https://differ.blog/) 🚀
-- [**Join our content creators community on Discord**](https://discord.gg/in-plain-english-709094664682340443) 🧑🏻‍💻
-- For more content, visit [**plainenglish.io**](https://plainenglish.io/) + [**stackademic.com**](https://stackademic.com/)
-
-![](/public/images/securing-remix-apps-with-asgardeo-part-2/image-8.jpg)
-
----
-
-[Securing Remix Apps with Asgardeo — Part 2](https://javascript.plainenglish.io/securing-remix-apps-with-asgardeo-part-2-c4b3deda9caf) was originally published in [JavaScript in Plain English](https://javascript.plainenglish.io) on Medium, where people are continuing the conversation by highlighting and responding to this story.

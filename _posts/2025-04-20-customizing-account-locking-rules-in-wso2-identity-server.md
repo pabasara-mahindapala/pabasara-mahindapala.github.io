@@ -60,8 +60,12 @@ This [section](https://github.com/wso2-extensions/identity-event-handler-account
 
 If the value of the http://wso2.org/claims/identity/unlockTime claim is set to 0, the account will be locked permanently. Otherwise we can set a future timestamp to lock the account temporarily.
 
-```
-
+```java
+if (failedAttemptsClaim.equals("http://wso2.org/claims/identity/failedSmsOtpAttempts")) {
+ newClaims.put(AccountConstants.ACCOUNT_UNLOCK_TIME_CLAIM, Long.toString(unlockTime)); 
+} else {
+ newClaims.put(AccountConstants.ACCOUNT_UNLOCK_TIME_CLAIM, "0");
+}
 ```
 
 #### 3. Deploy and Configure the Custom Account Lock Handler
@@ -69,14 +73,17 @@ If the value of the http://wso2.org/claims/identity/unlockTime claim is set to 0
 - Build the custom account lock handler with `mvn clean install` and deploy the generated JAR file in the /repository/components/dropins directory.
 - Add the following configuration in the /repository/conf/deployment.toml file to disable the default AccountLockHandler since we are adding a custom implementation:
 
-```
-
+```toml
+[authentication_policy]
+disable_account_lock_handler=true
 ```
 
 - Add the custom account lock handler configuration in the deployment.toml file:
 
-```
-
+```toml
+[[event_handler]]
+name= "custom.account.lock.handler"
+subscriptions =["PRE_AUTHENTICATION", "POST_AUTHENTICATION", "PRE_SET_USER_CLAIMS", "POST_SET_USER_CLAIMS", "POST_NON_BASIC_AUTHENTICATION"]
 ```
 
 - Restart the WSO2 IS server to apply the changes.
@@ -90,9 +97,3 @@ The complete source code for the custom account lock handler is available in the
 To test the custom account lock handler, you can configure username/password and SMS OTP as authentication steps in your application.
 
 Then, try logging in with incorrect credentials for the username/password step three times and you should see the account being permanently locked. Similarly, try logging in with incorrect OTP three times and you should see the account being temporarily locked for a configurable duration.
-
-![](/public/images/customizing-account-locking-rules-in-wso2-identity-server/image-2.jpg)
-
----
-
-[Customizing Account Locking Rules in WSO2 Identity Server](https://towardsdev.com/customizing-account-locking-rules-in-wso2-identity-server-158bf67ca38d) was originally published in [Towards Dev](https://towardsdev.com) on Medium, where people are continuing the conversation by highlighting and responding to this story.

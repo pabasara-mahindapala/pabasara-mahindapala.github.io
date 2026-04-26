@@ -72,9 +72,3 @@ To further test the agent’s capabilities, I asked Copilot to use NUnit instead
 Using GitHub Copilot Agent to refactor my old CQRS implementation to use MediatR with async/await support was a great experience. It handled most of the repetitive work, allowing me to focus on reviewing and guiding the changes while ensuring it stayed on the intended path.
 
 It remains to be seen how well it will perform in more complex scenarios and whether such agents can maintain deterministic behavior in all situations.
-
-![](/public/images/practical-experience-migrating-an-old-net-project-with-github-copilot-/image-8.jpg)
-
----
-
-[Practical Experience: Migrating an Old .NET Project with GitHub Copilot Agent](https://towardsdev.com/practical-experience-migrating-an-old-net-project-with-github-copilot-agent-cb564b6688fe) was originally published in [Towards Dev](https://towardsdev.com) on Medium, where people are continuing the conversation by highlighting and responding to this story.

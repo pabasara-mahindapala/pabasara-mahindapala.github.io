@@ -233,11 +233,21 @@ async function convertHtml(html, slug) {
   });
 
   // Code blocks
+  // Medium wraps code in bare <pre> tags using <br> for newlines (no <code> child).
+  // Cheerio's .text() decodes HTML entities automatically.
   $('pre').each((_, el) => {
     const $el = $(el);
     const $code = $el.find('code');
-    const lang = $code.attr('data-language') || $code.attr('class')?.match(/language-(\w+)/)?.[1] || '';
-    const codeText = $code.text();
+    let lang = '';
+    let codeText;
+    if ($code.length > 0) {
+      lang = $code.attr('data-language') || $code.attr('class')?.match(/language-(\w+)/)?.[1] || '';
+      $code.find('br').each((__, br) => $(br).replaceWith('\n'));
+      codeText = $code.text().trim();
+    } else {
+      $el.find('br').each((__, br) => $(br).replaceWith('\n'));
+      codeText = $el.text().trim();
+    }
     $el.replaceWith(`\n\`\`\`${lang}\n${codeText}\n\`\`\`\n`);
   });
 

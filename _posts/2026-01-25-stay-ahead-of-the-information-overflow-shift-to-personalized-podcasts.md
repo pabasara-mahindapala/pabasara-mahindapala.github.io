@@ -154,5 +154,3 @@ By leveraging podcast style summaries, we can stay ahead in the overflow of info
 Let me know your thoughts and experiences if you try this out!
 
 (Graphics created with Gemini Nano Banana Pro)
-
-![](/public/images/stay-ahead-of-the-information-overflow-shift-to-personalized-podcasts/image-10.jpg)
