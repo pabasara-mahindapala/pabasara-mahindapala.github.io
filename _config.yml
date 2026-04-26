@@ -50,5 +50,9 @@ exclude:
   - LICENSE
   - README.md
   - CLAUDE.md
+  - package.json
+  - package-lock.json
+  - node_modules
+  - scripts
 
 version: 2.0.0
