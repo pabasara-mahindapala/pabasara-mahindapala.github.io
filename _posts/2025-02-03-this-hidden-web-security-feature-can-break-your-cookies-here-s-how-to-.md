@@ -6,7 +6,7 @@ description: "This Hidden Web Security Feature Can Break Your Cookies — Here�
 categories: [web, typescript, cookies, frontend, javascript]
 tags: [web, typescript, cookies, frontend, javascript]
 cross_posts:
-  - platform: plainenglish
+  - platform: medium
     url: https://javascript.plainenglish.io/this-hidden-web-security-feature-can-break-your-cookies-heres-how-to-fix-it-7e7813ec3d1d
 medium_guid: https://medium.com/p/7e7813ec3d1d
 ---
@@ -77,7 +77,7 @@ function extractDomainFromHost() {
 }
 ```
 
-[identity-apps/identity-apps-core/apps/authentication-portal/src/main/webapp/includes/language-switcher.jsp at d2b06cbf70f3ccf5857d17711f247715ba542783 · wso2/identity-apps](https://github.com/wso2/identity-apps/blob/d2b06cbf70f3ccf5857d17711f247715ba542783/identity-apps-core/apps/authentication-portal/src/main/webapp/includes/language-switcher.jsp#L66)
+[language-switcher.jsp at d2b06cbf70f3ccf5857d17711f247715ba542783 · wso2/identity-apps](https://github.com/wso2/identity-apps/blob/d2b06cbf70f3ccf5857d17711f247715ba542783/identity-apps-core/apps/authentication-portal/src/main/webapp/includes/language-switcher.jsp#L66)
 
 In the WSO2 IS UIs, the domain for setting the **ui_lang** cookie was being extracted using the **extractDomainFromHost()** method shown above.
 
@@ -145,7 +145,7 @@ public static getDomain(url: string, options: Record<string, unknown> = {
 };
 ```
 
-[identity-apps/modules/core/src/utils/url-utils.ts at 566c585d5f99c0b75fb4c5626b206a43dd03c6ab · wso2/identity-apps](https://github.com/wso2/identity-apps/blob/566c585d5f99c0b75fb4c5626b206a43dd03c6ab/modules/core/src/utils/url-utils.ts#L213)
+[url-utils.ts at 566c585d5f99c0b75fb4c5626b206a43dd03c6ab · wso2/identity-apps](https://github.com/wso2/identity-apps/blob/566c585d5f99c0b75fb4c5626b206a43dd03c6ab/modules/core/src/utils/url-utils.ts#L213)
 
 As shown above, the **extractDomainFromHost()** method was replaced with the **getDomain()** method that uses the **tldts** library to safely parse the domain from the hostname. This method ensures that the domain is extracted correctly even when the hostname is a complex domain included in the PSL.
 

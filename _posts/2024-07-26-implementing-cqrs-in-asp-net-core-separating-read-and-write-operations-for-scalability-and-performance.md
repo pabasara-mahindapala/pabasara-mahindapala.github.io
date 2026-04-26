@@ -5,6 +5,10 @@ published: true
 description: How to separate read and write operations in ASP.NET Core using CQRS - a pattern that unlocks independent scaling and cleaner domain boundaries.
 categories: [software-development, software-architecture]
 tags: [software, programming, coding, software-architecture, csharp, c#, aspnet-core, cqrs, command-query-responsibility-segregation, scalability, performance]
+cross_posts:
+  - platform: medium
+    url: https://medium.com/towardsdev/implementing-cqrs-in-asp-net-af30881279df
+medium_guid: https://medium.com/p/af30881279df
 ---
 
 I have recently followed a course on Linkedin Learning titled [Software Architecture: Patterns for Developers](https://www.linkedin.com/learning/software-architecture-patterns-for-developers) by Peter Morlion. In this course, I learned about the Command Query Responsibility Segregation (CQRS) pattern and I was interested to try it out in ASP.NET Core. In this article, I will walk you through my approach to implementing CQRS in a ASP.NET Core Web API project.

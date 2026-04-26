@@ -6,7 +6,7 @@ description: "In a project I worked on recently, there was a business requiremen
 categories: [authentication, authorization, java, wso2, wso2is]
 tags: [authentication, authorization, java, wso2, wso2is]
 cross_posts:
-  - platform: towardsdev
+  - platform: medium
     url: https://towardsdev.com/customizing-account-locking-rules-in-wso2-identity-server-158bf67ca38d
 medium_guid: https://medium.com/p/158bf67ca38d
 ---
@@ -38,7 +38,7 @@ The default AccountLockHandler in WSO2 IS is implemented as an event handler. An
 
 The default AccountLockHandler listens for authentication events and handles account locking, account unlocking and account lock validation for users.
 
-[identity-event-handler-account-lock/components/org.wso2.carbon.identity.handler.event.account.lock/src/main/java/org/wso2/carbon/identity/handler/event/account/lock/AccountLockHandler.java at d9a0567aca30bd0f1d2ec2ce638273bf6af3730e · wso2-extensions/identity-event-handler-account-lock](https://github.com/wso2-extensions/identity-event-handler-account-lock/blob/d9a0567aca30bd0f1d2ec2ce638273bf6af3730e/components/org.wso2.carbon.identity.handler.event.account.lock/src/main/java/org/wso2/carbon/identity/handler/event/account/lock/AccountLockHandler.java)
+[AccountLockHandler.java at d9a0567aca30bd0f1d2ec2ce638273bf6af3730e · wso2-extensions/identity-event-handler-account-lock](https://github.com/wso2-extensions/identity-event-handler-account-lock/blob/d9a0567aca30bd0f1d2ec2ce638273bf6af3730e/components/org.wso2.carbon.identity.handler.event.account.lock/src/main/java/org/wso2/carbon/identity/handler/event/account/lock/AccountLockHandler.java)
 
 To achieve the requirement, we need to extend the default AccountLockHandler and implement custom logic to differentiate between authentication methods. The following steps outline the process:
 
@@ -90,7 +90,7 @@ subscriptions =["PRE_AUTHENTICATION", "POST_AUTHENTICATION", "PRE_SET_USER_CLAIM
 
 The complete source code for the custom account lock handler is available in the following GitHub repository:
 
-[GitHub - pabasara-mahindapala/custom-account-lock-handler: This is a custom account lock handler for WSO2 IS implemented to lock user accounts temporarily or permanently based on whether basic authentication or non-basic authentication is used (SMS OTP, Email OTP, TOTP)](https://github.com/pabasara-mahindapala/custom-account-lock-handler)
+[GitHub - pabasara-mahindapala/custom-account-lock-handler](https://github.com/pabasara-mahindapala/custom-account-lock-handler)
 
 ### Try it out
 

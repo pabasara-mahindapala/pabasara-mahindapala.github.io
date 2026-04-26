@@ -6,7 +6,7 @@ description: "Practical Experience: Migrating an Old .NET Project with GitHub Co
 categories: [dotnet, ai, c-sharp-programming, cqrs, github]
 tags: [dotnet, ai, c-sharp-programming, cqrs, github]
 cross_posts:
-  - platform: towardsdev
+  - platform: medium
     url: https://towardsdev.com/practical-experience-migrating-an-old-net-project-with-github-copilot-agent-cb564b6688fe
 medium_guid: https://medium.com/p/cb564b6688fe
 ---

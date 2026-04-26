@@ -6,7 +6,7 @@ description: "To wrap or not to wrap, that is the Angular questionShould you wri
 categories: [abstraction, angular, front-end-development, programming, web-development]
 tags: [abstraction, angular, front-end-development, programming, web-development]
 cross_posts:
-  - platform: plainenglish
+  - platform: medium
     url: https://javascript.plainenglish.io/to-wrap-or-not-to-wrap-883b6e954114
 medium_guid: https://medium.com/p/883b6e954114
 ---

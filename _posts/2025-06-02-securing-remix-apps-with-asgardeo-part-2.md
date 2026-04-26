@@ -8,7 +8,7 @@ tags: [react, reactjs, remix, web-development, front-end-development]
 series: asgardeo-remix
 series_order: 2
 cross_posts:
-  - platform: plainenglish
+  - platform: medium
     url: https://javascript.plainenglish.io/securing-remix-apps-with-asgardeo-part-2-c4b3deda9caf
 medium_guid: https://medium.com/p/c4b3deda9caf
 ---
