@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "This Hidden Web Security Feature Can Break Your Cookies — Here’s How to Fix It"
+title: "This Hidden Web Security Feature Can Break Your Cookies - Here’s How to Fix It"
 published: true
-description: "This Hidden Web Security Feature Can Break Your Cookies — Here’s How to Fix ItWhile working on a project with WSO2 Identity Server (IS) 7.0.0, I encountered a rather interesting issue."
+description: "This Hidden Web Security Feature Can Break Your Cookies - Here’s How to Fix ItWhile working on a project with WSO2 Identity Server (IS) 7.0.0, I encountered a rather interesting issue."
 categories: [web, typescript, cookies, frontend, javascript]
 tags: [web, typescript, cookies, frontend, javascript, wso2, wso2is]
 cross_posts:
@@ -17,7 +17,7 @@ medium_guid: https://medium.com/p/7e7813ec3d1d
     </small>
 </div>
 
-### This Hidden Web Security Feature Can Break Your Cookies — Here’s How to Fix It
+### This Hidden Web Security Feature Can Break Your Cookies - Here’s How to Fix It
 
 ![](/public/images/this-hidden-web-security-feature-can-break-your-cookies-here-s-how-to-/image-1.jpg "Photo by Maria Baranova on Unsplash")
 

@@ -2,7 +2,7 @@
 layout: post
 title: "Blame Canada Moment of the Big Tech"
 published: true
-description: "The big tech is having a 'Blame Canada' moment. Recent lawsuits against Meta and YouTube held companies liable for addictive product designs — but should we stop there?"
+description: "The big tech is having a 'Blame Canada' moment. Recent lawsuits against Meta and YouTube held companies liable for addictive product designs - but should we stop there?"
 categories: [opinion, social-media, tech-ethics]
 tags: [big-tech, social-media, screen-time, parenting, accountability, meta, youtube]
 cross_posts:

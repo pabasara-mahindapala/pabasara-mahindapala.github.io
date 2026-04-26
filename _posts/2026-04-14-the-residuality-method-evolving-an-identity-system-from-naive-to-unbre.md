@@ -17,7 +17,7 @@ medium_guid: https://medium.com/p/533127590838
     </small>
 </div>
 
-![](/public/images/the-residuality-method-evolving-an-identity-system-from-naive-to-unbre/image-1.jpg "Photo by Leo_Visions on Unsplash (Cathédrale Notre-Dame de Paris — Built to last a thousand years)")
+![](/public/images/the-residuality-method-evolving-an-identity-system-from-naive-to-unbre/image-1.jpg "Photo by Leo_Visions on Unsplash (Cathédrale Notre-Dame de Paris - Built to last a thousand years)")
 
 When we design a piece of software, usually we focus on the functional requirements and often try to follow the happy path.
 

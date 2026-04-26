@@ -49,8 +49,8 @@ description: What Pabasara Mahindapala is working on, reading, and thinking abou
       <div class="now-card-icon" aria-hidden="true">📖</div>
       <div class="now-card-body">
         <h2 class="now-card-label">Reading</h2>
-        <p>Reading up on the agentic AI - Not because of the hype, but because I need to understand how they work.</p>
-        <p>Reading on how agents are being structured, where they break, and what that means for the systems they connect to.</p>
+        <p>Reading up on the agentic AI - Not just because of the hype, I need to understand how they work.</p>
+        <p>Focusing on how agents are being structured, where they break, and what that means for the systems they connect to.</p>
       </div>
     </div>
 

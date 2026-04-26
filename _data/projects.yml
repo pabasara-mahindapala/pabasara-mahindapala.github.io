@@ -5,27 +5,27 @@
 #   status: active
 
 - name: clipboard-history
-  description: A super lightweight clipboard history manager for macOS built with only built-in dependencies — two scripts running locally. Browse and paste anything you've copied recently, triggered from any app via an Automator Quick Action. No third-party apps, no cloud sync, no need to trust anyone with sensitive data.
+  description: A super lightweight clipboard history manager for macOS built with only built-in dependencies - two scripts running locally. Browse and paste anything you've copied recently, triggered from any app via an Automator Quick Action. No third-party apps, no cloud sync, no need to trust anyone with sensitive data.
   tech: [Python, Shell, macOS, Automator]
   url: https://github.com/pabasara-mahindapala/clipboard-history
   status: active
 
 - name: ContactBook
-  description: Reference implementation of the CQRS pattern in ASP.NET Core Web API. Separates read and write models so each can scale and evolve independently — Commands mutate state, Queries retrieve it, with no crossover. The companion code for the blog post on CQRS in ASP.NET Core.
+  description: Reference implementation of the CQRS pattern in ASP.NET Core Web API. Separates read and write models so each can scale and evolve independently - Commands mutate state, Queries retrieve it, with no crossover. The companion code for the blog post on CQRS in ASP.NET Core.
   tech: [C#, ASP.NET Core, CQRS, .NET]
   url: https://github.com/pabasara-mahindapala/ContactBook
   blog_post: /2024/07/26/implementing-cqrs-in-asp-net-core-separating-read-and-write-operations-for-scalability-and-performance/
   status: reference
 
 # - name: custom-account-lock-handler
-#   description: Custom OSGi bundle for WSO2 Identity Server that replaces the default AccountLockHandler with per-method locking rules — permanent lock after three failed password attempts, temporary lock after three failed OTP attempts. Built to satisfy a real production requirement where WSO2 IS's built-in handler couldn't differentiate between authentication methods.
+#   description: Custom OSGi bundle for WSO2 Identity Server that replaces the default AccountLockHandler with per-method locking rules - permanent lock after three failed password attempts, temporary lock after three failed OTP attempts. Built to satisfy a real production requirement where WSO2 IS's built-in handler couldn't differentiate between authentication methods.
 #   tech: [Java, WSO2 Identity Server, OSGi, Authentication]
 #   url: https://github.com/pabasara-mahindapala/custom-account-lock-handler
 #   blog_post: /2025/04/20/customizing-account-locking-rules-in-wso2-identity-server/
 #   status: reference
 
 - name: babylon.js-shape-extrusion
-  description: An experiment in interactive 3D in the browser — draw a 2D polygon and extrude it into a 3D solid using Babylon.js. Covers the mesh generation and manipulation APIs that sit beneath most Babylon.js 3D scenes.
+  description: An experiment in interactive 3D in the browser - draw a 2D polygon and extrude it into a 3D solid using Babylon.js. Covers the mesh generation and manipulation APIs that sit beneath most Babylon.js 3D scenes.
   tech: [TypeScript, Babylon.js, WebGL, 3D]
   url: https://github.com/pabasara-mahindapala/babylon.js-shape-extrusion
   status: reference

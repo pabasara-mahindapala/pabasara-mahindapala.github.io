@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Stay ahead of the Information Overflow — Shift to Personalized Podcasts"
+title: "Stay ahead of the Information Overflow - Shift to Personalized Podcasts"
 published: true
-description: "Stay ahead of the Information Overflow — Shift to Personalized PodcastsHow many links do you have saved in your reading list right now?I have 12 unread articles"
+description: "Stay ahead of the Information Overflow - Shift to Personalized PodcastsHow many links do you have saved in your reading list right now?I have 12 unread articles"
 categories: [podcasts, information-overload, chatgpt, claude, ai, gemini, notebooklm, chrome, google-drive]
 tags: [podcasts, information-overload, chatgpt, claude, ai, gemini, notebooklm, chrome, google-drive]
 cross_posts:
@@ -17,7 +17,7 @@ medium_guid: https://medium.com/p/9d387294edbc
     </small>
 </div>
 
-### Stay ahead of the Information Overflow — Shift to Personalized Podcasts
+### Stay ahead of the Information Overflow - Shift to Personalized Podcasts
 
 ![](/public/images/stay-ahead-of-the-information-overflow-shift-to-personalized-podcasts/image-1.png "So much info!")
 

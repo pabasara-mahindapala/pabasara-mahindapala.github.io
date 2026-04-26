@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Securing Remix Apps with Asgardeo — Part 2"
+title: "Securing Remix Apps with Asgardeo - Part 2"
 published: true
-description: "Securing Remix Apps with Asgardeo — Part 2In the previous part of this article, we explored how to secure Remix applications using Asgardeo by implementing user login and logout functionality."
+description: "Securing Remix Apps with Asgardeo - Part 2In the previous part of this article, we explored how to secure Remix applications using Asgardeo by implementing user login and logout functionality."
 categories: [react, remix, asgardeo, reactjs, web-development, front-end-development]
 tags: [react, remix, asgardeo, reactjs, web-development, front-end-development, wso2, authentication, authorization, oidc]
 series: asgardeo-remix
@@ -19,7 +19,7 @@ medium_guid: https://medium.com/p/c4b3deda9caf
     </small>
 </div>
 
-### Securing Remix Apps with Asgardeo — Part 2
+### Securing Remix Apps with Asgardeo - Part 2
 
 ![](/public/images/securing-remix-apps-with-asgardeo-part-2/image-1.jpg "Photo by Onur Binay on Unsplash")
 
@@ -71,7 +71,7 @@ So far, we’ve been using the ID token to establish the logged-in user’s cont
 
 The access token is typically used when your application needs to interact with a secure backend API. This token contains the necessary permissions (or “scopes”) for making API requests on behalf of the authenticated user. In this section, we’ll explore how to use this token to make authenticated API calls from your Remix app.
 
-For simplicity, let’s assume that the APIs you’re calling are secured by the same Identity Provider (IdP) and share the same issuer — in this case, the same Asgardeo organization. This setup is common when your Remix app is interacting with internal APIs that belong to the same organization.
+For simplicity, let’s assume that the APIs you’re calling are secured by the same Identity Provider (IdP) and share the same issuer - in this case, the same Asgardeo organization. This setup is common when your Remix app is interacting with internal APIs that belong to the same organization.
 
 In Asgargeo, scim2 REST API implements the [SCIM 2.0](https://datatracker.ietf.org/doc/html/rfc7643) Protocol according to the SCIM 2.0 specification. scim2/Me is a protected endpoint that returns the user details of the currently authenticated user. We will call this endpoint in this section to get the user details.
 
