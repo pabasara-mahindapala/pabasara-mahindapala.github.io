@@ -1,27 +1,35 @@
-
 <head>
-  <link href="https://gmpg.org/xfn/11" rel="profile">
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="msvalidate.01" content="33C81F1538C1B2B31CB7870109F8449F" />
-  <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-  {% if page.title == "Home" %}
-      <meta name="description" content="{{ site.description }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="msvalidate.01" content="33C81F1538C1B2B31CB7870109F8449F">
+
+  <!-- SEO description -->
+  {% if page.description %}
+    <meta name="description" content="{{ page.description }}">
+  {% elsif page.title == "Home" %}
+    <meta name="description" content="{{ site.description }}">
   {% else %}
-    {% if page.description %}
-      <meta name="description" content="{{ page.description }}">
-    {% endif %}
+    <meta name="description" content="{{ site.description }}">
   {% endif %}
 
-  {% if site.twitter_username %}<!-- Twitter Cards -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:image" content="{{ site.url }}/public/profile.jpg">
-    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-    <meta name="twitter:creator" content="@{{ site.twitter_username }}">
-  {% endif %}
+  <!-- Open Graph -->
+  <meta property="og:type"        content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+  <meta property="og:title"       content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:url"         content="{{ site.url }}{{ page.url }}">
+  <meta property="og:site_name"   content="{{ site.title }}">
+  <meta property="og:image"       content="{{ site.url }}/public/og-default.png">
 
+  <!-- Twitter Cards -->
+  {% if site.twitter_username %}
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:site"        content="@{{ site.twitter_username }}">
+  <meta name="twitter:creator"     content="@{{ site.twitter_username }}">
+  <meta name="twitter:title"       content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:image"       content="{{ site.url }}/public/og-default.png">
+  {% endif %}
 
   <title>
     {% if page.title == "Home" %}
@@ -31,18 +39,32 @@
     {% endif %}
   </title>
 
-  <!-- CSS -->
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:700,400italic,300' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="/public/css/poole.css">
-  <link rel="stylesheet" href="/public/css/syntax.css">
-  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <!-- Prevent flash of unstyled theme -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+      } catch(e) {}
+    })();
+  </script>
 
-  <!-- Icons -->
-  <link rel="icon" sizes="144x144" href="{{ site.url }}/public/profile.jpg">
-  <link rel="shortcut icon" href="{{ site.url }}/public/favicon.ico">
+  <!-- Fonts: Inter + Lora + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/site.css">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/public/favicon.svg">
+  <link rel="shortcut icon" href="/public/favicon.svg">
 
   <!-- Atom feed -->
-  <link rel="alternate" type="application/atom+xml" title="Atom" href="/atom.xml">
-  {% include analytics.html %}
+  <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/atom.xml">
 
+  {% include analytics.html %}
 </head>

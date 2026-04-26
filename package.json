@@ -1,0 +1,25 @@
+{
+  "name": "pabasara-mahindapala.github.io",
+  "version": "1.0.0",
+  "description": "Lanyon is an unassuming [Jekyll](http://jekyllrb.com) theme that places content first by tucking away navigation in a hidden drawer. It's based on [Poole](http://getpoole.com), the Jekyll butler.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pabasara-mahindapala/pabasara-mahindapala.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pabasara-mahindapala/pabasara-mahindapala.github.io/issues"
+  },
+  "homepage": "https://github.com/pabasara-mahindapala/pabasara-mahindapala.github.io#readme",
+  "type": "module",
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "fast-xml-parser": "^5.7.2"
+  }
+}

@@ -1,0 +1,28 @@
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" itemprop="url">
+      <span itemprop="author">{{ site.author.name }}</span>
+    </a>
+
+    <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      ☰
+    </button>
+
+    <ul class="nav-links" id="nav-links" role="list">
+      <li><a href="/writing/"  {% if page.url contains 'writing'  %}class="active"{% endif %}>Writing</a></li>
+      <li><a href="/projects/" {% if page.url contains 'projects' %}class="active"{% endif %}>Projects</a></li>
+      <li><a href="/about/"    {% if page.url contains 'about'    %}class="active"{% endif %}>About</a></li>
+      <li><a href="/now/"      {% if page.url contains '/now'     %}class="active"{% endif %}>Now</a></li>
+      <li>
+        <a href="/atom.xml" class="nav-rss-link" title="RSS feed" aria-label="RSS feed">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19.01 7.38 20 6.18 20C4.98 20 4 19.01 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1z"/>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">◐</button>
+      </li>
+    </ul>
+  </div>
+</nav>

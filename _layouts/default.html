@@ -1,47 +1,54 @@
 <!DOCTYPE html>
-<html lang="en" itemscope='' itemtype='https://schema.org/Blog' >
-
+<html lang="en" itemscope itemtype="https://schema.org/Blog">
   {% include head.html %}
-  <body class="theme-base-0f">
+  <body>
 
-    {% include sidebar.html %}
+    {% include nav.html %}
 
-    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
-         content to avoid any CSS collisions with our real content. -->
-    <div class="wrap">
-      <div class="masthead">
-        <div class="container">
-          <h3 class="masthead-title">
-            <a href="/" title="Home" itemprop='url' >
-                <span itemprop='author'>{{ site.author.name }}</span>
-            </a>
-            <small>| &nbsp; {{ site.tagline }}</small>
-          </h3>
-        </div>
-      </div>
-
-      <div class="container content">
+    <main>
+      <div class="container">
         {{ content }}
       </div>
-    </div>
+    </main>
 
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    {% include footer.html %}
+
     <script>
-      (function(document) {
-        var toggle = document.querySelector('.sidebar-toggle');
-        var sidebar = document.querySelector('#sidebar');
-        var checkbox = document.querySelector('#sidebar-checkbox');
+      // Mobile nav toggle
+      (function () {
+        var toggle = document.getElementById('nav-toggle');
+        var links  = document.getElementById('nav-links');
+        if (!toggle || !links) return;
+        toggle.addEventListener('click', function () {
+          var open = links.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', open);
+        });
+        // Close on outside click
+        document.addEventListener('click', function (e) {
+          if (!toggle.contains(e.target) && !links.contains(e.target)) {
+            links.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      })();
 
-        document.addEventListener('click', function(e) {
-          var target = e.target;
-
-          if(!checkbox.checked ||
-             sidebar.contains(target) ||
-             (target === checkbox || target === toggle)) return;
-
-          checkbox.checked = false;
-        }, false);
-      })(document);
+      // Theme toggle
+      (function () {
+        var btn = document.getElementById('theme-toggle');
+        if (!btn) return;
+        function updateIcon(theme) {
+          btn.textContent = theme === 'dark' ? '☀' : '☾';
+          btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+        }
+        updateIcon(document.documentElement.getAttribute('data-theme') || 'light');
+        btn.addEventListener('click', function () {
+          var current = document.documentElement.getAttribute('data-theme');
+          var next = current === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          updateIcon(next);
+          try { localStorage.setItem('theme', next); } catch(e) {}
+        });
+      })();
     </script>
 
   </body>

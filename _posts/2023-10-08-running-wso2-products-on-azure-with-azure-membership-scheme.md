@@ -2,9 +2,12 @@
 layout: post
 title: Running WSO2 Products on Azure with Azure Membership Scheme
 published: true
-description: Running WSO2 Products on Azure with Azure Membership Scheme
+description: How to deploy WSO2 Identity Server and other WSO2 products on Azure using the Hazelcast Azure Membership Scheme for cluster coordination.
 categories: [software-development, wso2]
 tags: [wso2, azure, software, programming, coding, cloud, hazelcast, wso2is]
+cross_posts:
+  - platform: medium
+    url: https://towardsdev.com/running-wso2-products-on-azure-with-azure-membership-scheme-3175113d8e10
 ---
 
 <div class="message">

@@ -2,9 +2,13 @@
 layout: post
 title: Implementing CQRS in ASP.NET Core - Separating Read and Write Operations for Scalability and Performance
 published: true
-description: Implementing CQRS in ASP.NET Core - Separating Read and Write Operations for Scalability and Performance
+description: How to separate read and write operations in ASP.NET Core using CQRS - a pattern that unlocks independent scaling and cleaner domain boundaries.
 categories: [software-development, software-architecture]
 tags: [software, programming, coding, software-architecture, csharp, c#, aspnet-core, cqrs, command-query-responsibility-segregation, scalability, performance]
+cross_posts:
+  - platform: medium
+    url: https://medium.com/towardsdev/implementing-cqrs-in-asp-net-af30881279df
+medium_guid: https://medium.com/p/af30881279df
 ---
 
 I have recently followed a course on Linkedin Learning titled [Software Architecture: Patterns for Developers](https://www.linkedin.com/learning/software-architecture-patterns-for-developers) by Peter Morlion. In this course, I learned about the Command Query Responsibility Segregation (CQRS) pattern and I was interested to try it out in ASP.NET Core. In this article, I will walk you through my approach to implementing CQRS in a ASP.NET Core Web API project.
@@ -279,8 +283,6 @@ Follow the below steps to run the application:
  3. Open the `ContactBook.sln` file in Visual Studio.
  4. Run the application.
  5. Use the Swagger UI to test the API endpoints for creating, updating, and reading user contacts.
-
-### Conclusion
 
 In this article, my aim was to demonstrate how to implement the CQRS pattern in an ASP.NET Core application. In my next article, I will try to implement Event Sourcing along with CQRS in this application.
 

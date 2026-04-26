@@ -1,0 +1,18 @@
+<section class="currently">
+  <p class="section-label">Currently</p>
+  <ul class="currently-list">
+    {% for item in site.data.now.items %}
+    <li class="currently-item">
+      <span class="currently-emoji" aria-hidden="true">{{ item.emoji }}</span>
+      <span class="currently-label">{{ item.label }}</span>
+      <span class="currently-value">
+        {% if item.url %}
+          <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.text }}</a>
+        {% else %}
+          {{ item.text }}
+        {% endif %}
+      </span>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
