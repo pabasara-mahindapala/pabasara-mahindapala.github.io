@@ -2,7 +2,7 @@
 layout: post
 title: "Practical Experience: Migrating an Old .NET Project with GitHub Copilot Agent"
 published: true
-description: "Practical Experience: Migrating an Old .NET Project with GitHub Copilot AgentI recently migrated an existing CQRS (Command Query Responsibility Segregation) imp"
+description: "Practical Experience: Migrating an Old .NET Project with GitHub Copilot Agent"
 categories: [dotnet, ai, c-sharp-programming, cqrs, github]
 tags: [dotnet, ai, c-sharp-programming, cqrs, github]
 cross_posts:

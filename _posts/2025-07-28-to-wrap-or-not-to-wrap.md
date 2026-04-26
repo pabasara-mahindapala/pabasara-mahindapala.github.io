@@ -2,7 +2,7 @@
 layout: post
 title: "To wrap or not to wrap"
 published: true
-description: "To wrap or not to wrap, that is the Angular questionShould you write a wrapper layer for UI components in your Angular project?IntroductionA complex Angular app"
+description: "To wrap or not to wrap, that is the Angular question."
 categories: [abstraction, angular, front-end-development, programming, web-development]
 tags: [abstraction, angular, front-end-development, programming, web-development]
 cross_posts:

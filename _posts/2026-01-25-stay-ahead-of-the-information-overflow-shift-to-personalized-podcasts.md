@@ -2,7 +2,7 @@
 layout: post
 title: "Stay ahead of the Information Overflow - Shift to Personalized Podcasts"
 published: true
-description: "Stay ahead of the Information Overflow - Shift to Personalized PodcastsHow many links do you have saved in your reading list right now?I have 12 unread articles"
+description: "How many links do you have saved in your reading list right now?"
 categories: [podcasts, information-overload, chatgpt, claude, ai, gemini, notebooklm, chrome, google-drive]
 tags: [podcasts, information-overload, chatgpt, claude, ai, gemini, notebooklm, chrome, google-drive]
 cross_posts:

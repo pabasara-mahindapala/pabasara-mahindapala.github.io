@@ -2,7 +2,7 @@
 layout: post
 title: "The Residuality Method: Evolving an Identity System from Naive to Unbreakable"
 published: true
-description: "When we design a piece of software, usually we focus on the functional requirements and often try to follow the happy path."
+description: "When we design software, usually we focus on the functional requirements and try to follow the happy path."
 categories: [software-architecture, coding, programming, system-design-concepts, software-development]
 tags: [software-architecture, coding, programming, system-design-concepts, software-development]
 cross_posts:
