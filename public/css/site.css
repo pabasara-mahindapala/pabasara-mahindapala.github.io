@@ -13,6 +13,8 @@
   --color-accent:       #2C5282;
   --color-accent-hover: #1a3a6b;
   --color-accent-warm:  #D97757;
+  --color-btn-primary:       #2C5282;
+  --color-btn-primary-hover: #1a3a6b;
 
   /* Tinted backgrounds derived from accent colours (no color-mix needed) */
   --color-accent-bg:       rgba(44, 82, 130, 0.09);
@@ -21,11 +23,11 @@
   --color-warm-border:     rgba(217, 119, 87, 0.28);
 
   --font-sans:  'Inter', system-ui, -apple-system, sans-serif;
-  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-serif: 'Lora', Georgia, serif;
   --font-mono:  'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
 
   --nav-height: 60px;
-  --container:  720px;
+  --container:  800px;
 
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -48,6 +50,8 @@
     --color-accent-bg-hover: rgba(125, 179, 213, 0.20);
     --color-warm-bg:         rgba(232, 155, 117, 0.11);
     --color-warm-border:     rgba(232, 155, 117, 0.28);
+    --color-btn-primary:       #2A6F9E;
+    --color-btn-primary-hover: #1F5580;
   }
 }
 
@@ -65,6 +69,8 @@
   --color-accent-bg-hover: rgba(125, 179, 213, 0.20);
   --color-warm-bg:         rgba(232, 155, 117, 0.11);
   --color-warm-border:     rgba(232, 155, 117, 0.28);
+  --color-btn-primary:       #2A6F9E;
+  --color-btn-primary-hover: #1F5580;
 }
 
 [data-theme="light"] {
@@ -80,6 +86,8 @@
   --color-accent-bg-hover: rgba(44, 82, 130, 0.17);
   --color-warm-bg:         rgba(217, 119, 87, 0.09);
   --color-warm-border:     rgba(217, 119, 87, 0.28);
+  --color-btn-primary:       #2C5282;
+  --color-btn-primary-hover: #1a3a6b;
 }
 
 /* --- Reset --- */
@@ -314,13 +322,13 @@ main {
   cursor: pointer;
 }
 .btn-primary {
-  background: var(--color-accent);
+  background: var(--color-btn-primary);
   color: #fff;
-  border-color: var(--color-accent);
+  border-color: var(--color-btn-primary);
 }
 .btn-primary:hover {
-  background: var(--color-accent-hover);
-  border-color: var(--color-accent-hover);
+  background: var(--color-btn-primary-hover);
+  border-color: var(--color-btn-primary-hover);
   color: #fff;
   text-decoration: none;
 }

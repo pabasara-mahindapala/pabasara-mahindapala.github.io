@@ -41,7 +41,7 @@ Most of my long-form writing appears on [Medium](https://medium.com/@pabasaramah
 
 ## Get in touch
 
-- **Email:** [pabasaramahindapala@gmail.com](mailto:pabasaramahindapala@gmail.com)
+- **Email:** pabasaramahindapala[at]gmail[dot]com
 - **LinkedIn:** [pabasara-mahindapala]({{ site.author.linkedIn }})
 - **Twitter / X:** [@pabasara_mahi](https://twitter.com/{{ site.twitter_username }})
 - **GitHub:** [pabasara-mahindapala]({{ site.github }})

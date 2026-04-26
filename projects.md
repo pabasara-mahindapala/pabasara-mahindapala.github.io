@@ -36,9 +36,14 @@ description: Open source projects and side work by Pabasara Mahindapala - Angula
           {% endfor %}
         </div>
       {% endif %}
-      {% if project.url %}
-        <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub ↗</a>
-      {% endif %}
+      <div class="project-links">
+        {% if project.url %}
+          <a href="{{ project.url }}" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub ↗</a>
+        {% endif %}
+        {% if project.blog_post %}
+          <a href="{{ project.blog_post }}" class="project-link">Read the article ↗</a>
+        {% endif %}
+      </div>
     </li>
     {% endfor %}
   </ul>
