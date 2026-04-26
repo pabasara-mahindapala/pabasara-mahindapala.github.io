@@ -14,7 +14,7 @@
   description: Reference implementation of the CQRS pattern in ASP.NET Core Web API. Separates read and write models so each can scale and evolve independently - Commands mutate state, Queries retrieve it, with no crossover. The companion code for the blog post on CQRS in ASP.NET Core.
   tech: [C#, ASP.NET Core, CQRS, .NET]
   url: https://github.com/pabasara-mahindapala/ContactBook
-  blog_post: /2024/07/26/implementing-cqrs-in-asp-net-core-separating-read-and-write-operations-for-scalability-and-performance/
+  blog_post: ../software-development/software-architecture/2024/07/26/implementing-cqrs-in-asp-net-core-separating-read-and-write-operations-for-scalability-and-performance/
   status: reference
 
 # - name: custom-account-lock-handler
