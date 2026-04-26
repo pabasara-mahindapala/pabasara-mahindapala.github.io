@@ -27,9 +27,9 @@ Should you write a wrapper layer for UI components in your Angular project?
 
 A complex Angular application can not possibly exist without using components from third-party UI libraries. But using these libraries comes with its own set of challenges:
 
-NaN. While these libraries can provide different components with different features, the APIs of these components can be very different from each other.
-NaN. A common observation is how the APIs of a component can change between versions of the library, which can be a headache for a large scale Angular project when upgrading the library.
-NaN. Some libraries may not provide all the components you need, or the components may not be flexible enough to meet your requirements.
+1. While these libraries can provide different components with different features, the APIs of these components can be very different from each other.
+2. A common observation is how the APIs of a component can change between versions of the library, which can be a headache for a large scale Angular project when upgrading the library.
+3. Some libraries may not provide all the components you need, or the components may not be flexible enough to meet your requirements.
 
 ![](/public/images/to-wrap-or-not-to-wrap/image-2.png)
 
