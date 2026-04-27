@@ -9,7 +9,7 @@ description: Open source projects and side work by Pabasara Mahindapala - Angula
   <h1 class="page-title" itemprop="name">Projects</h1>
   <div class="page-content">
 
-<p>Side projects and open-source work. Most of what I build falls into two camps: tools that fix something annoying I ran into at work, and experiments that let me go deeper on something I wrote about.</p>
+<p>Side projects and open-source work. Most of what I build falls into two categories: tools that fix something annoying I ran into, and experiments that let me go deeper on something I am curious about.</p>
 
   </div>
 

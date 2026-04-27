@@ -1,52 +1,50 @@
 ---
 layout: post
 title: "MCP Server Authentication in .NET: Implementing OAuth 2.1 Without a SaaS"
-published: true
+published: false
 description: "The MCP spec mandates OAuth 2.1 with PKCE for remote servers. This post walks through implementing the full auth layer in ASP.NET Core — no external Identity Provider required."
 categories: [dotnet, security, authentication, aspnetcore]
 tags: [dotnet, mcp, oauth2, pkce, security, aspnetcore, identity, csharp, backend]
 hero: /public/images/mcp-server-oauth2-dotnet/hero.jpg
 ---
 
-![](/public/images/mcp-server-oauth2-dotnet/hero.jpg "MCP Server Authentication in .NET: Implementing OAuth 2.1 Without a SaaS")
+![](/public/images/mcp-server-oauth2-dotnet/hero.jpg "Photo by FlyD on Unsplash")
 
-**TL;DR:** The MCP 2025-11-25 specification mandates OAuth 2.1 with PKCE for remote server authentication. This post walks through implementing the entire auth layer natively in ASP.NET Core — authorization server, dynamic client registration, PKCE verification, and token issuance — no external Identity Provider required.
-
----
-
-## The Problem: An Unauthenticated MCP Server Is an Open Door
-
-The Model Context Protocol (MCP) lets AI clients like Claude Code call tools on your server. But if your MCP endpoint has no authentication, any client that can reach it can invoke those tools — including destructive ones.
-
-The [MCP 2025-11-25 specification](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization) addresses this directly: remote MCP servers **must** use OAuth 2.1 to protect their endpoints.
-
-For production systems, the right answer is usually a managed Identity Provider (IdP). Asgardeo, for example, handles the authorization server, dynamic client registration, token management, and refresh rotation out of the box. You configure your app as a resource server, point the `WWW-Authenticate` header at Asgardeo's discovery endpoint, and you're done.
-
-But not every project warrants that overhead. If you're building an internal tool, a self-hosted API, or a smaller app where adding a SaaS IdP is more friction than the problem it solves, you can implement the OAuth 2.1 layer yourself. The spec is precise enough that a well-scoped native implementation is straightforward.
-
-This post covers exactly that.
+**TL;DR:** The Model Context Protocol (MCP) specification mandates using OAuth 2.1 with PKCE for server authentication. This article walks through implementing this authentication layer natively in ASP.NET Core, including authorization server, dynamic client registration, PKCE verification, and token issuance - without relying on an external Identity Provider.
 
 ---
 
-## What the MCP Spec Actually Requires
+## MCP Server Authentication
 
-Before writing any code, it's worth understanding what the spec mandates:
+The Model Context Protocol (MCP) allows building MCP servers that expose your backend as a set of tools to MCP clients.
 
-1. **OAuth 2.1** — specifically, the authorization code flow. Implicit and password grants are not allowed.
-2. **PKCE** — Proof Key for Code Exchange (S256 method only). This prevents authorization code interception attacks.
-3. **Dynamic Client Registration** — MCP clients auto-register before starting the auth flow. Your server must accept `POST /oauth/register` and return a `client_id` on the spot.
-4. **Discovery endpoints** — two well-known URLs that tell clients where to find your authorization and token endpoints:
+The [MCP specification](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization) addresses how the authorization layer should be implemented. Remote MCP servers **must** use OAuth 2.1 to protect their endpoints.
+
+For large scale systems, the strategy is usually using a managed Identity Provider (IdP) like [Asgardeo](https://wso2.com/asgardeo/). It handles the authorization server, dynamic client registration, token management, and refresh token handling OOTB. You can configure your application as a resource server, point the `WWW-Authenticate` header at Asgardeo's discovery endpoint, and you're done.
+
+But not every project will need that overhead. For a smaller app where adding a SaaS/On-Prem IdP is hard, you can implement the OAuth 2.1 layer yourself. The specification is clear enough that a well-scoped native implementation is straightforward.
+
+This article walks through building the authentication for an MCP server in ASP.NET Core natively.
+
+---
+
+## Overview of the Requirements
+
+1. **OAuth 2.1** — Authorization code flow needs to be used.
+2. **PKCE** — Proof Key for Code Exchange (S256 method only). Prevents authorization code interception attacks.
+3. **Dynamic Client Registration** — MCP clients need to auto-register before starting the auth flow. MCP server must accept `POST /oauth/register` and return a `client_id`.
+4. **Discovery endpoints** — two well-known URLs that allow clients to find your authorization and token endpoints:
    - `GET /.well-known/oauth-protected-resource`
    - `GET /.well-known/oauth-authorization-server`
-5. **A `WWW-Authenticate` header** — when a request arrives at your MCP endpoint without a valid token, your server must respond with `401` and a header that points to the protected resource metadata URL.
+5. **A `WWW-Authenticate` header** — when a request arrives at the MCP endpoint without a valid token, the MCP server must respond with `401` status code and a header that points to the protected resource metadata URL.
 
-Once a client has a valid Bearer token, every subsequent request to `/mcp` must carry it. Your API validates it the same way it validates any JWT — nothing special for MCP there.
+Once a client has a valid Bearer token, every subsequent request to `/mcp` must carry it in the `Authorization` header. Your API validates it the same way it validates any JWT.
 
 ---
 
-## Project Setup
+## Initial Setup
 
-The MCP SDK for .NET ([`ModelContextProtocol.AspNetCore`](https://www.nuget.org/packages/ModelContextProtocol.AspNetCore)) handles the protocol transport. Authentication is standard ASP.NET Core JWT Bearer middleware.
+The MCP SDK for .NET ([`ModelContextProtocol.AspNetCore`](https://www.nuget.org/packages/ModelContextProtocol.AspNetCore)) handles the protocol transport. Here, the authentication is handled using the standard ASP.NET Core JWT Bearer middleware.
 
 ```csharp
 // Program.cs
@@ -59,13 +57,13 @@ builder.Services.Configure<OAuthOptions>(
 builder.Services.AddSingleton<AuthorizationCodeStore>();
 ```
 
-`WithToolsFromAssembly()` discovers all classes decorated with `[McpServerToolType]` and registers their methods automatically. `Stateless = true` tells the transport layer not to maintain session state between requests — each call is self-contained, which is correct for JWT-authenticated APIs.
+`WithToolsFromAssembly()` discovers all classes decorated with `[McpServerToolType]` and registers their methods automatically as MCP tools. `Stateless = true` tells the transport layer not to maintain session state between requests. Here, each call is self-contained, which is the norm for API endpoints.
 
 ```csharp
 app.MapMcp("/mcp").RequireAuthorization("McpAccess");
 ```
 
-The `/mcp` endpoint uses a named policy rather than bare `.RequireAuthorization()`. That distinction matters — without it, any valid JWT issued by this server (including regular app sessions) could call MCP tools. The policy is defined in the authorization setup:
+Here our `/mcp` endpoint uses a named policy rather than bare `.RequireAuthorization()`. Without this, any valid JWT issued by this server (including unrelated app sessions) could call the MCP tools. The policy to restrict access is defined in the authorization setup:
 
 ```csharp
 services.AddAuthorization(options =>
@@ -76,11 +74,11 @@ services.AddAuthorization(options =>
 });
 ```
 
-`RequireClaim("scope", "mcp:tools")` means only tokens issued through the MCP OAuth flow pass. Tokens from your normal login endpoint don't carry this claim, so they're rejected at the MCP endpoint even if they're otherwise valid.
+`RequireClaim("scope", "mcp:tools")` ensures only tokens issued through the MCP OAuth flow pass. Tokens from normal login flows do not carry this claim, and they're rejected at the MCP endpoint even if they're otherwise valid.
 
 ---
 
-## The 401 Challenge: Pointing Clients to Your Discovery Endpoints
+## 401 Challenge and Exposing well-known URLs 
 
 When a client hits `/mcp` without a token, the default JWT Bearer `401` response is not enough. The MCP spec requires the `WWW-Authenticate` header to include a `resource_metadata` URL. Without it, MCP clients don't know where to start the auth flow.
 
