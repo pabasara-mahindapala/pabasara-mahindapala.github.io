@@ -45,7 +45,7 @@
   status: reference
 
 - name: pabasara-mahindapala.github.io
-  description: This website. A Jekyll blog redesigned from Lanyon into a custom editorial theme - Ink & Signal palette, Inter + Instrument Serif typography, dark mode, and structured content via Jekyll data files.
+  description: This website. A Jekyll blog redesigned from Lanyon into a custom theme - Ink & Signal palette, Inter + Serif typography, dark mode, and structured content via Jekyll data files.
   tech: [Jekyll, Liquid, CSS, Ruby, GitHub Pages]
   url: https://github.com/pabasara-mahindapala/pabasara-mahindapala.github.io
   status: active
