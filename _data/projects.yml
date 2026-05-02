@@ -1,3 +1,9 @@
+- name: vscode-mario
+  description: A fully playable Mario-style game running inside VS Code's sidebar. Every sprite and sound effect is generated procedurally - no image or audio files. Covers Canvas 2D physics, AABB collision detection, fixed-timestep game loops, and enemy AI.
+  tech: [TypeScript, HTML5 Canvas, Web Audio API, VS Code Extension API]
+  url: https://github.com/pabasara-mahindapala/vscode-mario
+  status: active
+
 # - name: Inkfolio
 #   description: Open-source PDF annotation editor built with Angular 18. Draw textboxes, rectangles, highlights, and lines directly on PDFs; manage and reorder pages; and download the annotated result as a PDF.
 #   tech: [Angular, TypeScript, Fabric.js, pdf-lib, PDF.js]
@@ -35,7 +41,7 @@
   tech: [Java, Azure, Hazelcast, WSO2]
   url: https://github.com/pabasara-mahindapala/azure-membership-scheme
   blog_post: ../software-development/wso2/2023/10/08/running-wso2-products-on-azure-with-azure-membership-scheme/
-  status: maintained
+  status: archived
 
 - name: Angular Search Bar with RxJS Debounce
   description: A production-ready search bar component in Angular using RxJS debounceTime, distinctUntilChanged, and switchMap - avoiding unnecessary API calls as the user types.

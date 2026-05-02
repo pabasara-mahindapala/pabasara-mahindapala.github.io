@@ -1,16 +1,19 @@
 ---
 layout: post
 title: "MCP Server Authentication in .NET: Implementing OAuth 2.1 Without a SaaS"
-published: false
+published: true
 description: "The MCP spec mandates OAuth 2.1 with PKCE for remote servers. This post walks through implementing the full auth layer in ASP.NET Core — no external Identity Provider required."
 categories: [dotnet, security, authentication, aspnetcore]
-tags: [dotnet, mcp, oauth2, pkce, security, aspnetcore, identity, csharp, backend]
+tags:
+  [dotnet, mcp, oauth2, pkce, security, aspnetcore, identity, csharp, backend]
 hero: /public/images/mcp-server-oauth2-dotnet/hero.jpg
 ---
 
 ![](/public/images/mcp-server-oauth2-dotnet/hero.jpg "Photo by FlyD on Unsplash")
 
-**TL;DR:** The Model Context Protocol (MCP) specification mandates using OAuth 2.1 with PKCE for server authentication. This article walks through implementing this authentication layer natively in ASP.NET Core, including authorization server, dynamic client registration, PKCE verification, and token issuance - without relying on an external Identity Provider.
+**TL;DR:** The Model Context Protocol (MCP) specification mandates using OAuth 2.1 with PKCE for server authentication. 
+
+This article walks through implementing this authentication layer natively in ASP.NET Core, including authorization server, dynamic client registration, PKCE verification, and token issuance.
 
 ---
 
@@ -25,6 +28,10 @@ For large scale systems, the strategy is usually using a managed Identity Provid
 But not every project will need that overhead. For a smaller app where adding a SaaS/On-Prem IdP is hard, you can implement the OAuth 2.1 layer yourself. The specification is clear enough that a well-scoped native implementation is straightforward.
 
 This article walks through building the authentication for an MCP server in ASP.NET Core natively.
+
+Here is the complete flow we'll implement:
+
+![Authorization code flow with PKCE](/public/images/mcp-server-oauth2-dotnet/auth-flow.png "Authorization code flow with PKCE"){:.centered}
 
 ---
 
@@ -78,11 +85,11 @@ services.AddAuthorization(options =>
 
 ---
 
-## 401 Challenge and Exposing well-known URLs 
+## 401 Challenge and Exposing well-known URLs
 
-When a client hits `/mcp` without a token, the default JWT Bearer `401` response is not enough. The MCP spec requires the `WWW-Authenticate` header to include a `resource_metadata` URL. Without it, MCP clients don't know where to start the auth flow.
+When a client hits `/mcp` without a token, in addition to the default JWT Bearer `401` response, the MCP spec requires the `WWW-Authenticate` response header to include a `resource_metadata` URL. MCP clients use this URL to discover the authorization server and start the OAuth flow.
 
-Hook into the JWT Bearer `OnChallenge` event to add it:
+We use the JWT Bearer `OnChallenge` event to add it:
 
 ```csharp
 builder.Services.PostConfigure<JwtBearerOptions>(
@@ -109,13 +116,13 @@ builder.Services.PostConfigure<JwtBearerOptions>(
 });
 ```
 
-`context.HandleResponse()` suppresses the default 401 body and lets you write your own. The `resource_metadata` value is the URL the client will fetch next.
+`context.HandleResponse()` will suppress the default 401 body and let you write your own. The `resource_metadata` value is the URL that the client will fetch next.
 
 ---
 
-## Discovery Endpoints
+## Exposing Discovery Endpoints
 
-The client follows the `resource_metadata` URL to learn about your auth server. Two endpoints, minimal logic:
+The client follows the `resource_metadata` URL to learn about our authorization server. Two endpoints are required:
 
 ```csharp
 [ApiController]
@@ -157,13 +164,13 @@ public class WellKnownController : ControllerBase
 }
 ```
 
-The `authorization_servers` array in the protected resource response tells the client that the same server acts as the authorization server. In a SaaS setup, this would point to the external IdP URL instead.
+This `authorization_servers` array in the protected resource response says to the client which authorization server endpoints it should use for authentication.
 
 ---
 
-## Dynamic Client Registration
+## Dynamic Client Registration (DCR)
 
-MCP clients don't have pre-configured `client_id` values. They register themselves the first time they connect. Your `POST /oauth/register` endpoint accepts the request and returns a fresh `client_id`:
+Since MCP clients don't have pre-configured `client_id` values, they need to register themselves as clients the first time they connect. The `POST /oauth/register` endpoint accepts the request and returns a new `client_id` that they can use.
 
 ```csharp
 [HttpPost("register")]
@@ -198,13 +205,17 @@ public async Task<IActionResult> Register()
 }
 ```
 
-The `client_id` is a cryptographically random Base64Url string stored in memory. It's not persisted anywhere — if the server restarts, the client will need to register again. For an internal tool, that's an acceptable trade-off.
+The `client_id` is a random Base64Url string that identifies a client using the authorization server. Note that we keep this in memory and don't persist it anywhere.
 
 ---
 
-## Authorization Code Flow with PKCE
+## Authorization Code Flow (with PKCE)
 
-This is the core of the implementation. The flow has three steps: render the login form, handle the form submission, and exchange the code for tokens.
+Authorization code flow with PKCE is required to be used by the MCP specification. This flow will have three steps.
+
+1. Render the login form
+2. Handle the credential submission and issue an authorization code
+3. Exchange the code for tokens
 
 ### Step 1 — Render the Login Form
 
@@ -230,9 +241,16 @@ public IActionResult Authorize(
 }
 ```
 
-Validation checks: valid `client_id` (static or dynamically registered), `response_type=code`, `code_challenge_method=S256`, and an allowed `redirect_uri` prefix. If any fail, return `400` — never redirect on a bad request, as that can enable open redirect attacks.
+Several validation checks:
 
-### Step 2 — Handle Credentials and Issue a Code
+1. Valid `client_id` (dynamically registered)
+2. `response_type=code`
+3. `code_challenge_method=S256`
+4. An allowed `redirect_uri`
+
+If any of the validations fail, the server must return a `400` error response with an appropriate error message.
+
+### Step 2 — Handle Credentials and Issue an Authorization Code
 
 ```csharp
 [HttpPost("authorize")]
@@ -243,7 +261,7 @@ public async Task<IActionResult> Authorize([FromForm] OAuthLoginForm form)
     if (!TryValidateAuthorizeRequest(request, out var validationError))
         return BadRequest(validationError);
 
-    var loginResult = await _accountUseCase.Login(new LoginCommand
+    var loginResult = await _authenticationService.Login(new LoginCommand
     {
         Email = form.Email,
         Password = form.Password,
@@ -263,7 +281,7 @@ public async Task<IActionResult> Authorize([FromForm] OAuthLoginForm form)
 }
 ```
 
-On successful login, generate a one-time authorization code and store it in memory along with the `code_challenge`. The `state` parameter is passed back to the client unchanged — it's the client's CSRF protection.
+Here, the `_authenticationService` can be any existing login service you have in your application. The key part is that on successful login, it generates a one-time authorization code and store it in memory along with the `code_challenge`. The `state` parameter is passed back to the client as is.
 
 ### Step 3 — Exchange the Code for Tokens
 
@@ -288,14 +306,20 @@ private async Task<IActionResult> ExchangeAuthorizationCode(IFormCollection form
             "PKCE verification failed.", HttpStatusCode.BadRequest);
 
     var user = await _userManager.FindByIdAsync(entry.UserId);
-    var (accessToken, refreshToken) = await _accountUseCase
+    var (accessToken, refreshToken) = await _authenticationService
         .GenerateAccessAndRefreshTokens(user, scope: "mcp:tools");
 
     return Ok(BuildTokenResponse(accessToken, refreshToken));
 }
 ```
 
-`TryConsume` removes the code from the store atomically — authorization codes are single-use. Then three checks run in order: the code must belong to the requesting client and redirect URI, and the PKCE verifier must hash to the stored challenge.
+Again, your existing token generation logic can be reused here (Eg: Asp.NET Core Identity with JWT).
+
+Here, `TryConsume` will remove the code from the store atomically, since authorization codes are single-use only. Then we run three checks in order:
+
+1. Verify the code belongs to the requesting client
+2. Verify the redirect URI matches
+3. Verify the PKCE verifier hashes to the stored challenge
 
 ```csharp
 private static bool VerifyPkce(string codeVerifier, string expectedChallenge)
@@ -307,13 +331,17 @@ private static bool VerifyPkce(string codeVerifier, string expectedChallenge)
 }
 ```
 
-The PKCE check is what makes this attack-resistant. Even if someone intercepts the authorization code in transit, they cannot exchange it without the original `code_verifier` — which only the legitimate client has.
+PKCE makes this flow secure against interception attacks. Even if an attacker captures the authorization code, they cannot exchange it for tokens without the original `code_verifier` value, which only the legitimate client will have.
 
 ---
 
-## The Authorization Code Store
+## Authorization Code Store
 
-The in-memory store handles code creation, consumption, and client registration:
+As mentioned earlier, we use an in-memory store to handle code creation, consumption, and client registration. However, as per project requirements, this can be swapped out for a persistent store without much change to the overall logic.
+
+If you need persistence across restarts, the store can be moved to a database table while the interface stays the same. Swap `ConcurrentDictionary` for EF Core tables, add an index on the code column, and a background cleanup job can be added for expired entries.
+
+Code and client lifetimes can be set as needed:
 
 ```csharp
 public class AuthorizationCodeStore
@@ -381,120 +409,66 @@ public class AuthorizationCodeStore
 }
 ```
 
-`ConcurrentDictionary` makes the store thread-safe without explicit locking. `TryRemove` is atomic — it handles the race condition where two concurrent requests try to consume the same code.
-
-**Lifetime decisions:**
-- Authorization codes: 2-minute TTL. Short enough to limit interception windows, long enough for a user to enter credentials.
-- Dynamic client registrations: 24-hour TTL. The dictionary stores the expiry timestamp instead of a boolean, so `IsDynamicClient` can check it inline without a separate sweep. `PruneExpiredDynamicClients` runs before each new registration to keep memory bounded.
-- Tokens: issued with whatever lifetime your JWT configuration specifies.
+We use `ConcurrentDictionary` to make the store thread-safe without explicit locking. Also, `TryRemove` is atomic and it handles the race condition if two concurrent requests try to consume the same code.
 
 ---
 
-## MCP Tools
+## Defining the MCP Tools
 
-With auth in place, defining tools is straightforward. The SDK discovers them via `[McpServerToolType]` and `[McpServerTool]`:
+Now we have completed the authentication layer for the MCP server.
+
+Defining the tools for your MCP is straightforward.
+
+The SDK discovers them via `[McpServerToolType]` and `[McpServerTool]` added to your classes and methods.
+
+For example:
 
 ```csharp
 [McpServerToolType]
-public static class VendorsCustomerTools
+public static class ProductTools
 {
-    [McpServerTool, Description("List vendors/customers with optional search and pagination.")]
-    public static async Task<VendorsCustomersResponse> GetVendorsCustomers(
+    [McpServerTool, Description("List products with optional search and pagination.")]
+    public static async Task<ProductsResponse> GetProducts(
         IMediator mediator,
-        string? searchText = null,
-        int pageNumber = 1,
-        int rowsPerPage = 50)
+        [Description("Optional free-text search.")] string? searchText = null,
+        [Description("Page number for pagination.")] int pageNumber = 1,
+        [Description("Number of rows per page.")] int rowsPerPage = 50)
     {
-        return Unwrap(await mediator.Send(new GetVendorsCustomersQuery
+        return await mediator.Send(new GetProductsQuery
         {
             SearchText = searchText,
             PageNumber = pageNumber,
             RowsPerPage = rowsPerPage
-        }));
-    }
-
-    private static T Unwrap<T>(Envelope<T> env)
-    {
-        if (env.IsError)
-            throw new InvalidOperationException(
-                $"{env.Title}: {string.Join("; ", env.ValidationErrors
-                    .Select(kv => $"{kv.Key}: {kv.Value}"))}");
-        return env.Payload;
+        });
     }
 }
 ```
 
-Dependencies like `IMediator` are injected directly as method parameters — no constructor or controller needed. The SDK resolves them from the DI container per request.
+Dependencies like `IMediator` can be injected directly as method parameters, no constructor or controller needed. The SDK will resolve them from the DI container per request.
 
 ---
 
-## What Lives in Memory — and What That Means
+## When to Use This approach vs. a Managed IdP
 
-Authorization codes, dynamic client IDs, and the code-to-entry mapping are all in-memory. A server restart wipes them.
+This implementation covers the MCP spec requirements and works well for a small to medium project with an existing user base and authentication system. It allows you to expose an MCP server without integrating a full Identity Provider, which can be overkill for simple use cases.
 
-For most internal tools, this is fine. Authorization codes have a 2-minute TTL and dynamic client registrations last 24 hours — so a client that registered earlier in the day can reconnect without re-registering, but after a restart it will need to go through `/oauth/register` again before starting the auth flow.
+But in a larger system with multiple applications, shared user bases, or complex compliance requirements, a managed IdP can be the right choice. It already has the features you need, and it offloads the burden of securely implementing and maintaining the auth layer.
 
-If you need persistence across restarts, move the store to a database. The interface stays the same — swap `ConcurrentDictionary` for EF Core tables, add an index on the code column, and add a background cleanup job for expired entries. The rest of the implementation doesn't change.
+Check out [Asgardeo](https://wso2.com/asgardeo/) or [WSO2 Identity Server](https://wso2.com/identity-platform/access-manager/) if you want to follow that route. Both support the MCP spec and can be configured with minimal effort.
 
-Refresh tokens are already persisted — they're stored in the `AspNetUsers` table and validated on every refresh request. Only the short-lived authorization codes and the ephemeral client registrations are in memory.
-
----
-
-## When to Use This vs. Asgardeo (or Another IdP)
-
-This implementation covers the MCP spec requirements and works well for:
-
-- Internal APIs where you control both the server and the clients
-- Projects already running ASP.NET Core Identity with their own user store
-- Teams that want to avoid introducing an external dependency for a non-customer-facing tool
-
-Where a managed IdP earns its place:
-
-- **Multi-application scenarios** — if several services share the same users, a central IdP avoids duplicating auth logic
-- **Enterprise SSO** — SAML, SCIM, corporate directory integration are hard to build and easy to get wrong
-- **Compliance requirements** — audit logs, token revocation lists, session management at scale
-
-The native approach is a self-contained solution. Adding Asgardeo is a one-way door toward a richer feature set — but it comes with configuration, pricing, and a dependency on an external system. Know which trade-off you're making before committing.
-
----
-
-## The Full Auth Flow, Step by Step
-
-Here's what happens from the moment a client connects to a working token in hand:
-
-```
-Client → GET /mcp
-       ← 401  WWW-Authenticate: Bearer resource_metadata="…/.well-known/oauth-protected-resource"
-
-Client → GET /.well-known/oauth-protected-resource
-       ← { "authorization_servers": ["http://localhost:5000"] }
-
-Client → GET /.well-known/oauth-authorization-server
-       ← { "authorization_endpoint": "…/oauth/authorize",
-            "token_endpoint": "…/oauth/token",
-            "registration_endpoint": "…/oauth/register" }
-
-Client → POST /oauth/register
-       ← { "client_id": "<random>" }
-
-Client opens browser → GET /oauth/authorize?client_id=…&code_challenge=…
-User submits credentials → POST /oauth/authorize
-       ← 302  redirect_uri?code=<code>&state=<state>
-
-Client → POST /oauth/token  { code, code_verifier, client_id, redirect_uri }
-       ← { "access_token": "…", "refresh_token": "…" }
-
-Client → GET /mcp  Authorization: Bearer <access_token>  ✓
-```
-
-Each step in this chain is mandated by the MCP 2025-11-25 spec. Skip any one of them and compliant clients will refuse to connect.
+<a class="link-preview-card" href="https://is.docs.wso2.com/en/latest/guides/agentic-ai/mcp/mcp-server-authorization/" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:stretch; justify-content:space-between; gap:1.25rem; margin:1.75rem 0; border:1px solid #E5E2DD; border-radius:8px; background:#FFFFFF; color:#1A1A1A; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.06); text-decoration:none;">
+    <span class="link-preview-card__content" style="display:flex; flex:1 1 auto; flex-direction:column; justify-content:center; min-width:0; padding:1.1rem 1.25rem;">
+        <span class="link-preview-card__title" style="display:block; font-size:1rem; font-weight:700; line-height:1.35; margin-bottom:0.5rem; color:#1A1A1A;">Model Context Protocol (MCP) server authorization</span>
+        <span class="link-preview-card__description" style="display:block; font-size:0.95rem; line-height:1.55; color:#4A4A4A; margin-bottom:0.9rem;">Just like APIs, MCP (Model Context Protocol) servers need fine-grained access control so that only authorized users can access the tools they expose.</span>
+        <span class="link-preview-card__url" style="display:block; font-size:0.85rem; line-height:1.4; color:#4A4A4A;">is.docs.wso2.com</span>
+    </span>
+    <img class="link-preview-card__image" src="https://is.docs.wso2.com/en/7.2.0/assets/img/guides/authorization/mcp-authorization/create-new-mcp-server.png" alt="WSO2 Identity Server MCP server authorization guide" style="display:block; width:190px; min-width:190px; margin:0; object-fit:cover; border-radius:0; box-shadow:none;">
+</a>
 
 ---
 
 ## Wrapping Up
 
-Implementing OAuth 2.1 natively for an MCP server is more work than pointing at Asgardeo — but it's not as complex as it looks once you break it into its components. The spec is clear, the .NET primitives handle the cryptography, and a few hundred lines of controller code covers the full auth layer.
+Implementing MCP server authentication natively in ASP.NET Core with OAuth 2.1 and PKCE is not as complex as it looks once you break it into its components. 
 
-The key decisions to revisit as your project grows: do you need persistence for auth codes and client registrations, do you need token revocation, and at what point does a managed IdP pay for itself in operational simplicity?
-
-Have you run into any of the edge cases in this flow — particularly around PKCE or dynamic client registration? I'd be curious what broke first.
+The spec is clear, and the existing .NET authentication features can integrate with the custom logic to handle the required flows.

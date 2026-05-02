@@ -986,6 +986,11 @@ tr:last-child td { border-bottom: none; }
   color: var(--color-accent);
 }
 
+.project-status--archived {
+  background: var(--color-border);
+  color: var(--color-text-muted);
+}
+
 .project-status--maintained {
   background: rgba(45, 160, 100, 0.1);
   color: #2da064;
