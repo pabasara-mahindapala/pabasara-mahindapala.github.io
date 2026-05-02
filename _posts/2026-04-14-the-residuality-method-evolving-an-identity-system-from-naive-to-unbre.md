@@ -97,7 +97,7 @@ We move binaries to an Object Store (like AWS S3 or Azure Blob Storage) and stor
 
 By applying these stressors picked from real-world experiences, our final architecture has evolved significantly.
 
-We now have **Redis **for caching high-churn data, a** claim-check pattern** for handling large permission sets, and external **object storage **for large media. This architecture is not what we initially designed, but it is what remained after surviving the stressors.
+We now have **Redis** for caching high-churn data, a **claim-check pattern** for handling large permission sets, and external **object storage** for large media. This architecture is not what we initially designed, but it is what remained after surviving the stressors.
 
 ![](/public/images/the-residuality-method-evolving-an-identity-system-from-naive-to-unbre/image-7.jpg "Photo by erika m on Unsplash")
 
