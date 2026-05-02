@@ -1,0 +1,33 @@
+sequenceDiagram  
+ participant CC as MCP Client
+participant B as Browser
+participant S as MCP Server
+
+      CC->>S: GET /mcp (no token)
+      S-->>CC: 401 Unauthorized<br/>WWW-Authenticate: Bearer resource_metadata=".../.well-known/oauth-protected-resource"
+
+      CC->>S: GET /.well-known/oauth-protected-resource
+      S-->>CC: { resource, authorization_servers }
+
+      CC->>S: GET /.well-known/oauth-authorization-server
+      S-->>CC: { authorization_endpoint, token_endpoint, registration_endpoint, ... }
+
+      CC->>S: POST /oauth/register
+      S-->>CC: { client_id }
+
+      CC->>B: Open browser → GET /oauth/authorize?client_id=...&code_challenge=...&state=...
+      B->>S: GET /oauth/authorize
+      S-->>B: Render HTML login form
+
+      B->>S: POST /oauth/authorize (email + password + OAuth params)
+      Note over S: Validate credentials <br/>Generate one-time code → store in AuthorizationCodeStore
+      S-->>B: 302 Redirect → redirect_uri?code=&state=
+
+      B->>CC: Callback with code + state
+
+      CC->>S: POST /oauth/token<br/>grant_type=authorization_code, code, code_verifier
+      Note over S: Validate code → verify PKCE<br/>Generate Access And Refresh Tokens
+      S-->>CC: { access_token, refresh_token, expires_in }
+
+      CC->>S: GET /mcp (Authorization: Bearer access_token)
+      S-->>CC: MCP response ✓
