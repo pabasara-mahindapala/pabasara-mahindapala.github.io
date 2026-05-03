@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Testing Your Local MCP Server with Claude Desktop and Claude Code"
-published: false
+published: true
 description: "You've built an MCP server and it's running on localhost. Here's how you can actually test it."
 categories: [software-development]
 tags: [mcp, claude, claude-code, oauth2, dotnet]
@@ -56,8 +56,6 @@ The `NODE_TLS_REJECT_UNAUTHORIZED=0` flag will be needed for a local development
 The flag lives in `mcp-remote`'s `env` block because `mcp-remote` is the one making the HTTPS request. Note that Claude Desktop itself never connects directly to your server.
 
 Restart Claude Desktop after saving. On first launch a browser window should open for OAuth login.
-
-> **Don't set `NODE_TLS_REJECT_UNAUTHORIZED=0` for a production MCP server.** It will disable all certificate verification and any certificate will be trusted. For production, you should get a valid certificate from a trusted CA or use a TLS termination proxy.
 
 ---
 
