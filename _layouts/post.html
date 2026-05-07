@@ -2,6 +2,28 @@
 layout: default
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ page.title | escape }}",
+  "description": "{{ page.description | escape }}",
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+  "url": "{{ site.url }}{{ page.url }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author.name }}",
+    "url": "{{ site.url }}/about/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "{{ site.author.name }}"
+  }{% if page.hero %},
+  "image": "{{ site.url }}{{ page.hero }}"{% endif %}
+}
+</script>
+
 <article itemscope itemtype="https://schema.org/BlogPosting" class="post">
 
   <header class="post-header">
@@ -20,6 +42,10 @@ layout: default
     </div>
 
     <h1 itemprop="headline" class="post-title">{{ page.title }}</h1>
+    <span itemprop="author" itemscope itemtype="https://schema.org/Person" style="display:none">
+      <meta itemprop="name" content="{{ site.author.name }}">
+      <meta itemprop="url" content="{{ site.url }}/about/">
+    </span>
   </header>
 
   <div itemprop="articleBody" class="post-body">
