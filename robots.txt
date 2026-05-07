@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /404.html
+
+Sitemap: https://pabasara-mahindapala.github.io/sitemap.xml

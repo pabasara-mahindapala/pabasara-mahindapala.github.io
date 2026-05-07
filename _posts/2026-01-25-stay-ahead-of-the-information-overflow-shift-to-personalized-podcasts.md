@@ -2,7 +2,7 @@
 layout: post
 title: "Stay ahead of the Information Overflow - Shift to Personalized Podcasts"
 published: true
-description: "How many links do you have saved in your reading list right now?"
+description: "Turn your unread reading list into personalized audio - how to use Google Chrome, Google Drive, NotebookLM to create podcasts from any source, powered by Gemini."
 categories: [podcasts, information-overload, chatgpt, claude, ai, gemini, notebooklm, chrome, google-drive]
 tags: [podcasts, information-overload, chatgpt, claude, ai, gemini, notebooklm, chrome, google-drive]
 cross_posts:
