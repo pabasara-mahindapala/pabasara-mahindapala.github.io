@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(grep -E \"primary|accent|--color|background|#[0-9a-fA-F]{3,6}\" \"C:\\\\Users\\\\Administrator\\\\Documents\\\\Github\\\\pabasara-mahindapala\\\\pabasara-mahindapala.github.io\\\\public\\\\css\\\\site.css\")"
-    ]
-  }
-}
