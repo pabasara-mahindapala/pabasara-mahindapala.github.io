@@ -88,6 +88,15 @@ Once the images were sorted, I could easily scan through the short list of perso
 
 But more than that, the payoff goes beyond a single photo. Now I know things that are actually worth keeping. I can back those up properly, and delete the junk without being worried about losing anything important.
 
-If you want to run this yourself, the full code is in the [`zero-shot-image-classifier`](https://github.com/pabasara-mahindapala/zero-shot-image-classifier) repo.
+If you want to run this yourself, the full code is on GitHub:
+
+<a class="link-preview-card" href="https://github.com/pabasara-mahindapala/zero-shot-image-classifier" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:stretch; justify-content:space-between; gap:1.25rem; margin:1.75rem 0; border:1px solid #E5E2DD; border-radius:8px; background:#FFFFFF; color:#1A1A1A; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.06); text-decoration:none;">
+    <span class="link-preview-card__content" style="display:flex; flex:1 1 auto; flex-direction:column; justify-content:center; min-width:0; padding:1.1rem 1.25rem;">
+        <span class="link-preview-card__title" style="display:block; font-size:1rem; font-weight:700; line-height:1.35; margin-bottom:0.5rem; color:#1A1A1A;">pabasara-mahindapala/zero-shot-image-classifier</span>
+        <span class="link-preview-card__description" style="display:block; font-size:0.95rem; line-height:1.55; color:#4A4A4A; margin-bottom:0.9rem;">Classifies large photo archives into categories using OpenAI's CLIP model. No labelled data, no fine-tuning, no cloud uploads. Runs entirely locally.</span>
+        <span class="link-preview-card__url" style="display:block; font-size:0.85rem; line-height:1.4; color:#4A4A4A;">github.com</span>
+    </span>
+    <img class="link-preview-card__image" src="https://opengraph.githubassets.com/1/pabasara-mahindapala/zero-shot-image-classifier" alt="zero-shot-image-classifier GitHub repository" style="display:block; width:190px; min-width:190px; margin:0; object-fit:cover; border-radius:0; box-shadow:none;">
+</a>
 
 Thanks for reading! If you have any questions or want to share your own experiences with sorting large photo archives, feel free to reach out.
