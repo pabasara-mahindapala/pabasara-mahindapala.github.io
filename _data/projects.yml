@@ -1,3 +1,10 @@
+- name: zero-shot-image-classifier
+  description: Classifies large photo archives into categories using OpenAI's CLIP model. No labelled data, no fine-tuning, no cloud uploads. Entirely private. Sorts images with prompt ensembling across different categories, routes low-confidence results to a review folder, and runs entirely locally.
+  tech: [Python, CLIP, PyTorch, Machine Learning, MPS]
+  url: https://github.com/pabasara-mahindapala/zero-shot-image-classifier
+  blog_post: /ai/machine-learning/python/productivity/2026/05/31/sorting-70000-photos-with-clip/
+  status: active
+
 - name: vscode-mario
   description: A fully playable Mario-style game running inside VS Code's sidebar. Every sprite and sound effect is generated procedurally - no image or audio files. Covers Canvas 2D physics, AABB collision detection, fixed-timestep game loops, and enemy AI.
   tech: [TypeScript, HTML5 Canvas, Web Audio API, VS Code Extension API]
