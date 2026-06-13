@@ -11,7 +11,7 @@ description: What Pabasara Mahindapala is working on, reading, and thinking abou
     <h1 class="page-title" itemprop="name">Now</h1>
     <p class="now-meta">
       A <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">now page</a> - a snapshot of what I'm focused on at this point in time.
-      Updated manually when things shift. <span class="now-updated">Last updated: May 2026.</span>
+      Updated manually when things shift. <span class="now-updated">Last updated: June 2026.</span>
     </p>
   </div>
 
@@ -21,7 +21,7 @@ description: What Pabasara Mahindapala is working on, reading, and thinking abou
       <div class="now-card-icon" aria-hidden="true">💼</div>
       <div class="now-card-body">
         <h2 class="now-card-label">Day job</h2>
-        <p>Senior Software Engineer at <a href="https://wso2.com" target="_blank" rel="noopener noreferrer">WSO2</a>, focused on Identity and Access Management and enterprise integration - Most of what I know about OIDC, Oauth2, federation, and IAM comes from this work.</p>
+        <p>Senior Software Engineer at <a href="https://wso2.com/about/team/pabasara-mahindapala/" target="_blank" rel="noopener noreferrer">WSO2</a>, focused on Identity and Access Management and enterprise integration - Most of what I know about OIDC, Oauth2, federation, and IAM comes from this work.</p>
       </div>
     </div>
 
@@ -29,9 +29,9 @@ description: What Pabasara Mahindapala is working on, reading, and thinking abou
       <div class="now-card-icon" aria-hidden="true">✍️</div>
       <div class="now-card-body">
         <h2 class="now-card-label">Writing</h2>
-        <p>Working on few articles on IAM, software architecture and Agentic AI topics.</p>
-        <p>Just published an
-        <a href="../dotnet/security/authentication/aspnetcore/2026/05/02/mcp-server-oauth2-dotnet" target="_blank" rel="noopener noreferrer"> article </a> on implementing the full MCP authentication layer in ASP.NET Core natively, according to the spec.</p>
+        <p>Working on a few articles on IAM, software architecture and Agentic AI topics.</p>
+        <p>Recently published an experiment on
+        <a href="../machine-learning/python/productivity/image-classification/2026/05/31/sorting-70000-photos-with-clip" target="_blank" rel="noopener noreferrer"> sorting 70,000 photos with CLIP</a> without losing the weekend.</p>
       </div>
     </div>
 
@@ -39,9 +39,9 @@ description: What Pabasara Mahindapala is working on, reading, and thinking abou
       <div class="now-card-icon" aria-hidden="true">🔧</div>
       <div class="now-card-body">
         <h2 class="now-card-label">Building</h2>
+        <p>An AI-powered bookkeeping app in .NET 8 - integrating Claude for bank statement extraction and an MCP server that lets Claude operate the app directly.</p>
         <p>An open-source Angular 18 PDF annotation editor as a hobby project. Current focus: annotation persistence reliability and page manipulation.</p>
         <!-- <p>This website - migrating from the Lanyon theme to a custom design using Jekyll data files and CSS custom properties.</p> -->
-        <p>A Mario-style game for VS Code that lives in the Explorer sidebar, with every media file generated procedurally.</p>
       </div>
     </div>
 
