@@ -32,6 +32,60 @@
   <meta name="twitter:image"       content="{{ site.url }}{{ og_image }}">
   {% endif %}
 
+  <!-- Structured data: Person + WebSite (sitewide, feeds Google Knowledge Graph) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "{{ site.url }}/#person",
+        "name": "{{ site.author.name }}",
+        "jobTitle": "Senior Software Engineer",
+        "url": "{{ site.url }}/",
+        "image": "{{ site.avatar }}",
+        {% if site.author.email %}"email": "mailto:{{ site.author.email }}",{% endif %}
+        "worksFor": {
+          "@type": "Organization",
+          "name": "WSO2",
+          "url": "https://wso2.com"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Colombo",
+          "addressCountry": "Sri Lanka"
+        },
+        "knowsAbout": [
+          "Identity and Access Management",
+          "OAuth2",
+          "OpenID Connect",
+          "Asgardeo",
+          "WSO2 Identity Server",
+          "Angular",
+          "Frontend Engineering",
+          "Software Architecture",
+          "Agentic AI"
+        ],
+        "sameAs": [
+          {%- assign sep = "" -%}
+          {%- if site.github %}{{ sep }}"{{ site.github | strip }}"{%- assign sep = "," -%}{%- endif -%}
+          {%- if site.twitter_username %}{{ sep }}"https://twitter.com/{{ site.twitter_username }}"{%- assign sep = "," -%}{%- endif -%}
+          {%- if site.medium_username %}{{ sep }}"https://medium.com/@{{ site.medium_username }}"{%- assign sep = "," -%}{%- endif -%}
+          {%- if site.author.linkedIn %}{{ sep }}"{{ site.author.linkedIn }}"{%- assign sep = "," -%}{%- endif -%}
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "{{ site.url }}/#website",
+        "url": "{{ site.url }}/",
+        "name": "{{ site.title }}",
+        "description": "{{ site.description | strip_newlines | strip }}",
+        "publisher": { "@id": "{{ site.url }}/#person" }
+      }
+    ]
+  }
+  </script>
+
   <title>
     {% if page.title == "Home" %}
       {{ site.title }} &middot; {{ site.tagline }}
