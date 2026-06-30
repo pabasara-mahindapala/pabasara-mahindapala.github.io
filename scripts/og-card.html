@@ -1,0 +1,182 @@
+<!doctype html>
+<!--
+  og-card.html — source for the site's default Open Graph image (public/og-default.png).
+
+  Built as a plain HTML/CSS page using the site's "Ink & Signal" design tokens and the
+  same Google Fonts as the site, then screenshotted at exactly 1200x630 with headless Edge.
+  Lives in scripts/ so it stays out of the Jekyll build (scripts/ is excluded in _config.yml).
+
+  To regenerate after editing this file (Windows / Git Bash):
+
+    msedge="/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+    "$msedge" --headless=new --disable-gpu \
+      --window-size=1200,630 --hide-scrollbars \
+      --virtual-time-budget=5000 --force-device-scale-factor=1 \
+      --screenshot="$(cygpath -w public/og-default.png)" \
+      "file:///$(cygpath -w scripts/og-card.html)"
+
+  Key flags:
+    --window-size=1200,630   exact OG dimensions
+    --virtual-time-budget    waits ~5s so the web fonts finish loading before the snapshot
+    --force-device-scale-factor=1   ensures a true 1200x630 (not 2x) capture
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  /* Ink & Signal — site tokens (dark mode) */
+  :root {
+    --bg:          #0F1419;
+    --surface:     #1A2027;
+    --text:        #E8E6E1;
+    --muted:       #9CA3AF;
+    --border:      #2D3440;
+    --accent:      #7DB3D5;
+    --accent-warm: #E89B75;
+    --font-sans:  'Inter', system-ui, sans-serif;
+    --font-serif: 'Lora', Georgia, serif;
+    --font-mono:  'JetBrains Mono', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 630px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Soft accent glow, top-right — same hue as the site accent */
+  body::before {
+    content: "";
+    position: absolute;
+    top: -260px;
+    right: -200px;
+    width: 760px;
+    height: 760px;
+    background: radial-gradient(circle, rgba(125,179,213,0.20) 0%, rgba(125,179,213,0.0) 62%);
+    pointer-events: none;
+  }
+  /* Faint warm glow, bottom-left for balance */
+  body::after {
+    content: "";
+    position: absolute;
+    bottom: -300px;
+    left: -220px;
+    width: 680px;
+    height: 680px;
+    background: radial-gradient(circle, rgba(232,155,117,0.10) 0%, rgba(232,155,117,0.0) 60%);
+    pointer-events: none;
+  }
+
+  .card {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    padding: 84px 96px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Header row: monogram + domain eyebrow */
+  .top {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+  .monogram {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    background: var(--accent);
+    color: #0F1419;
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 32px;
+    letter-spacing: -1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 21px;
+    letter-spacing: 1px;
+    color: var(--muted);
+  }
+
+  /* Main block */
+  .name {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 92px;
+    line-height: 1.04;
+    letter-spacing: -1.5px;
+    color: var(--text);
+  }
+  .rule {
+    width: 96px;
+    height: 5px;
+    border-radius: 3px;
+    background: var(--accent);
+    margin: 30px 0 28px;
+  }
+  .tagline {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 1.45;
+    color: var(--text);
+    max-width: 900px;
+  }
+  .tagline .hl { color: var(--accent); font-style: normal; }
+
+  /* Footer row */
+  .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .role {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--muted);
+  }
+  .handles {
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="top">
+      <div class="monogram">PM</div>
+      <div class="eyebrow">PABASARA-MAHINDAPALA.GITHUB.IO</div>
+    </div>
+
+    <div class="main">
+      <div class="name">Pabasara<br>Mahindapala</div>
+      <div class="rule"></div>
+      <div class="tagline">Writing about <span class="hl">identity</span>, <span class="hl">engineering</span> and what breaks in production.</div>
+    </div>
+
+    <div class="bottom">
+      <div class="role">Senior Software Engineer&nbsp;·&nbsp;WSO2</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -39,7 +39,6 @@ description: What Pabasara Mahindapala is working on, reading, and thinking abou
       <div class="now-card-icon" aria-hidden="true">🔧</div>
       <div class="now-card-body">
         <h2 class="now-card-label">Building</h2>
-        <p>An AI-powered bookkeeping app in .NET 8 - integrating Claude for bank statement extraction and an MCP server that lets Claude operate the app directly.</p>
         <p>An open-source Angular 18 PDF annotation editor as a hobby project. Current focus: annotation persistence reliability and page manipulation.</p>
         <!-- <p>This website - migrating from the Lanyon theme to a custom design using Jekyll data files and CSS custom properties.</p> -->
       </div>
