@@ -11,7 +11,7 @@ description: What Pabasara Mahindapala is working on, reading, and thinking abou
     <h1 class="page-title" itemprop="name">Now</h1>
     <p class="now-meta">
       A <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">now page</a> - a snapshot of what I'm focused on at this point in time.
-      Updated manually when things shift. <span class="now-updated">Last updated: June 2026.</span>
+      Updated manually when things shift. <span class="now-updated">Last updated: July 2026.</span>
     </p>
   </div>
 
@@ -30,8 +30,8 @@ description: What Pabasara Mahindapala is working on, reading, and thinking abou
       <div class="now-card-body">
         <h2 class="now-card-label">Writing</h2>
         <p>Working on a few articles on IAM, software architecture and Agentic AI topics.</p>
-        <p>Recently published an experiment on
-        <a href="../machine-learning/python/productivity/image-classification/2026/05/31/sorting-70000-photos-with-clip" target="_blank" rel="noopener noreferrer"> sorting 70,000 photos with CLIP</a> without losing the weekend.</p>
+        <p>Just published a breakdown of the
+        <a href="../mcp/oauth/security/identity/2026/07/11/mcp-authorization-2026-07-28-changes" target="_blank" rel="noopener noreferrer">six authorization changes landing in the 2026-07-28 MCP spec</a> - and what they mean if you build MCP clients.</p>
       </div>
     </div>
 
