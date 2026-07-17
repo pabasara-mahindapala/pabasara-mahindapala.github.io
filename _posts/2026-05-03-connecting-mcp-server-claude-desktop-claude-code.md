@@ -13,7 +13,7 @@ hero: /public/images/connecting-mcp-server-claude-desktop-claude-code/hero.jpg
 
 ![](/public/images/connecting-mcp-server-claude-desktop-claude-code/hero.jpg "Photo by Unsplash"){: .centered}
 
-You've built an MCP server and it's running on `https://localhost:5000`. Now you want to test it with a real client. How do you connect it to Claude Desktop or Claude Code?
+[You've built an MCP server](/dotnet/security/authentication/aspnetcore/2026/05/02/mcp-server-oauth2-dotnet/) and it's running on `https://localhost:5000`. Now you want to test it with a real client. How do you connect it to Claude Desktop or Claude Code?
 
 ---
 

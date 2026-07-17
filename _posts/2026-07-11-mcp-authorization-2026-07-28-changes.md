@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "PKCE Won't Save You: How the Upcoming MCP Auth Spec Tightens Up"
+title: "How the Upcoming MCP Auth Spec Tightens Up (PKCE Won't Save You)"
 published: true
 description: "The 2026-07-28 MCP authorization release candidate brings six hardening and interoperability fixes: issuer validation, per-issuer credentials, refresh token guidance, and more. Explained in plain terms."
 categories: [mcp, oauth, security, identity]
