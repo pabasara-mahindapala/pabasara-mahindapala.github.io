@@ -21,10 +21,14 @@ Then access from other devices at `http://<your-ip>:4000`. If blocked, add a Win
 
 ```
 _includes/
-  post-card.html       # shared post list item (homepage + archive)
+  post-card.html       # post list item (homepage only; writing.md inlines its own copy)
   analytics.html       # GoatCounter analytics (self-hosted count.js)
   head.html            # <head> with SEO meta tags
   nav.html             # top navigation
+  footer.html          # site footer
+  currently.html       # "currently" section on the homepage
+  share-page.html      # share links on posts
+  disqus.html          # comments
 _layouts/
   default.html         # base layout
   post.html            # single post layout (with series nav)
@@ -33,7 +37,9 @@ _posts/                # blog posts in YYYY-MM-DD-slug.md format
 public/
   css/site.css         # all styles
   count.js             # self-hosted GoatCounter script
+  og-default.png       # fallback social preview image
   images/              # post images, one folder per post slug
+scripts/               # Node helpers (Medium backport, image + code-block fixups)
 index.html             # homepage (recent writing + currently section)
 writing.md             # full post archive with tag filtering
 about.md               # about page
@@ -55,20 +61,27 @@ cross_posts:
   - platform: medium          # or linkedin, plainenglish, towardsdev
     url: https://...
 medium_guid: https://medium.com/p/<id>   # deduplication key for backport script
-hero: /public/images/slug/hero.jpg       # optional: pin a specific thumbnail image
+hero: /public/images/slug/hero.jpg       # optional: social preview image (og:image + JSON-LD)
 # series fields (optional):
 series: series-slug
 series_order: 1
 ---
 ```
 
-Post images go in `/public/images/<post-slug>/`. The first image in a post body is auto-extracted as the thumbnail in post list cards; set `hero:` in frontmatter to override.
+Post images go in `/public/images/<post-slug>/`.
+
+`hero:` does not appear in the post body or in list cards. It sets the Open Graph and Twitter preview image in `_includes/head.html`, and the `image` field of the JSON-LD blob in `_layouts/post.html`. When it is omitted, both fall back to `/public/og-default.png`. Reference images inside the post body with normal markdown, adding `{: .centered}` to center one.
 
 ## Post cards
 
-The `_includes/post-card.html` include renders each item in the homepage recent writing list and the full archive. It auto-extracts the first body image as a right-side clickable thumbnail. Thumbnails are hidden on screens narrower than 600 px.
+Cards are text only: date, up to two category chips, any `cross_posts` badges, title, and a summary. The summary is the `description` field, falling back to the first 35 words of the post body when `description` is missing or identical to the title. There are no thumbnails anywhere in the post lists.
 
-The archive page (`writing.md`) passes a `tags_data` parameter to the include to enable client-side tag filtering.
+Two separate implementations render these cards, so a change to card markup has to be made in both places:
+
+- `_includes/post-card.html` is used by `index.html` only, for the recent writing list.
+- `writing.md` inlines its own near-identical copy of the same markup, because each archive card needs a `data-tags` attribute that the include does not emit.
+
+Tag filtering on the archive is client-side. `writing.md` collects every tag across `site.posts` into a row of filter buttons, stamps each card with `data-tags`, and a small inline script shows or hides cards on click, hiding any year group left empty.
 
 ## Series
 
