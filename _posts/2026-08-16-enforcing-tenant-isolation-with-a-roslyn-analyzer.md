@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Business Rules Doesn't Have to Live in Memory or a Wiki Page"
+title: "Business Rules Don't Have to Live in a Wiki Page: Enforcing Them with a Roslyn Analyzer"
 published: true
-description: "A business rule that lived only in developers' memory, pushed down into the compiler with an ASP.NET Roslyn analyzer that warns on every rule violation"
+description: "A business rule that lived only in developers' memory, pushed down into the compiler with a .NET Roslyn analyzer that warns on every rule violation"
 categories: [dotnet, security, authorization, aspnetcore]
 tags:
   [dotnet, roslyn, analyzers, security, authorization, multitenancy, aspnetcore, csharp, backend]
@@ -11,7 +11,7 @@ hero: /public/images/enforcing-tenant-isolation-with-a-roslyn-analyzer/hero.jpg
 
 ![](/public/images/enforcing-tenant-isolation-with-a-roslyn-analyzer/hero.jpg "Photo by David Magalhães on Unsplash"){: .centered}
 
-*How an ASP.NET Roslyn analyzer move a business specific guardrail from developer memory into every build*
+*How a .NET Roslyn analyzer moves a business-specific guardrail from developer memory into every build*
 
 Every codebase accumulates rules the compiler knows nothing about.
 
@@ -27,7 +27,7 @@ This is how you can stop relying on memory to enforce the rules that matter.
 
 ## A Sample Scenario: Two Layers of Authorization
 
-Rest of this article works through one sample scenario end to end.
+The rest of this article works through one sample scenario end to end.
 
 Picture a multi-tenant platform: an ASP.NET Core application (.NET 8, MediatR for the request pipeline). Every tenant represents a "business," and a single user can have roles across several businesses. So authorization has two distinct questions to answer on every request:
 
@@ -36,7 +36,7 @@ Picture a multi-tenant platform: an ASP.NET Core application (.NET 8, MediatR fo
 
 Question 1 is action-level. Question 2 is resource-level, and it's the one that actually enforces tenant isolation. Get it wrong and a user who legitimately manages *their* business can reach into *someone else's*.
 
-Consider both questions are handled by a .NET custom authorization attribute, and the resource-level check is on by default:
+Consider both questions are handled by an ASP.NET custom authorization attribute, and the resource-level check is on by default:
 
 ```csharp
 [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
@@ -210,7 +210,7 @@ Notice how much of the design is about *not* firing.
 
 Two decisions do that work. `OptsOutOfBusinessCheck` returns true only for a literal `false` assignment. The request parameter is found by *shape*, not by name: any parameter whose type exposes a public `BusinessId` property is the request, however the type is named.
 
-Step 3 is also what keeps the rule off the endpoints that opt out for a mundane reason. An action like `DeleteInvoice(string id)` has no business ID anywhere in its request, so there is nothing to scope against and nothing to warn about, whatever the attribute says.
+Step 3 is what keeps the rule off the endpoints that opt out for a mundane reason. An action like `DeleteInvoice(string id)` has no business ID anywhere in its request, so there is nothing to scope against and nothing to warn about, whatever the attribute says.
 
 The result is a rule that fires on exactly one situation: *an endpoint that disabled the business check while its request carries a business ID.*
 
@@ -257,16 +257,16 @@ The severity choice is the part that makes this humane to adopt on an existing c
 
 First, the analyzer can ship at **`Warning`** level only. Every existing violation lights up immediately, everywhere, but the build succeeds. The team works through them deliberately: remove the ones that shouldn't be there, suppress the legitimate ones with a justification.
 
-Once every remaining `ABC001` warnings are either fixed or justified, the rule can be changed to an **`Error`**. This needs no change to the analyzer, only one line in `.editorconfig`:
+Once every remaining `ABC001` warning is either fixed or justified, the rule can be changed to an **`Error`**. This needs no change to the analyzer, only one line in `.editorconfig`:
 
 ```ini
 dotnet_diagnostic.ABC001.severity = error
 ```
 
-Warning and error are the same rule at different points in the codebase. That single line is what turns it from an advice into a property of the build. After it lands, a rule violation is not a code smell, but a build failure, and nobody can skip it.
+Warning and error are the same rule at different points in the codebase. That single line is what turns it from advice into a property of the build. After it lands, a rule violation is not a code smell, but a build failure, and nobody can skip it.
 
 ---
 
 ## Conclusion
 
-Every team has a handful of rules the programming language doesn't know: like the type that money has to go through, the factory that entities have to be built with, the base class every handler has to inherit. Writing an analyzer for one of them is few hours work, and it moves the rule to the compiler so that nobody can forget it.
+Every team has a handful of rules the programming language doesn't know: like the type that money has to go through, the factory that entities have to be built with, the base class every handler has to inherit. Writing an analyzer for one of them is a few hours work, and it moves the rule to the compiler so that nobody can forget it.
