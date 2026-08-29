@@ -5,6 +5,10 @@ published: true
 description: "The 2026-07-28 MCP authorization release candidate brings six hardening and interoperability fixes: issuer validation, per-issuer credentials, refresh token guidance, and more. Explained in plain terms."
 categories: [mcp, oauth, security, identity]
 tags: [mcp, oauth, security, identity, ai, oauth2, oidc, authorization]
+cross_posts:
+  - platform: medium
+    url: https://medium.com/@pabasaramahindapala/pkce-wont-save-you-how-the-upcoming-mcp-auth-spec-tightens-up-3d5608fd0ead
+medium_guid: https://medium.com/p/3d5608fd0ead
 hero: /public/images/mcp-authorization-2026-07-28-changes/hero.jpg
 ---
 

@@ -6,6 +6,10 @@ description: "A business rule that lived only in developers' memory, pushed down
 categories: [dotnet, security, authorization, aspnetcore]
 tags:
   [dotnet, roslyn, analyzers, security, authorization, multitenancy, aspnetcore, csharp, backend]
+cross_posts:
+  - platform: medium
+    url: https://medium.com/@pabasaramahindapala/business-rules-dont-have-to-live-in-a-wiki-page-enforcing-them-with-a-roslyn-analyzer-a10627874f5b
+medium_guid: https://medium.com/p/a10627874f5b
 hero: /public/images/enforcing-tenant-isolation-with-a-roslyn-analyzer/hero.jpg
 ---
 
