@@ -43,8 +43,8 @@ description: What Pabasara Mahindapala is working on, reading, and thinking abou
       <div class="now-card-body">
         <h2 class="now-card-label">Building</h2>
         <!-- <p>An open-source Angular 18 PDF annotation editor as a hobby project. Current focus: annotation persistence reliability and page manipulation.</p> -->
-        <p>Contributing to <a href="https://github.com/geelen/mcp-remote" target="_blank" rel="noopener noreferrer">mcp-remote</a>, the proxy that lets stdio-only MCP clients reach remote servers. My
-        <a href="https://github.com/geelen/mcp-remote/pull/262" target="_blank" rel="noopener noreferrer">fix for the OAuth callback port crash (#262)</a> shipped in 0.1.39.</p>
+        <p>Contributing to <a href="https://github.com/punkpeye/mcp-remote" target="_blank" rel="noopener noreferrer">mcp-remote</a>, the proxy that lets stdio-only MCP clients reach remote servers. My
+        <a href="https://github.com/punkpeye/mcp-remote/pull/262" target="_blank" rel="noopener noreferrer">fix for the OAuth callback port crash (#262)</a> shipped in 0.1.39.</p>
         <!-- <p>This website - migrating from the Lanyon theme to a custom design using Jekyll data files and CSS custom properties.</p> -->
       </div>
     </div>
