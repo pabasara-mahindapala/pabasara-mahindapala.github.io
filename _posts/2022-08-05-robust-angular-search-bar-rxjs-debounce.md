@@ -4,7 +4,7 @@ title: A Robust Angular Search Bar with RxJs Debounce
 published: true
 description: A robust search bar in Angular using RxJS debounce, distinctUntilChanged, and switchMap to avoid unnecessary API calls.
 categories: [software-development, frontend, angular]
-tags: [angular, javascript, software, programming, coding, rxjs, debounce]
+tags: [angular, frontend, javascript]
 cross_posts:
   - platform: medium
     url: https://medium.com/javascript-in-plain-english/a-robust-angular-search-bar-with-rxjs-debounce-29a082d6816e

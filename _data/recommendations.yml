@@ -1,0 +1,42 @@
+# LinkedIn recommendations, newest first. Text is verbatim; roles are as at the time of writing.
+# `featured: true` shows the `highlight` (an exact sentence from `text`) on the homepage.
+
+- id: oan-ali
+  name: Oan Ali
+  role: Enterprise & Digital Transformation Leader, Chief Architect
+  date: 2026-05-23
+  featured: true
+  highlight: Pabasara demonstrated strong expertise in API Gateway, integration, and middleware technologies, and played a key role in delivering scalable and reliable integration solutions in a complex banking environment.
+  text:
+    - I had the pleasure of working with Pabasara Mahindapala during the Meem Digital Bank revamp program, where he represented the WSO2 side while I led the architecture initiatives from GIB. Pabasara demonstrated strong expertise in API Gateway, integration, and middleware technologies, and played a key role in delivering scalable and reliable integration solutions in a complex banking environment.
+    - What stood out most was his technical depth, professionalism, and ability to collaborate effectively across teams. He consistently brought practical solutions, strong ownership, and a problem-solving mindset to the table. I highly recommend him for any organization looking for a skilled integration and API technology specialist.
+
+- id: martin-jones
+  name: Martin Jones
+  role: Integration Architect, University of Edinburgh
+  date: 2025-07-19
+  featured: true
+  highlight: He delivered at a pace our testers couldn’t keep up with and he was always super easy to deal with. I have since cited him in numerous interviews and conversations with peers and his code changes still provide a template for our in house developers to copy.
+  text:
+    - I had the absolute pleasure to work with Pabasara on a large scale API migration project at the University of Edinburgh. He delivered at a pace our testers couldn’t keep up with and he was always super easy to deal with. I have since cited him in numerous interviews and conversations with peers and his code changes still provide a template for our in house developers to copy. I cannot recommend him enough.
+
+- id: dumindu-madushanka
+  name: Dumindu Madushanka
+  role: CEO, DevUpLink
+  date: 2022-09-26
+  text:
+    - Pabasara is passionate about his work and has exceptional skills in the software engineering field. His work is always top-notch, and he is always welcoming to feedback and ready to make improvements. It was a pleasure to work with such a talented mind and helpful professional with a positive attitude. He will add vibrant energy to any company.
+
+- id: lakshin-karunaratne
+  name: Lakshin Karunaratne
+  role: Senior Tech Lead, DevUpLink
+  date: 2021-06-08
+  text:
+    - Pabasara is a hardworking talented individual, with the capability of solving complex problems and developing solutions with minimum supervision maintaining good code quality using his technical expertise. He is also a very good team player, a quick learner and is always willing to take any challenge with a positive attitude. Any team would be lucky to have such an individual.
+
+- id: buddika-kulasekara
+  name: Buddika Kulasekara
+  role: Full Stack Developer
+  date: 2021-04-30
+  text:
+    - Pabasara is one of the most enthusiastic people I've worked with. He is always punctual. He provided outstanding results for DevUpLink. Energetic and broad-minded developer. Detail oriented team player. Always willing to take challenges and a quick learner. No matter how complex the problem is, he will always come up with a brilliant solution. I enjoyed working with him and any team will be lucky to have him.

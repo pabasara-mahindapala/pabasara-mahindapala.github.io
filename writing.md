@@ -2,7 +2,7 @@
 layout: default
 title: Writing
 permalink: /writing/
-description: All articles by Pabasara Mahindapala - identity, frontend engineering, software architecture, and cloud.
+description: All articles by Pabasara Mahindapala on identity and access management, OAuth and MCP, AI agents, software architecture, and frontend engineering.
 ---
 
 <div class="page writing-archive">
@@ -33,10 +33,11 @@ description: All articles by Pabasara Mahindapala - identity, frontend engineeri
         {% for post in year_group.items %}
           {% assign post_tag_slugs = "" | split: "" %}
           {% for tag in post.tags %}
-            {% assign post_tag_slugs = post_tag_slugs | push: tag | join: " " %}
+            {% assign tag_slug = tag | slugify %}
+            {% assign post_tag_slugs = post_tag_slugs | push: tag_slug %}
           {% endfor %}
           <li class="post-card"
-              data-tags="{{ post.tags | join: ' ' | slugify: 'pretty' }}"
+              data-tags="{{ post_tag_slugs | join: ' ' }}"
               itemscope itemtype="https://schema.org/BlogPosting">
             <div class="post-card-meta">
               <span itemprop="datePublished" class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
@@ -87,7 +88,7 @@ description: All articles by Pabasara Mahindapala - identity, frontend engineeri
         cards.forEach(function (c) { c.style.display = ''; });
       } else {
         cards.forEach(function (c) {
-          var tags = c.getAttribute('data-tags') || '';
+          var tags = (c.getAttribute('data-tags') || '').split(' ');
           c.style.display = tags.indexOf(selected) !== -1 ? '' : 'none';
         });
       }

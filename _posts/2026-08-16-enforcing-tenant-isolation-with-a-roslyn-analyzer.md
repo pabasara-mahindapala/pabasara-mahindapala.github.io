@@ -4,8 +4,7 @@ title: "Business Rules Don't Have to Live in a Wiki Page: Enforcing Them with a 
 published: true
 description: "A business rule that lived only in developers' memory, pushed down into the compiler with a .NET Roslyn analyzer that warns on every rule violation"
 categories: [dotnet, security, authorization, aspnetcore]
-tags:
-  [dotnet, roslyn, analyzers, security, authorization, multitenancy, aspnetcore, csharp, backend]
+tags: [dotnet, security]
 cross_posts:
   - platform: medium
     url: https://medium.com/@pabasaramahindapala/business-rules-dont-have-to-live-in-a-wiki-page-enforcing-them-with-a-roslyn-analyzer-a10627874f5b

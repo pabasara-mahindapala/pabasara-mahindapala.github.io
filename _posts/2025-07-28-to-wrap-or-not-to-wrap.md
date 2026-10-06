@@ -4,7 +4,7 @@ title: "To wrap or not to wrap"
 published: true
 description: "To wrap or not to wrap, that is the Angular question."
 categories: [abstraction, angular, front-end-development, programming, web-development]
-tags: [abstraction, angular, front-end-development, programming, web-development]
+tags: [angular, frontend, software-architecture, abstraction]
 cross_posts:
   - platform: medium
     url: https://javascript.plainenglish.io/to-wrap-or-not-to-wrap-883b6e954114

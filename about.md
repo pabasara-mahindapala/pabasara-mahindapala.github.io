@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About
-description: About Pabasara Mahindapala - Senior Software Engineer at WSO2, writing about identity, frontend engineering, and software architecture.
+description: About Pabasara Mahindapala, Senior Software Engineer at WSO2 specialising in identity and access management and enterprise integration.
 published: true
 ---
 
@@ -37,6 +37,8 @@ On the side I build open-source projects and experiment with new technologies.
 ## How I work
 
 Five years of working with customers has taught me that the right answer is usually "it depends", and the value is in knowing *what* it depends on.
+
+For what the people I have worked with say, see [Recommendations](/recommendations/).
 
 ## What I write about
 

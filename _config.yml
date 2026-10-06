@@ -7,10 +7,10 @@ permalink: pretty
 
 # Site
 title:       Pabasara Mahindapala
-tagline:     Software Engineer
+tagline:     Senior Software Engineer at WSO2
 description: >
-  Senior Software Engineer at WSO2. Writing about identity, frontend engineering,
-  and what breaks in production.
+  Senior Software Engineer at WSO2, specialising in identity and access management
+  and enterprise integration. Writing about IAM, AI agents, and what breaks in production.
 url:     https://pabasara-mahindapala.github.io
 baseurl: ""
 
