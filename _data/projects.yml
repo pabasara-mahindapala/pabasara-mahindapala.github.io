@@ -1,3 +1,16 @@
+- name: skills
+  description: The AI agent skills I use day to day, written as SKILL.md files and kept in sync between agents with a script.
+  tech: [AI Agents, Claude Code, GitHub Copilot, Shell, Python]
+  url: https://github.com/pabasara-mahindapala/skills
+  status: active
+
+- name: mcp-remote (contribution)
+  description: Fixed a startup crash in mcp-remote, the proxy that lets stdio-only MCP clients reach remote servers. When the OAuth callback port is already taken, it now binds another port and re-registers the client, or fails with a clear message when the port has been pinned. Merged in PR 262 and shipped in 0.1.39.
+  tech: [TypeScript, Node.js, OAuth 2.0, MCP]
+  url: https://github.com/punkpeye/mcp-remote/pull/262
+  blog_post: /software-development/2026/09/07/mcp-remote-oauth-callback-port-crash/
+  status: active
+
 - name: zero-shot-image-classifier
   description: Classifies large photo archives into categories using OpenAI's CLIP model. No labelled data, no fine-tuning, no cloud uploads. Entirely private. Sorts images with prompt ensembling across different categories, routes low-confidence results to a review folder, and runs entirely locally.
   tech: [Python, CLIP, PyTorch, Machine Learning, MPS]
@@ -22,6 +35,19 @@
   tech: [Python, Shell, macOS, Automator]
   url: https://github.com/pabasara-mahindapala/clipboard-history
   status: active
+
+- name: m2m-app-creator
+  description: CLI that automates machine-to-machine (M2M) application setup in WSO2 Identity Server. Reads app definitions from config, resolves API resources, creates client credentials apps, and authorizes each one with the required scopes - validating everything before the first API call.
+  tech: [Java, WSO2 Identity Server, OAuth 2.0, Maven]
+  url: https://github.com/pabasara-mahindapala/m2m-app-creator
+  status: active
+
+- name: Asgardeo Samples (Remix and Express)
+  description: Two sample apps that add Asgardeo login, one to a Remix app and one to an Express app with Passport.js. Both now in the official asgardeo-samples repository.
+  tech: [TypeScript, JavaScript, Remix, Express, Passport.js, Asgardeo, OIDC]
+  url: https://github.com/asgardeo-samples/asgardeo-javascript-samples
+  blog_post: /remix/asgardeo/software-development/programming/coding/frontend/web-development/2025/05/18/securing-react-remix-apps-with-asgardeo/
+  status: reference
 
 - name: ContactBook
   description: Reference implementation of the CQRS pattern in ASP.NET Core Web API. Separates read and write models so each can scale and evolve independently - Commands mutate state, Queries retrieve it, with no crossover. The companion code for the blog post on CQRS in ASP.NET Core.

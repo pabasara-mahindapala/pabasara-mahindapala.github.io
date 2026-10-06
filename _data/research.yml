@@ -1,0 +1,41 @@
+- title: "Beyond Data Residency: Compensating Controls for Sovereign Management of NHS Patient Data on AWS under the DSP Toolkit"
+  authors: ["B.M.P.D. Balasooriya", "D.P.P. Mahindapala"]
+  venue: "APIIT International Research Conference 2026 (AIRC 2026)"
+  date: 2026-10-01
+  isbn: "978-624-6201-21-0"
+  status: published
+  award: "Best Paper Award"
+  summary: >-
+    Hosting NHS patient data in the AWS London Region settles where the data is stored.
+    It does not settle who can act on it, because AWS is administered through a global management plane.
+    The paper reviews 36 studies and finds no peer-reviewed work that maps the NHS Data Security and Protection (DSP) Toolkit v8 to concrete AWS controls.
+    It proposes four compensating controls and tests them in a sandbox AWS organisation.
+  points:
+    - "Customer-managed KMS keys keep decryption authority with the NHS."
+    - "Service Control Policies confine administrative action to the London Region."
+    - "An organisation-wide CloudTrail trail, written to an immutable S3 bucket, makes every privileged action auditable."
+    - "A self-hosted WSO2 API Manager gateway sits in front of all access to patient data."
+  keywords: [AWS, NHS DSP Toolkit, UK GDPR, Data sovereignty, Cloud security]
+  links:
+    # - label: "ORCID record"
+      # url: "https://orcid.org/0009-0001-8779-3933"
+    - label: "Conference page"
+      url: "https://apiit.lk/international-research-hub-detail/apiit-international-research-conference-2026"
+  bibtex: |
+    @inproceedings{balasooriya2026beyond,
+      author    = {Balasooriya, B. M. P. D. and Mahindapala, D. P. P.},
+      title     = {Beyond Data Residency: Compensating Controls for Sovereign Management of {NHS} Patient Data on {AWS} under the {DSP} Toolkit},
+      booktitle = {APIIT International Research Conference 2026},
+      year      = {2026},
+      month     = oct,
+      isbn      = {978-624-6201-21-0},
+      url       = {https://apiit.lk/international-research-hub-detail/apiit-international-research-conference-2026}
+    }
+
+- title: "Cost-Optimization Algorithm Comparison for Fresh Crop Transportation in Sri Lanka"
+  venue: "Undergraduate research, University of Ruhuna"
+  year: 2021
+  summary: >-
+    Compared optimization methods to find the most suitable approach for minimizing the cost of transporting fresh crops in Sri Lanka.
+    The findings were applied to build an agricultural marketing and transportation platform.
+  keywords: [Optimization, Logistics, Agriculture]

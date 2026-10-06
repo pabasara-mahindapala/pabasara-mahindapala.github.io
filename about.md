@@ -11,13 +11,24 @@ published: true
 
 I'm <span itemprop="name">Pabasara Mahindapala</span>, a <span itemprop="jobTitle">Senior Software Engineer</span> at <span itemprop="worksFor" itemscope itemtype="https://schema.org/Organization"><a href="https://wso2.com/about/team/pabasara-mahindapala/" itemprop="url"><span itemprop="name">WSO2</span></a></span>, based in Colombo, Sri Lanka.
 
-I spend most of my working hours helping organisations implement and optimise their Identity and Access Management and enterprise integration solutions - primarily with WSO2 products.
+I spend most of my working hours helping organisations implement and optimise their Identity and Access Management and enterprise integration solutions, primarily with WSO2 products.
 
 </div>
 
+## Get in touch
+
+- **Email:** pabasaramahindapala[at]gmail[dot]com
+- **GitHub:** [pabasara-mahindapala]({{ site.github }})
+- **LinkedIn:** [pabasara-mahindapala]({{ site.author.linkedIn }})
+- **Medium:** [@pabasaramahindapala](https://medium.com/@pabasaramahindapala)
+- **Twitter / X:** [@pabasara_mahi](https://twitter.com/{{ site.twitter_username }})
+- **Gravatar:** [pabasaramahindapala](https://gravatar.com/pabasaramahindapala)
+- **Stack Overflow:** [pabasara-mahindapala](https://stackoverflow.com/users/10310943/pabasara-mahindapala)
+- **ORCID:** [0009-0001-8779-3933]({{ site.author.orcid }}) - see [Research](/research/)
+
 ## What I work on
 
-My day job sits at the intersection of identity engineering and customer-facing consulting. 
+My day job sits at the intersection of identity engineering and customer-facing consulting.
 
 I work with customers across multiple industries, which means I've seen the same IAM mistake made in at least three different regulatory environments. It keeps the job interesting.
 
@@ -32,19 +43,11 @@ Five years of working with customers has taught me that the right answer is usua
 Writing is the way I process what I learn. The recurring themes:
 
 - **Identity and access management** - OIDC, OAuth2, SAML, RBAC, session management, and the edge cases that bite in production
-- **AI and agents** - useful tools, but with a lot of hype around them; I write about what they can actually do, where human judgment is still irreplaceable, and how they work under the hood
+- **AI and agents** - useful tools, but an agent with access to real systems needs more controls than any other identity: who it is, what it is allowed to do, how its actions are audited, and where a human still has to sign off. I write about governing agents in practice, and how they work under the hood
 - **Frontend engineering** - Angular, RxJS patterns, component architecture, and the tradeoffs that don't show up in tutorials
 - **Software architecture** - system design, and applying patterns to real problems
 - **What breaks in production** - war stories and post-mortems, because failure is the best teacher
 
-Most of my long-form writing appears on [Medium](https://medium.com/@pabasaramahindapala).
+Most of my long-form writing appears on this [site](/writing/) and on [Medium](https://medium.com/@pabasaramahindapala).
 
-## Get in touch
 
-- **Email:** pabasaramahindapala[at]gmail[dot]com
-- **GitHub:** [pabasara-mahindapala]({{ site.github }})
-- **LinkedIn:** [pabasara-mahindapala]({{ site.author.linkedIn }})
-- **Medium:** [@pabasaramahindapala](https://medium.com/@pabasaramahindapala)
-- **Twitter / X:** [@pabasara_mahi](https://twitter.com/{{ site.twitter_username }})
-- **Gravatar:** [pabasaramahindapala](https://gravatar.com/pabasaramahindapala)
-- **Stack Overflow:** [pabasara-mahindapala](https://stackoverflow.com/users/10310943/pabasara-mahindapala)
