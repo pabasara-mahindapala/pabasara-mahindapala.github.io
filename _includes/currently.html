@@ -7,7 +7,7 @@
       <span class="currently-label">{{ item.label }}</span>
       <span class="currently-value">
         {% if item.url %}
-          <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.text }}</a>
+          <a href="{{ item.url }}"{% if item.url contains "://" %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ item.text }}</a>
         {% else %}
           {{ item.text }}
         {% endif %}

@@ -1,12 +1,17 @@
 items:
   - emoji: "✍️"
     label: "Writing"
-    text: "Mostly on Medium"
-    url: "https://medium.com/@pabasaramahindapala"
+    text: >-
+      <a href="/writing/">This site</a> and
+      <a href="https://medium.com/@pabasaramahindapala" target="_blank" rel="noopener noreferrer">Medium</a>
   - emoji: "🔧"
     label: "Building"
     text: "Open-source projects"
     url: "https://github.com/pabasara-mahindapala?tab=repositories"
   - emoji: "📖"
     label: "Reading"
-    text: "About Agentic AI"
+    text: "Governing AI agents in the enterprise"
+  - emoji: "🔬"
+    label: "Research"
+    text: "Best Paper Award at AIRC 2026"
+    url: "/research/"

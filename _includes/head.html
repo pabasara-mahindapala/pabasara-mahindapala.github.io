@@ -72,6 +72,7 @@
           {%- if site.twitter_username %}{{ sep }}"https://twitter.com/{{ site.twitter_username }}"{%- assign sep = "," -%}{%- endif -%}
           {%- if site.medium_username %}{{ sep }}"https://medium.com/@{{ site.medium_username }}"{%- assign sep = "," -%}{%- endif -%}
           {%- if site.author.linkedIn %}{{ sep }}"{{ site.author.linkedIn }}"{%- assign sep = "," -%}{%- endif -%}
+          {%- if site.author.orcid %}{{ sep }}"{{ site.author.orcid }}"{%- assign sep = "," -%}{%- endif -%}
         ]
       },
       {
