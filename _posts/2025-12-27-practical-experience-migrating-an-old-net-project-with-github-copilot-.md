@@ -4,7 +4,7 @@ title: "Practical Experience: Migrating an Old .NET Project with GitHub Copilot
 published: true
 description: "Practical Experience: Migrating an Old .NET Project with GitHub Copilot Agent"
 categories: [dotnet, ai, c-sharp-programming, cqrs, github]
-tags: [dotnet, ai, c-sharp-programming, cqrs, github]
+tags: [ai, dotnet, cqrs]
 cross_posts:
   - platform: medium
     url: https://towardsdev.com/practical-experience-migrating-an-old-net-project-with-github-copilot-agent-cb564b6688fe

@@ -4,7 +4,7 @@ title: "Securing Remix Apps with Asgardeo - Part 2"
 published: true
 description: "Add logout, token refresh, and route protection to your Remix app secured with Asgardeo — part two of the series."
 categories: [react, remix, asgardeo, reactjs, web-development, front-end-development]
-tags: [react, remix, asgardeo, reactjs, web-development, front-end-development, wso2, authentication, authorization, oidc]
+tags: [react, frontend, identity, wso2, authentication, oidc, oauth2]
 series: asgardeo-remix
 series_order: 2
 cross_posts:

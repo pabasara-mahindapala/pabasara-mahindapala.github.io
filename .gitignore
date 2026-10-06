@@ -42,3 +42,7 @@ node_modules
 bower_components
 .vscode/settings.json
 .claude/settings.local.json
+
+# Jekyll local build caches
+.jekyll-metadata
+.jekyll-cache

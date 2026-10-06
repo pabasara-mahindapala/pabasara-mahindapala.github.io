@@ -4,7 +4,7 @@ title: "mcp-remote Crashed When the OAuth Port Was Taken, Here's How I Fixed It"
 published: true
 description: "An open source contribution to mcp-remote: recovering from EADDRINUSE on the OAuth callback port without silently breaking the registered redirect_uri."
 categories: [software-development]
-tags: [mcp, oauth2, nodejs, open-source, claude, typescript]
+tags: [mcp, oauth2, open-source, claude, typescript]
 cross_posts:
   - platform: medium
     url: https://medium.com/@pabasaramahindapala/mcp-remote-crashed-when-the-oauth-port-was-taken-heres-how-i-fixed-it-142630478746

@@ -4,8 +4,7 @@ title: "MCP Server Authentication in .NET: Implement OAuth 2.1 with PKCE Nativel
 published: true
 description: "The MCP spec mandates OAuth 2.1 with PKCE for remote servers. This post walks through implementing the full auth layer in ASP.NET Core."
 categories: [dotnet, security, authentication, aspnetcore]
-tags:
-  [dotnet, mcp, oauth2, pkce, security, aspnetcore, identity, csharp, backend]
+tags: [mcp, oauth2, dotnet, security]
 cross_posts:
   - platform: medium
     url: https://medium.com/@pabasaramahindapala/mcp-server-authentication-in-net-implement-oauth-2-1-with-pkce-natively-5b5caae76e67

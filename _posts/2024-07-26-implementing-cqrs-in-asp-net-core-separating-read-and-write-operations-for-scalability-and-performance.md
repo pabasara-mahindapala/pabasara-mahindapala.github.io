@@ -4,7 +4,7 @@ title: Implementing CQRS in ASP.NET Core - Separating Read and Write Operations 
 published: true
 description: How to separate read and write operations in ASP.NET Core using CQRS.
 categories: [software-development, software-architecture]
-tags: [software, programming, coding, software-architecture, csharp, c#, aspnet-core, cqrs, command-query-responsibility-segregation, scalability, performance]
+tags: [dotnet, cqrs, software-architecture, scalability]
 cross_posts:
   - platform: medium
     url: https://medium.com/towardsdev/implementing-cqrs-in-asp-net-af30881279df

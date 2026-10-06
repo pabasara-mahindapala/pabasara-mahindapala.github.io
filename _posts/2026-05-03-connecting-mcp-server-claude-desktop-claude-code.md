@@ -4,7 +4,7 @@ title: "Testing Your Local MCP Server with Claude Desktop and Claude Code"
 published: true
 description: "You've built an MCP server and it's running on localhost. Here's how you can actually test it."
 categories: [software-development]
-tags: [mcp, claude, claude-code, oauth2, dotnet]
+tags: [mcp, ai, oauth2, dotnet, claude]
 cross_posts:
   - platform: medium
     url: https://medium.com/towardsdev/testing-your-local-mcp-server-with-claude-desktop-and-claude-code-9afef3c76fb4

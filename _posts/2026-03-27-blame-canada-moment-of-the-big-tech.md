@@ -4,7 +4,7 @@ title: "Blame Canada Moment of the Big Tech"
 published: true
 description: "The big tech is having a 'Blame Canada' moment. Recent lawsuits, addictive product designs."
 categories: [opinion, social-media, tech-ethics]
-tags: [big-tech, social-media, screen-time, parenting, accountability, meta, youtube]
+tags: [big-tech]
 cross_posts:
   - platform: linkedin
     url: https://www.linkedin.com/pulse/blame-canada-moment-big-tech-pabasara-mahindapala-wb4sc/
