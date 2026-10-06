@@ -38,6 +38,8 @@ On the side I build open-source projects and experiment with new technologies.
 
 Five years of working with customers has taught me that the right answer is usually "it depends", and the value is in knowing *what* it depends on.
 
+For what the people I have worked with say, see [Recommendations](/recommendations/).
+
 ## What I write about
 
 Writing is the way I process what I learn. The recurring themes:

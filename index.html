@@ -22,6 +22,30 @@ description: "Senior Software Engineer at WSO2. Writing about identity, frontend
 
 {% include currently.html %}
 
+<section class="recommendations">
+  <div class="section-header">
+    <p class="section-label">What people say</p>
+    <a href="/recommendations/" class="section-link">All recommendations →</a>
+  </div>
+  <ul class="rec-list rec-list--featured">
+    {% assign featured = site.data.recommendations | where: "featured", true %}
+    {% for rec in featured limit:2 %}
+    <li class="rec-card">
+      <figure>
+        <blockquote class="rec-quote">
+          <p>{{ rec.highlight }}</p>
+        </blockquote>
+        <figcaption class="rec-byline">
+          <span class="rec-name">{{ rec.name }}</span>
+          <span class="rec-role">{{ rec.role | escape }}</span>
+          <a class="rec-more" href="/recommendations/#{{ rec.id }}">Read in full →</a>
+        </figcaption>
+      </figure>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
 <section class="recent-posts">
   <div class="section-header">
     <p class="section-label">Recent writing</p>
