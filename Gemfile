@@ -4,6 +4,7 @@ gem 'jekyll',           '~> 4.3'
 gem 'jekyll-paginate',  '~> 1.1'
 gem 'jekyll-sitemap'
 gem 'jekyll-feed'
+gem 'jekyll-redirect-from'
 gem 'jemoji'
 gem 'webrick'           # required for Ruby 3+
 

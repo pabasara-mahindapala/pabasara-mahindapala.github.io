@@ -1165,6 +1165,7 @@ tr:last-child td { border-bottom: none; }
 }
 
 /* --- Research page --- */
+.research-orcid { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; }
 .research-orcid a {
   display: inline-flex;
   align-items: center;

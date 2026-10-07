@@ -3,7 +3,10 @@ layout: post
 title: "Sorting 70,000 Photos Without Losing the Weekend"
 published: true
 description: "How I used OpenAI's CLIP model to classify 70,000 photos into 13 categories locally in three hours — no cloud, no API, no labelled data."
-categories: [machine-learning, python, productivity, image-classification]
+categories: [ai]
+redirect_from:
+  - /machine-learning/python/productivity/image-classification/2026/05/31/sorting-70000-photos-with-clip/
+legacy_id: /machine-learning/python/productivity/image-classification/2026/05/31/sorting-70000-photos-with-clip
 tags: [machine-learning, productivity, image-classification]
 cross_posts:
   - platform: medium

@@ -3,7 +3,7 @@ markdown:    kramdown
 highlighter: rouge
 
 # Permalinks
-permalink: pretty
+permalink: /writing/:title/
 
 # Site
 title:       Pabasara Mahindapala
@@ -36,6 +36,7 @@ author:
   email:    pabasaramahindapala@gmail.com
   linkedIn: https://www.linkedin.com/in/pabasara-mahindapala/
   orcid:    https://orcid.org/0009-0001-8779-3933
+  scholar:  https://scholar.google.com/citations?user=tUGNHz4AAAAJ
 
 # Plugins
 plugins:
@@ -43,6 +44,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-redirect-from
 
 # Exclude from production build
 exclude:

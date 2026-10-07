@@ -32,10 +32,10 @@ description: What Pabasara Mahindapala is working on, reading, and thinking abou
         <p>Working on a few articles on IAM, software architecture and Agentic AI topics.</p>
         <p>My co-authored <a href="/research/">research paper</a> was published at the APIIT International Research Conference 2026 (AIRC 2026) on 1 October and won the <strong>Best Paper Award</strong>. It maps the NHS DSP Toolkit to four AWS controls that govern who can act on patient data, not only where it is stored.</p>
         <p>Just published a piece on
-        <a href="/software-development/2026/09/07/mcp-remote-oauth-callback-port-crash/">why a busy port made mcp-remote crash on startup</a>, and why the obvious fix quietly breaks OAuth.</p>
+        <a href="{% post_url 2026-09-07-mcp-remote-oauth-callback-port-crash %}">why a busy port made mcp-remote crash on startup</a>, and why the obvious fix quietly breaks OAuth.</p>
         <!-- <p>Before that,
-        <a href="/dotnet/security/authorization/aspnetcore/2026/08/16/enforcing-tenant-isolation-with-a-roslyn-analyzer/">enforcing a tenant isolation rule with a Roslyn analyzer</a> and a breakdown of the
-        <a href="/mcp/oauth/security/identity/2026/07/11/mcp-authorization-2026-07-28-changes/">six authorization changes landed in the 2026-07-28 MCP spec</a>.</p> -->
+        <a href="{% post_url 2026-08-16-enforcing-tenant-isolation-with-a-roslyn-analyzer %}">enforcing a tenant isolation rule with a Roslyn analyzer</a> and a breakdown of the
+        <a href="{% post_url 2026-07-11-mcp-authorization-2026-07-28-changes %}">six authorization changes landed in the 2026-07-28 MCP spec</a>.</p> -->
       </div>
     </div>
 

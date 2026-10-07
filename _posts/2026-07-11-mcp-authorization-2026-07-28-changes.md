@@ -3,7 +3,10 @@ layout: post
 title: "How the Upcoming MCP Auth Spec Tightens Up (PKCE Won't Save You)"
 published: true
 description: "The 2026-07-28 MCP authorization release candidate brings six hardening and interoperability fixes: issuer validation, per-issuer credentials, refresh token guidance, and more. Explained in plain terms."
-categories: [mcp, oauth, security, identity]
+categories: [identity]
+redirect_from:
+  - /mcp/oauth/security/identity/2026/07/11/mcp-authorization-2026-07-28-changes/
+legacy_id: /mcp/oauth/security/identity/2026/07/11/mcp-authorization-2026-07-28-changes
 tags: [mcp, oauth2, identity, ai, oidc, security]
 cross_posts:
   - platform: medium
@@ -46,7 +49,7 @@ To avoid this, before starting the login flow, the client notes exactly which au
 
 ![How issuer validation stops a mix-up attack](/public/images/mcp-authorization-2026-07-28-changes/diagram-2-mixup.png "How issuer validation stops a mix-up attack"){: .centered}
 
-This is notable because PKCE, the protection most people assume covers this, does not stop mix-up attacks. The client sends its code verifier to whichever token endpoint it was tricked into using. (Read more on how PKCE is involved in MCP auth here: [MCP Server Authentication in .NET](/dotnet/security/authentication/aspnetcore/2026/05/02/mcp-server-oauth2-dotnet/).) 
+This is notable because PKCE, the protection most people assume covers this, does not stop mix-up attacks. The client sends its code verifier to whichever token endpoint it was tricked into using. (Read more on how PKCE is involved in MCP auth here: [MCP Server Authentication in .NET]({% post_url 2026-05-02-mcp-server-oauth2-dotnet %}).) 
 
 Today, authorization servers SHOULD emit `iss` - and must advertise it via `authorization_response_iss_parameter_supported` if they do. The spec signals that a future revision is expected to upgrade that to a MUST, so operators are encouraged to start emitting it now.
 

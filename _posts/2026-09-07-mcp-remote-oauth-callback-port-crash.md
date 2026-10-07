@@ -3,7 +3,10 @@ layout: post
 title: "mcp-remote Crashed When the OAuth Port Was Taken, Here's How I Fixed It"
 published: true
 description: "An open source contribution to mcp-remote: recovering from EADDRINUSE on the OAuth callback port without silently breaking the registered redirect_uri."
-categories: [software-development]
+categories: [identity]
+redirect_from:
+  - /software-development/2026/09/07/mcp-remote-oauth-callback-port-crash/
+legacy_id: /software-development/2026/09/07/mcp-remote-oauth-callback-port-crash
 tags: [mcp, oauth2, open-source, claude, typescript]
 cross_posts:
   - platform: medium
@@ -22,7 +25,7 @@ hero: /public/images/mcp-remote-oauth-callback-port-crash/hero.jpg
 
 If you have ever connected Claude Desktop to a remote [MCP server](https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro), you might have run `mcp-remote`.
 
-Most MCP clients only support STDIO to a local process. Remote MCP servers require HTTP and expect a full OAuth flow. `mcp-remote` bridges the gap: it reads STDIO on one side and makes authenticated HTTP requests on the other side. A walkthrough of that setup is available in [Testing Your Local MCP Server with Claude Desktop and Claude Code](/software-development/2026/05/03/connecting-mcp-server-claude-desktop-claude-code/).
+Most MCP clients only support STDIO to a local process. Remote MCP servers require HTTP and expect a full OAuth flow. `mcp-remote` bridges the gap: it reads STDIO on one side and makes authenticated HTTP requests on the other side. A walkthrough of that setup is available in [Testing Your Local MCP Server with Claude Desktop and Claude Code]({% post_url 2026-05-03-connecting-mcp-server-claude-desktop-claude-code %}).
 
 It runs a local HTTP server to capture the OAuth redirect, handles the browser authentication flow, and caches the resulting token for reuse.
 

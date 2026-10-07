@@ -55,7 +55,7 @@ layout: post
 title: "Post Title"
 published: true
 description: "One-sentence summary shown in post cards and meta tags."
-categories: [category-one, category-two]
+categories: [identity]        # exactly one slug from _data/categories.yml
 tags: [tag-one, tag-two]
 cross_posts:
   - platform: medium          # or linkedin, plainenglish, towardsdev
@@ -65,8 +65,14 @@ hero: /public/images/slug/hero.jpg       # optional: social preview image (og:im
 # series fields (optional):
 series: series-slug
 series_order: 1
+# only on posts whose URL has changed (never remove):
+redirect_from:
+  - /old/url/
+legacy_id: /old/feed/id                  # keeps the Atom entry id stable
 ---
 ```
+
+Post URLs are `/writing/<slug>/`, where the slug comes from the filename or a `slug:` field. If a published post's URL ever changes, add the old URL to `redirect_from` (jekyll-redirect-from builds an instant-refresh page with a canonical link) and set `legacy_id` to the old feed id so feed readers do not show the post as new. Disqus threads key on the first `redirect_from` entry.
 
 Post images go in `/public/images/<post-slug>/`.
 
@@ -74,7 +80,7 @@ Post images go in `/public/images/<post-slug>/`.
 
 ## Post cards
 
-Cards are text only: date, up to two category chips, any `cross_posts` badges, title, and a summary. The summary is the `description` field, falling back to the first 35 words of the post body when `description` is missing or identical to the title. There are no thumbnails anywhere in the post lists.
+Cards are text only: date, the category chip (label from `_data/categories.yml`), any `cross_posts` badges, title, and a summary. The summary is the `description` field, falling back to the first 35 words of the post body when `description` is missing or identical to the title. There are no thumbnails anywhere in the post lists.
 
 Two separate implementations render these cards, so a change to card markup has to be made in both places:
 

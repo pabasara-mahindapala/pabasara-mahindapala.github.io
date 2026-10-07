@@ -3,7 +3,10 @@ layout: post
 title: "Customizing Account Locking Rules in WSO2 Identity Server"
 published: true
 description: "Implement custom account locking rules for different authentication methods in WSO2 Identity Server."
-categories: [authentication, authorization, java, wso2, wso2is]
+categories: [identity]
+redirect_from:
+  - /authentication/authorization/java/wso2/wso2is/2025/04/20/customizing-account-locking-rules-in-wso2-identity-server/
+legacy_id: /authentication/authorization/java/wso2/wso2is/2025/04/20/customizing-account-locking-rules-in-wso2-identity-server
 tags: [identity, java, wso2, authentication]
 cross_posts:
   - platform: medium

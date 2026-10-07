@@ -16,6 +16,10 @@ description: Research by Pabasara Mahindapala, including the AIRC 2026 Best Pape
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#A6CE39"/><text x="12" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#fff">iD</text></svg>
     ORCID: {{ site.author.orcid | remove: "https://orcid.org/" }}
   </a>
+  <a href="{{ site.author.scholar }}" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#4285F4"/><path d="M12 5.5 4.5 10 12 14.5 19.5 10z" fill="#fff"/><path d="M7.5 12.2v3.1c0 1.2 2 2.2 4.5 2.2s4.5-1 4.5-2.2v-3.1L12 14.9z" fill="#fff"/></svg>
+    Google Scholar
+  </a>
 </p>
 
   </div>

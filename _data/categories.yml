@@ -1,0 +1,6 @@
+# Post categories: one per post. Slug (used in front matter) -> display label.
+identity: Identity & Access
+ai: AI & Agents
+architecture: Architecture & Integration
+frontend: Frontend
+opinion: Opinion

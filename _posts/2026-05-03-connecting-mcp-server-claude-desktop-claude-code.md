@@ -3,7 +3,10 @@ layout: post
 title: "Testing Your Local MCP Server with Claude Desktop and Claude Code"
 published: true
 description: "You've built an MCP server and it's running on localhost. Here's how you can actually test it."
-categories: [software-development]
+categories: [ai]
+redirect_from:
+  - /software-development/2026/05/03/connecting-mcp-server-claude-desktop-claude-code/
+legacy_id: /software-development/2026/05/03/connecting-mcp-server-claude-desktop-claude-code
 tags: [mcp, ai, oauth2, dotnet, claude]
 cross_posts:
   - platform: medium
@@ -13,7 +16,7 @@ hero: /public/images/connecting-mcp-server-claude-desktop-claude-code/hero.jpg
 
 ![](/public/images/connecting-mcp-server-claude-desktop-claude-code/hero.jpg "Photo by Unsplash"){: .centered}
 
-[You've built an MCP server](/dotnet/security/authentication/aspnetcore/2026/05/02/mcp-server-oauth2-dotnet/) and it's running on `https://localhost:5000`. Now you want to test it with a real client. How do you connect it to Claude Desktop or Claude Code?
+[You've built an MCP server]({% post_url 2026-05-02-mcp-server-oauth2-dotnet %}) and it's running on `https://localhost:5000`. Now you want to test it with a real client. How do you connect it to Claude Desktop or Claude Code?
 
 ---
 
