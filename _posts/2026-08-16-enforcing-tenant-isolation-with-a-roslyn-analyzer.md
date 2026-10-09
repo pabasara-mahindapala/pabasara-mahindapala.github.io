@@ -3,7 +3,10 @@ layout: post
 title: "Business Rules Don't Have to Live in a Wiki Page: Enforcing Them with a Roslyn Analyzer"
 published: true
 description: "A business rule that lived only in developers' memory, pushed down into the compiler with a .NET Roslyn analyzer that warns on every rule violation"
-categories: [dotnet, security, authorization, aspnetcore]
+categories: [identity]
+redirect_from:
+  - /dotnet/security/authorization/aspnetcore/2026/08/16/enforcing-tenant-isolation-with-a-roslyn-analyzer/
+legacy_id: /dotnet/security/authorization/aspnetcore/2026/08/16/enforcing-tenant-isolation-with-a-roslyn-analyzer
 tags: [dotnet, security]
 cross_posts:
   - platform: medium

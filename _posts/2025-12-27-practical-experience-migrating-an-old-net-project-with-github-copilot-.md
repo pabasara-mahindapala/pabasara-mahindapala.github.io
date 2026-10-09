@@ -3,7 +3,11 @@ layout: post
 title: "Practical Experience: Migrating an Old .NET Project with GitHub Copilot Agent"
 published: true
 description: "Practical Experience: Migrating an Old .NET Project with GitHub Copilot Agent"
-categories: [dotnet, ai, c-sharp-programming, cqrs, github]
+categories: [ai]
+slug: migrating-an-old-net-project-with-github-copilot
+redirect_from:
+  - /dotnet/ai/c-sharp-programming/cqrs/github/2025/12/27/practical-experience-migrating-an-old-net-project-with-github-copilot/
+legacy_id: /dotnet/ai/c-sharp-programming/cqrs/github/2025/12/27/practical-experience-migrating-an-old-net-project-with-github-copilot-
 tags: [ai, dotnet, cqrs]
 cross_posts:
   - platform: medium

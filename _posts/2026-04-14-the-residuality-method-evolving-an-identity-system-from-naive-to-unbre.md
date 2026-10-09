@@ -3,7 +3,11 @@ layout: post
 title: "The Residuality Method: Evolving an Identity System from Naive to Unbreakable"
 published: true
 description: "When we design software, usually we focus on the functional requirements and try to follow the happy path."
-categories: [software-architecture, coding, programming, system-design-concepts, software-development]
+categories: [architecture]
+slug: the-residuality-method-evolving-an-identity-system
+redirect_from:
+  - /software-architecture/coding/programming/system-design-concepts/software-development/2026/04/14/the-residuality-method-evolving-an-identity-system-from-naive-to-unbre/
+legacy_id: /software-architecture/coding/programming/system-design-concepts/software-development/2026/04/14/the-residuality-method-evolving-an-identity-system-from-naive-to-unbre
 tags: [software-architecture, identity]
 cross_posts:
   - platform: medium

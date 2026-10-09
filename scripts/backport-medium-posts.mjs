@@ -407,7 +407,7 @@ layout: post
 title: "${title.replace(/"/g, '\\"')}"
 published: true
 description: "${description.replace(/"/g, '\\"')}"
-categories: [${[...new Set(categories)].slice(0, 6).map(c => `${c}`).join(', ')}]
+categories: []   # pick one from _data/categories.yml
 tags: [${[...new Set(categories)].map(c => `${c}`).join(', ')}]
 ${seriesLines}cross_posts:
   - platform: ${platform}

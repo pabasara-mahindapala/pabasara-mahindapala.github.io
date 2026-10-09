@@ -3,7 +3,10 @@ layout: post
 title: "To wrap or not to wrap"
 published: true
 description: "To wrap or not to wrap, that is the Angular question."
-categories: [abstraction, angular, front-end-development, programming, web-development]
+categories: [frontend]
+redirect_from:
+  - /abstraction/angular/front-end-development/programming/web-development/2025/07/28/to-wrap-or-not-to-wrap/
+legacy_id: /abstraction/angular/front-end-development/programming/web-development/2025/07/28/to-wrap-or-not-to-wrap
 tags: [angular, frontend, software-architecture, abstraction]
 cross_posts:
   - platform: medium

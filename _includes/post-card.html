@@ -3,8 +3,8 @@
   <div class="post-card-meta">
     <span itemprop="datePublished" class="post-date">{{ p.date | date: "%b %-d, %Y" }}</span>
     {% if p.categories %}
-      {% for cat in p.categories limit:2 %}
-        <a href="/writing/" class="tag-chip">{{ cat }}</a>
+      {% for cat in p.categories %}
+        <a href="/writing/" class="tag-chip">{{ site.data.categories[cat] | default: cat }}</a>
       {% endfor %}
     {% endif %}
     {% if p.cross_posts %}

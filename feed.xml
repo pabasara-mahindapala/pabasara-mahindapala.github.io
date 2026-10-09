@@ -1,0 +1,6 @@
+---
+layout: null
+sitemap: false
+---
+
+{% include atom-feed.xml self="/feed.xml" feed_id="/feed.xml" %}

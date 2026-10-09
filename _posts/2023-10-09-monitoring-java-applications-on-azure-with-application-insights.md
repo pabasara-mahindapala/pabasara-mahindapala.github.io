@@ -3,7 +3,10 @@ layout: post
 title: Monitoring Java Applications on Azure with Application Insights
 published: true
 description: Wiring up Azure Application Insights for Java apps - covering agent setup, custom telemetry, and live metrics.
-categories: [software-development, azure]
+categories: [architecture]
+redirect_from:
+  - /software-development/azure/2023/10/09/monitoring-java-applications-on-azure-with-application-insights/
+legacy_id: /software-development/azure/2023/10/09/monitoring-java-applications-on-azure-with-application-insights
 tags: [wso2, azure, java, monitoring]
 cross_posts:
   - platform: medium

@@ -30,8 +30,8 @@ layout: default
     <div class="post-header-meta">
       <span itemprop="datePublished" class="post-date">{{ page.date | date: "%b %-d, %Y" }}</span>
       {% if page.categories %}
-        {% for cat in page.categories limit:2 %}
-          <a href="/writing/" class="tag-chip">{{ cat }}</a>
+        {% for cat in page.categories %}
+          <a href="/writing/" class="tag-chip">{{ site.data.categories[cat] | default: cat }}</a>
         {% endfor %}
       {% endif %}
       {% if page.cross_posts %}
@@ -94,4 +94,4 @@ layout: default
   </ul>
 </div>
 
-{% include disqus.html disqus_identifier=page.disqus_identifier %}
+{% include disqus.html %}

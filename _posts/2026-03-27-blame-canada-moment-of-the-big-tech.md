@@ -3,7 +3,10 @@ layout: post
 title: "Blame Canada Moment of the Big Tech"
 published: true
 description: "The big tech is having a 'Blame Canada' moment. Recent lawsuits, addictive product designs."
-categories: [opinion, social-media, tech-ethics]
+categories: [opinion]
+redirect_from:
+  - /opinion/social-media/tech-ethics/2026/03/27/blame-canada-moment-of-the-big-tech/
+legacy_id: /opinion/social-media/tech-ethics/2026/03/27/blame-canada-moment-of-the-big-tech
 tags: [big-tech]
 cross_posts:
   - platform: linkedin

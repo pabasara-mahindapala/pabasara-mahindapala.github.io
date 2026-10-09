@@ -42,8 +42,8 @@ description: All articles by Pabasara Mahindapala on identity and access managem
             <div class="post-card-meta">
               <span itemprop="datePublished" class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
               {% if post.categories %}
-                {% for cat in post.categories limit:2 %}
-                  <span class="tag-chip">{{ cat }}</span>
+                {% for cat in post.categories %}
+                  <span class="tag-chip">{{ site.data.categories[cat] | default: cat }}</span>
                 {% endfor %}
               {% endif %}
               {% if post.cross_posts %}
