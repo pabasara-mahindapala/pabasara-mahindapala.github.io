@@ -369,6 +369,17 @@ main {
 }
 .section-header .section-label { margin-bottom: 0; }
 
+/* GitHub contribution graph */
+.activity { margin: 2.5rem 0; }
+.activity img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+/* The chart ships a white background, so flip it in dark mode */
+html[data-theme="dark"] .activity img { filter: invert(1) hue-rotate(180deg) brightness(1.15); }
+
 .section-link {
   font-size: 0.8125rem;
   color: var(--color-accent);
@@ -1240,13 +1251,23 @@ tr:last-child td { border-bottom: none; }
 
 .rec-quote {
   margin: 0 0 1rem;
-  padding: 0 0 0 1.25rem;
-  border-left: 3px solid var(--color-accent);
+  padding: 0;
   font-family: var(--font-serif);
   font-style: italic;
   font-size: 1rem;
   line-height: 1.7;
   color: var(--color-text);
+}
+.rec-quote::before {
+  content: "\201C";
+  display: block;
+  height: 1.75rem;
+  font-family: var(--font-serif);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--color-accent);
 }
 .rec-quote p { margin: 0 0 0.75rem; }
 .rec-quote p:last-child { margin-bottom: 0; }

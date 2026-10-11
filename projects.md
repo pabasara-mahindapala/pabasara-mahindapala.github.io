@@ -13,6 +13,8 @@ description: Open-source projects and contributions by Pabasara Mahindapala, fro
 
   </div>
 
+  {% include activity.html %}
+
   <ul class="project-list">
     {% for project in site.data.projects %}
     <li class="project-card">
