@@ -1,0 +1,10 @@
+<section class="activity">
+  <div class="section-header">
+    <p class="section-label">GitHub activity</p>
+    <a href="{{ site.github }}" class="section-link" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a>
+  </div>
+  {% assign gh_user = site.github | split: "github.com/" | last | remove: "/" %}
+  <a href="{{ site.github }}" target="_blank" rel="noopener noreferrer">
+    <img src="https://ghchart.rshah.org/2C5282/{{ gh_user }}" alt="GitHub contribution graph for {{ gh_user }}" loading="lazy" width="720" height="112">
+  </a>
+</section>
