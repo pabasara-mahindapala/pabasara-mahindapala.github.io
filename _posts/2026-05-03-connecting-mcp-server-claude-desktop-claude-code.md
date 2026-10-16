@@ -50,16 +50,19 @@ Open `%APPDATA%\Claude\claude_desktop_config.json` (Windows) or `~/Library/Appli
         "http-only"
       ],
       "env": {
-        "NODE_TLS_REJECT_UNAUTHORIZED": "0"
+        "NODE_EXTRA_CA_CERTS": "/path/to/localhost.crt"
       }
     }
   }
 }
 ```
 
-The `NODE_TLS_REJECT_UNAUTHORIZED=0` flag will be needed for a local development server with a self-signed certificate. Node.js (which `mcp-remote` runs on) rejects self-signed certs by default, and this will ask it to skip the TLS verification. 
+A local development server usually has a self-signed certificate, and Node.js (which `mcp-remote` runs on) rejects self-signed certs by default. There are two ways around this:
 
-The flag lives in `mcp-remote`'s `env` block because `mcp-remote` is the one making the HTTPS request. Note that Claude Desktop itself never connects directly to your server.
+- **`NODE_EXTRA_CA_CERTS` (recommended):** point it to your server's certificate, or the CA that signed it, as a PEM file. Node.js then trusts that certificate in addition to the usual ones, and TLS verification stays on. For the ASP.NET Core development certificate, `dotnet dev-certs https --export-path ./localhost.crt --format PEM` exports it.
+- **`NODE_TLS_REJECT_UNAUTHORIZED=0`:** turns TLS verification off completely, so Node.js accepts any certificate. It's quicker to set up, but it also hides real certificate problems. Use it only for a short local test, and remove it afterwards.
+
+The variable lives in `mcp-remote`'s `env` block because `mcp-remote` is the one making the HTTPS request. Note that Claude Desktop itself never connects directly to your server.
 
 Restart Claude Desktop after saving. On first launch a browser window should open for OAuth login.
 
@@ -88,9 +91,18 @@ Or add it to your project's `.claude/settings.json`:
 
 Claude Code handles the OAuth flow the same way. The browser opens on first use, you authenticate, the token is cached, and subsequent runs are silent. There is no proxy process or STDIO bridge required.
 
-### Self-signed certificate workaround
+### Self-signed certificates
 
-Unlike Claude Desktop's command-based entries, HTTP-type MCP entries in `.claude/settings.json` don't have an `env` block, so you can't scope the TLS flag to a single server. Instead, set it in the global `~/.claude/settings.json`:
+Unlike Claude Desktop's command-based entries, HTTP-type MCP entries in `.claude/settings.json` don't have an `env` block, so you can't scope a certificate setting to a single server. It applies to the entire Claude Code process instead.
+
+The recommended option is again `NODE_EXTRA_CA_CERTS`. Set it in your shell before starting Claude Code, so Claude Code trusts your server's certificate while TLS verification stays on:
+
+```bash
+export NODE_EXTRA_CA_CERTS=/path/to/localhost.crt
+claude
+```
+
+The alternative is to turn verification off in the global `~/.claude/settings.json`:
 
 ```json
 {
@@ -100,6 +112,6 @@ Unlike Claude Desktop's command-based entries, HTTP-type MCP entries in `.claude
 }
 ```
 
-This sets the flag for the entire Claude Code process rather than for one MCP connection specifically. The same caveat applies: This should be restricted to development only, and you should remove it afterwards.
+Because this turns off TLS verification for every HTTPS connection Claude Code makes, not only your MCP server, use it only for a short local test and remove it afterwards.
 
 That's it! With these configurations, you should be able to test your local MCP server with both Claude Desktop and Claude Code.
