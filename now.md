@@ -31,8 +31,8 @@ description: What Pabasara Mahindapala is working on, reading, and thinking abou
         <h2 class="now-card-label">Writing</h2>
         <p>Working on a few articles on IAM, software architecture and Agentic AI topics.</p>
         <p>My co-authored <a href="/research/">research paper</a> was published at the APIIT International Research Conference 2026 (AIRC 2026) on 1 October and won the <strong>Best Paper Award</strong>. It maps the NHS DSP Toolkit to four AWS controls that govern who can act on patient data, not only where it is stored.</p>
-        <p>Just published a piece on
-        <a href="{% post_url 2026-09-07-mcp-remote-oauth-callback-port-crash %}">why a busy port made mcp-remote crash on startup</a>, and why the obvious fix quietly breaks OAuth.</p>
+        <p>Just published a guide on
+        <a href="{% post_url 2026-10-16-wso2-is-scim2-mcp-server-ai-gateway %}">turning WSO2 Identity Server's SCIM 2.0 APIs into a governed MCP server</a>: if done securely, identity administration is a good fit for an AI agent, and the WSO2 AI Gateway enforces a scope check on every tool call.</p>
         <!-- <p>Before that,
         <a href="{% post_url 2026-08-16-enforcing-tenant-isolation-with-a-roslyn-analyzer %}">enforcing a tenant isolation rule with a Roslyn analyzer</a> and a breakdown of the
         <a href="{% post_url 2026-07-11-mcp-authorization-2026-07-28-changes %}">six authorization changes landed in the 2026-07-28 MCP spec</a>.</p> -->
