@@ -4,7 +4,10 @@ title: "Turning WSO2 Identity Server's SCIM 2.0 APIs into a governed MCP server 
 published: true
 description: "How to expose the SCIM 2.0 APIs of WSO2 Identity Server 7.3 as an MCP server, secure it with Identity Server's own tokens at the WSO2 AI Gateway, and let Claude Desktop manage users and groups."
 categories: [identity]
-tags: [wso2, identity-and-access-management, scim2, mcp, ai-gateway]
+tags: [wso2, identity, scim2, mcp, ai-gateway]
+cross_posts:
+  - platform: medium
+    url: https://medium.com/@pabasaramahindapala/turning-wso2-identity-servers-scim-2-0-apis-into-a-governed-mcp-server-with-the-wso2-ai-gateway-df30c5a0cdc0
 hero: /public/images/wso2-is-scim2-mcp-server-ai-gateway/hero.jpg
 ---
 
