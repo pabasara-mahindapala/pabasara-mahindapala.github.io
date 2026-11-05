@@ -11,7 +11,7 @@ description: What Pabasara Mahindapala is working on, reading, and thinking abou
     <h1 class="page-title" itemprop="name">Now</h1>
     <p class="now-meta">
       A <a href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">now page</a> - a snapshot of what I'm focused on at this point in time.
-      Updated manually when things shift. <span class="now-updated">Last updated: October 2026.</span>
+      Updated manually when things shift. <span class="now-updated">Last updated: November 2026.</span>
     </p>
   </div>
 
